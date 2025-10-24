@@ -1,17 +1,55 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=22 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
+[ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_ldntv"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="2_2fmhe"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="2_fiftr"]
 [ext_resource type="Texture2D" uid="uid://bfcak0r5xy5nq" path="res://Sprites/Treehuggers Concept/sprite climb.png" id="3_1ixah"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="3_ikfsv"]
+[ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="4_5dgvu"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="7_2fmhe"]
+[ext_resource type="Texture2D" uid="uid://cs07uqrn4yf2l" path="res://Sprites/Treehuggers Concept/sprite walk.png" id="7_uscyt"]
+[ext_resource type="Texture2D" uid="uid://cl18b1wvvbekb" path="res://Sprites/Treehuggers Concept/sprite leap.png" id="7_wywco"]
+[ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="8_4xiap"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
 size = Vector2(15000, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xiap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uscyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wywco")
+}],
+"loop": true,
+"name": &"HorizontalMovement",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ixah")
+}],
+"loop": true,
+"name": &"VerticalMovement",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wywco"]
+resource_name = "test"
+length = 2.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ldntv"]
+_data = {
+&"test": SubResource("Animation_wywco")
+}
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w8jfd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6h5vk"]
 radius = 24.0
@@ -22,6 +60,11 @@ radius = 29.0
 height = 124.0
 
 [node name="GameScene" type="Node2D"]
+
+[node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label")]
+unique_name_in_owner = true
+script = ExtResource("1_ldntv")
+acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 0.3)
@@ -85,11 +128,25 @@ shape = SubResource("RectangleShape2D_2fmhe")
 position = Vector2(-164, 2874)
 script = ExtResource("2_fiftr")
 
-[node name="CharacterSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_1ixah")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(7, -3)
+sprite_frames = SubResource("SpriteFrames_4xiap")
+animation = &"VerticalMovement"
+script = ExtResource("8_4xiap")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/AnimatedSprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ldntv")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Player/AnimatedSprite2D"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_w8jfd")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="MainCamera" type="Camera2D" parent="Player"]
-zoom = Vector2(0.715, 0.715)
+zoom = Vector2(0.55, 0.55)
 limit_left = -1350
 limit_right = 10000
 limit_bottom = 3265
@@ -134,9 +191,62 @@ position = Vector2(-15, -75)
 shape = SubResource("CapsuleShape2D_6h5vk")
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 2147483655
+collision_mask = 2147483655
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
 position = Vector2(-15, -74)
 shape = SubResource("CapsuleShape2D_ikfsv")
+
+[node name="GameUi" type="CanvasLayer" parent="."]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="GameUi"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 2.4573
+alignment_horizontal = 2
+alignment_vertical = 0
+
+[node name="AcornLabel" type="Label" parent="GameUi/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "0/100"
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="Acorn" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(-434, 842)
+
+[node name="Acorn2" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(1472, 336)
+
+[node name="Acorn3" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(2277, -192)
+
+[node name="Acorn4" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(-328, -67)
+
+[node name="Acorn5" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(276, -432)
+
+[node name="Acorn6" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(2126, 453)
+
+[node name="Acorn7" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(2259, 950)
+
+[node name="Acorn8" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(356, 1501)
+
+[node name="Acorn9" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(333, 1015)
+
+[node name="Acorn10" parent="Collectables" instance=ExtResource("4_5dgvu")]
+position = Vector2(-251, 1904)

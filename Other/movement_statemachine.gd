@@ -6,6 +6,12 @@ class_name MovementStateMachine
 
 @export var current_state: MovementState
 
+@export var animator: AnimatedSprite2D
+
+func set_animation_frame(source_state:MovementState, frame_id:int):
+	if(source_state == current_state):
+		animator.frame = frame_id
+
 func set_movement_state(source_state:MovementState, new_state:MovementState):
 	# Only allow the currently active state to change to another state
 	if(new_state==null):
