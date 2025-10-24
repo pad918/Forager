@@ -212,6 +212,8 @@ gravity = 5000
 player_area_collider = NodePath("../../PlayerArea")
 stem_climb_state = NodePath("../StemMovementState")
 side_movement_state = NodePath("../GroundMovementState")
+x_acceleration = 2000
+max_speed = Vector2(2000, 3000)
 character = NodePath("../..")
 
 [node name="GroundMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("player_area_collider", "stem_climb_state", "fall_state", "character")]

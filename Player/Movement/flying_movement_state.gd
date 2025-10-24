@@ -2,7 +2,6 @@ extends "res://Other/movement_state.gd"
 
 class_name FlyingMovementState
 
-@export var max_fall_speed = 2000
 
 @export var gravity = 100
 
@@ -13,6 +12,10 @@ class_name FlyingMovementState
 @export var side_movement_state: MovementState
 
 @export var friction_x = 0.01
+
+@export var x_acceleration = 100
+
+@export var max_speed = Vector2(2000, 1000)
 
 func _ready() -> void:
 	super._ready()
@@ -39,6 +42,25 @@ func _ready() -> void:
 
 func update(delta:float):
 	character.velocity += delta*Vector2(0, gravity)
-	character.velocity.y = min(max_fall_speed, character.velocity.y)
-	character.velocity.x *= (1-friction_x)
+	character.velocity.y = min(abs(max_speed.y), character.velocity.y)
+	
+	
+	# Get input direction
+	var input_dir: Vector2 =Vector2(0, 0)
+	
+	if Input.is_action_pressed("ui_left"):
+		input_dir += Vector2(-1, 0)
+	if Input.is_action_pressed("ui_right"):
+		input_dir += Vector2(1, 0)	
+		
+	if Input.is_action_pressed("ui_up"):
+		input_dir += Vector2(0, -1)
+	if Input.is_action_pressed("ui_down"):
+		input_dir += Vector2(0, 1)
+	if(input_dir.x==0):
+		character.velocity.x *= (1-friction_x)
+	else:
+		print("delta: ", delta*input_dir.x*x_acceleration)
+		character.velocity.x += delta*input_dir.x*x_acceleration
+	character.velocity.x = min(max_speed.x, max(-max_speed.x, character.velocity.x))
 	character.move_and_slide()
