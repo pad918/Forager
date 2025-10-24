@@ -8,6 +8,8 @@ class_name MovementStateMachine
 
 @export var animator: AnimatedSprite2D
 
+@export var sfx_player: SFXPlayer
+
 func set_animation_frame(source_state:MovementState, frame_id:int):
 	if(source_state == current_state):
 		animator.frame = frame_id

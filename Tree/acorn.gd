@@ -7,5 +7,8 @@ func _ready() -> void:
 		func(n:Area2D):
 			var player:Player = n.get_parent()
 			player.add_acorn()
+			#Play the collection sfx
+			var sfx:SFXPlayer = get_node("%SfxSingleton")
+			sfx.play_sfx("AcornGrab")
 			queue_free()
 	)

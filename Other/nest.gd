@@ -17,4 +17,5 @@ func _ready() -> void:
 func _input(ev):
 	if player!=null and Input.is_key_pressed(KEY_ENTER):
 		print("STASHING ALL ACORNS!")
+		get_node("%SfxSingleton").play_sfx("AcornStash")
 		player.stash_acorns()

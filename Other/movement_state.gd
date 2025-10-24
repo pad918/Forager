@@ -6,6 +6,9 @@ extends Node2D
 
 var statemachine: MovementStateMachine
 
+func get_sfx_player() -> SFXPlayer:
+	return get_parent().sfx_player
+
 func _ready() -> void:
 	statemachine = get_parent()
 

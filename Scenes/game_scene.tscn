@@ -1,21 +1,28 @@
-[gd_scene load_steps=25 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=32 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
+[ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="1_817jg"]
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_ldntv"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="2_2fmhe"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="2_fiftr"]
 [ext_resource type="Texture2D" uid="uid://bfcak0r5xy5nq" path="res://Sprites/Treehuggers Concept/sprite climb.png" id="3_1ixah"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="3_ikfsv"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="4_5dgvu"]
+[ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="5_aq00n"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="6_rgj8m"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="7_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://cs07uqrn4yf2l" path="res://Sprites/Treehuggers Concept/sprite walk.png" id="7_uscyt"]
+[ext_resource type="AudioStream" uid="uid://h3t060dq6fnt" path="res://audio/sfx/acorn-drop_seamless.wav" id="7_vtwju"]
 [ext_resource type="Texture2D" uid="uid://cl18b1wvvbekb" path="res://Sprites/Treehuggers Concept/sprite leap.png" id="7_wywco"]
 [ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="8_4xiap"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
+[ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="14_np3vi"]
 [ext_resource type="Script" uid="uid://cxraxrj0jam1p" path="res://Other/nest.gd" id="15_a7fet"]
+[ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="15_np3vi"]
 [ext_resource type="Texture2D" uid="uid://cxn2rt1k2in5h" path="res://builds/TreeHugger.icon.png" id="15_w8jfd"]
+[ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="16_aq00n"]
+[ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="16_mipjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
 size = Vector2(15000, 100)
@@ -65,6 +72,33 @@ height = 124.0
 size = Vector2(188, 181.99998)
 
 [node name="GameScene" type="Node2D"]
+
+[node name="MusicSingleton" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicSingleton"]
+stream = ExtResource("1_817jg")
+autoplay = true
+
+[node name="SfxSingleton" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("14_np3vi")
+
+[node name="LandGround" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("15_np3vi")
+
+[node name="LandBranch" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("16_mipjh")
+volume_db = -19.369
+pitch_scale = 1.41
+
+[node name="Jump" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("16_aq00n")
+
+[node name="AcornGrab" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("5_aq00n")
+
+[node name="AcornStash" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("7_vtwju")
 
 [node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label")]
 unique_name_in_owner = true
@@ -160,10 +194,11 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="MovementStateMachine" type="Node2D" parent="Player" node_paths=PackedStringArray("character_body", "current_state")]
+[node name="MovementStateMachine" type="Node2D" parent="Player" node_paths=PackedStringArray("character_body", "current_state", "sfx_player")]
 script = ExtResource("6_rgj8m")
 character_body = NodePath("..")
 current_state = NodePath("GroundMovementState")
+sfx_player = NodePath("../../SfxSingleton")
 
 [node name="StemMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("area_collider", "gliding_state", "side_movement_state", "character")]
 script = ExtResource("7_2fmhe")

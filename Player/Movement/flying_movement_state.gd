@@ -25,10 +25,14 @@ func _ready() -> void:
 			# Add state for entering  branch
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
+				# Only play if player is moving downwards!
+				if(character.velocity.y>=-0.01):
+					get_sfx_player().play_sfx("LandBranch")
 				statemachine.set_movement_state(self, side_movement_state)
 			# Or entering the ground (layer 1)
 			if((a.collision_layer&(1<<0)) != 0):
 				print("entered ground")
+				get_sfx_player().play_sfx("LandGround")
 				statemachine.set_movement_state(self, side_movement_state)
 		
 	)
