@@ -33,8 +33,7 @@ func _ready() -> void:
 				is_on_stem = false
 			# If you exit a branch, fall
 			if(((a.collision_layer&(1<<2)) != 0)):
-				statemachine.set_movement_state(self, fall_state)
-		
+				statemachine.set_movement_state(self, fall_state if !is_on_stem else stem_climb_state)		
 	)
 
 func update(delta: float):
