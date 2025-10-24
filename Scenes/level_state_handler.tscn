@@ -495,6 +495,8 @@ round_animation_player = NodePath("Animations/RoundEndAnimations")
 [node name="Parallax2D2" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.03, 0.03)
 scroll_offset = Vector2(-1100, 3000)
+repeat_size = Vector2(7492.1, 0)
+repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background4" type="Sprite2D" parent="ParalaxLayers/Parallax2D2"]
@@ -507,6 +509,8 @@ texture = ExtResource("3_h34ov")
 [node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(-1100, 3000)
+repeat_size = Vector2(7492.1, 0)
+repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background3" type="Sprite2D" parent="ParalaxLayers/Parallax2D"]
@@ -519,6 +523,8 @@ texture = ExtResource("4_vqsto")
 [node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.075, 0.075)
 scroll_offset = Vector2(-1100, 3000)
+repeat_size = Vector2(7492.1, 0)
+repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
@@ -529,8 +535,10 @@ scale = Vector2(3.06, 3.06)
 texture = ExtResource("5_tffdo")
 
 [node name="BackgroundFront" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.15, 0.15)
+scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-1100, 3000)
+repeat_size = Vector2(7492.1, 0)
+repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgroundFront"]
@@ -541,7 +549,7 @@ scale = Vector2(3.06, 3.06)
 texture = ExtResource("6_3iuea")
 
 [node name="BackgrounLeaves" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(6000, 2000)
 autoscroll = Vector2(0, 200)
 repeat_times = 3
