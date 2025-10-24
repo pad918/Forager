@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="TreeHugger"
-run/main_scene="uid://b4sogs0ju16ip"
+run/main_scene="uid://7le7rx8hneh6"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+
+[autoload]
+
+SceneLoaderSingleton="*res://Scenes/scene_singleton.tscn"
 
 [display]
 

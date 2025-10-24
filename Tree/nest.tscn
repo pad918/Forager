@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxn2rt1k2in5h" path="res://builds/TreeHugger.icon.png" id="2_3hic0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfd"]
-size = Vector2(188, 181.99998)
+size = Vector2(254, 235)
 
 [node name="Nest" type="Node2D" node_paths=PackedStringArray("nest_area")]
 script = ExtResource("1_bgsk5")
@@ -21,5 +21,5 @@ collision_layer = 2147483648
 collision_mask = 2147483648
 
 [node name="NestCollider" type="CollisionShape2D" parent="NestArea"]
-position = Vector2(-2, 72)
+position = Vector2(3, 74)
 shape = SubResource("RectangleShape2D_w8jfd")

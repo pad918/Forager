@@ -2,26 +2,23 @@ extends Node2D
 
 class_name LevelStateHandler
 
-@export var acorn_label: Label
 @export var timer_label: Label
 
-var acorn_target:int = 100
+@export var round_animation_player: AnimationPlayer
+
+var acorn_target:int = 10
 
 var acorns_collected:int = 0
 
-var time_left:float = 60*1 # 5 minutes
+var time_left:float = 10
 
-func update_ui():
-	acorn_label.text = "%d/%d" % [acorns_collected, acorn_target]
-
-func reset(new_target:int):
-	acorns_collected = acorn_target
-	update_ui()
+var round_over:bool = false
 	
 func add_acorns(num:int):
 	acorns_collected+=num
-	print("state handler num acorns: ", acorns_collected)
-	update_ui()
+	if(acorns_collected >= acorn_target):
+		round_over = true
+		print("PLAYER WON")
 
 func has_reached_target():
 	return acorns_collected >= acorn_target
@@ -37,8 +34,15 @@ func _physics_process(delta: float) -> void:
 	time_left -= delta
 	
 	if(time_left<0):
-		time_left = 0
-		print("ran out of time")
+		if(not round_over):
+			print("Player FAILED!")
+			round_animation_player.play("DidNotMakeIt")
+			round_animation_player.animation_finished.connect(
+				func(_n):
+					SceneLoaderSingleton.load_scene("MainMenu")
+			)
+		round_over = true
+		#print("ran out of time")
 		# TODO: play hibernation animation thing?
 	update_timer_label()
 

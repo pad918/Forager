@@ -1,15 +1,20 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=63 format=3 uid="uid://b4sogs0ju16ip"]
 
-[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="1_817jg"]
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_ldntv"]
+[ext_resource type="Texture2D" uid="uid://bgw4ncl0pe153" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0004_background4.png" id="1_t53j4"]
+[ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="1_uaga3"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="2_2fmhe"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="2_fiftr"]
+[ext_resource type="Texture2D" uid="uid://c0a7qp2p0uhq0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0003_background3.png" id="2_uaga3"]
 [ext_resource type="Texture2D" uid="uid://bfcak0r5xy5nq" path="res://Sprites/Treehuggers Concept/sprite climb.png" id="3_1ixah"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="3_ikfsv"]
+[ext_resource type="Texture2D" uid="uid://bpld0nd3p3vyk" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0002_background2.png" id="3_lafet"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="4_5dgvu"]
+[ext_resource type="Texture2D" uid="uid://bn7asu7u4gxo0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0001_background1.png" id="4_juer4"]
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="5_aq00n"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="6_rgj8m"]
+[ext_resource type="Texture2D" uid="uid://b0s4qeclf4eb5" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0000_backgroundleaves.png" id="6_udify"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="7_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://cs07uqrn4yf2l" path="res://Sprites/Treehuggers Concept/sprite walk.png" id="7_uscyt"]
 [ext_resource type="AudioStream" uid="uid://h3t060dq6fnt" path="res://audio/sfx/acorn-drop_seamless.wav" id="7_vtwju"]
@@ -18,7 +23,11 @@
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
 [ext_resource type="Texture2D" uid="uid://cr3j1y26ypd62" path="res://Sprites/Treehuggers Concept/tree trunk.png" id="12_fnr0w"]
+[ext_resource type="AudioStream" uid="uid://cy5ehsb724stc" path="res://audio/sfx/acorn-full.wav" id="13_juer4"]
+[ext_resource type="Texture2D" uid="uid://bcvunctkp6238" path="res://Sprites/AboveGroundAssets/foregroundground.png" id="14_e624q"]
+[ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="14_lafet"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="14_np3vi"]
+[ext_resource type="Texture2D" uid="uid://7s5s2oi34p1i" path="res://Sprites/AboveGroundAssetsNew/Hometree.png" id="15_juer4"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="15_np3vi"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="16_aq00n"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="16_mipjh"]
@@ -26,6 +35,12 @@
 [ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="23_vtwju"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="25_kiiqx"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="26_m8c54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juer4"]
+size = Vector2(956.5, 3438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udify"]
+size = Vector2(515.4938, 1016.00006)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
 size = Vector2(3756, 100)
@@ -385,7 +400,156 @@ height = 124.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8c54"]
 size = Vector2(1112, 20)
 
+[sub_resource type="Animation" id="Animation_juer4"]
+resource_name = "DidNotMakeIt"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/MainCamera:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1.945, 1.945)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player/PlayerAnimation:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MusicSingleton/AudioStreamPlayer:pitch_scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.3]
+}
+
+[sub_resource type="Animation" id="Animation_udify"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/MainCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Player/PlayerAnimation:self_modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../MusicSingleton/AudioStreamPlayer:pitch_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k2gex"]
+_data = {
+&"DidNotMakeIt": SubResource("Animation_juer4"),
+&"RESET": SubResource("Animation_udify")
+}
+
 [node name="GameScene" type="Node2D"]
+
+[node name="ParalaxLayers" type="Node2D" parent="."]
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.03, 0.03)
+scroll_offset = Vector2(-1100, 3000)
+script = ExtResource("1_uaga3")
+
+[node name="Background4" type="Sprite2D" parent="ParalaxLayers/Parallax2D2"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(2638.44, -3223.6)
+scale = Vector2(3.06, 3.06)
+texture = ExtResource("1_t53j4")
+
+[node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.05, 0.05)
+scroll_offset = Vector2(-1100, 3000)
+script = ExtResource("1_uaga3")
+
+[node name="Background3" type="Sprite2D" parent="ParalaxLayers/Parallax2D"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(2638.44, -3223.6)
+scale = Vector2(3.06, 3.06)
+texture = ExtResource("2_uaga3")
+
+[node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.075, 0.075)
+scroll_offset = Vector2(-1100, 3000)
+script = ExtResource("1_uaga3")
+
+[node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(2638.44, -3223.6)
+scale = Vector2(3.06, 3.06)
+texture = ExtResource("3_lafet")
+
+[node name="BackgroundFront" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.15, 0.15)
+scroll_offset = Vector2(-1100, 3000)
+script = ExtResource("1_uaga3")
+
+[node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgroundFront"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(2638.44, -2178.6)
+scale = Vector2(3.06, 3.06)
+texture = ExtResource("4_juer4")
+
+[node name="BackgrounLeaves" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(6000, 2000)
+autoscroll = Vector2(0, 200)
+repeat_times = 3
+script = ExtResource("1_uaga3")
+
+[node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgrounLeaves"]
+z_index = -100
+texture_repeat = 2
+position = Vector2(1206, 1634)
+scale = Vector2(3.06, 3.06)
+texture = ExtResource("6_udify")
 
 [node name="MusicSingleton" type="Node2D" parent="."]
 
@@ -414,29 +578,39 @@ stream = ExtResource("5_aq00n")
 [node name="AcornStash" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("7_vtwju")
 
-[node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label", "timer_label")]
+[node name="AcornStashFail" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("13_juer4")
+pitch_scale = 1.79
+
+[node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("timer_label", "round_animation_player")]
 unique_name_in_owner = true
 script = ExtResource("1_ldntv")
-acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
 timer_label = NodePath("../GameUi/AspectRatioContainer/TimerLabel")
+round_animation_player = NodePath("../Animations/RoundEndAnimations")
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(0, -850)
+[node name="HomeTree" type="Node2D" parent="."]
+position = Vector2(-692, 3080)
+script = ExtResource("14_lafet")
 
-[node name="Background1" type="Sprite2D" parent="Parallax2D"]
-z_index = -100
-texture = ExtResource("1_1ixah")
+[node name="Stem" type="Sprite2D" parent="HomeTree"]
+z_index = -1
+position = Vector2(122, -1723)
+texture = ExtResource("15_juer4")
 
-[node name="TreeLeft" parent="." instance=ExtResource("2_2fmhe")]
-position = Vector2(-888, 2316)
+[node name="StemArea" type="Area2D" parent="HomeTree/Stem"]
+collision_layer = 2
+collision_mask = 2
 
-[node name="TreeBranch" parent="TreeLeft" instance=ExtResource("3_ikfsv")]
-position = Vector2(364, -1365)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeTree/Stem/StemArea"]
+position = Vector2(-212.25, -40)
+shape = SubResource("RectangleShape2D_juer4")
 
-[node name="TreeBranch2" parent="TreeLeft" instance=ExtResource("3_ikfsv")]
-position = Vector2(516, -2073)
-scale = Vector2(1.8, 1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HomeTree/Stem/StemArea"]
+position = Vector2(296.2531, -1266)
+shape = SubResource("RectangleShape2D_udify")
+
+[node name="Nest" parent="HomeTree" instance=ExtResource("22_817jg")]
+position = Vector2(55, -2651)
 
 [node name="TreeRight" parent="." instance=ExtResource("2_2fmhe")]
 position = Vector2(916, 2327)
@@ -551,72 +725,83 @@ position = Vector2(-489.8929, -1918.5762)
 rotation = 0.8681307
 scale = Vector2(-2.9368675, 1.5621636)
 
-[node name="WorldBounds" type="Node2D" parent="."]
+[node name="Ground" type="Node2D" parent="."]
 position = Vector2(0, 3177)
 
-[node name="shape" type="StaticBody2D" parent="WorldBounds"]
+[node name="Ground1" type="Sprite2D" parent="Ground"]
+position = Vector2(1872.0001, 200)
+scale = Vector2(2.495, 1)
+texture = ExtResource("14_e624q")
 
-[node name="Ground1" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="shape" type="StaticBody2D" parent="Ground"]
+
+[node name="Ground1" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(-177, 106)
 scale = Vector2(1, 3.6)
 shape = SubResource("RectangleShape2D_2fmhe")
 
-[node name="Ground2" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="Ground2" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(4963, 106)
 scale = Vector2(1, 3.6)
 shape = SubResource("RectangleShape2D_vtwju")
 
-[node name="leftWall" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="leftWall" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(-1529, -4861)
 shape = SubResource("RectangleShape2D_817jg")
 
-[node name="underground1" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="underground1" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(-161, 1868)
 shape = SubResource("RectangleShape2D_fnr0w")
 
-[node name="underground2" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="underground2" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(7193, 1844)
 shape = SubResource("RectangleShape2D_fnr0w")
 
-[node name="underground3" type="CollisionShape2D" parent="WorldBounds/shape"]
+[node name="underground3" type="CollisionShape2D" parent="Ground/shape"]
 position = Vector2(3538, 3523)
 shape = SubResource("RectangleShape2D_gqlrj")
 
-[node name="GroundArea" type="Area2D" parent="WorldBounds"]
+[node name="GroundArea" type="Area2D" parent="Ground"]
 
-[node name="GroungAreaCollider" type="CollisionShape2D" parent="WorldBounds/GroundArea"]
+[node name="GroungAreaCollider" type="CollisionShape2D" parent="Ground/GroundArea"]
 position = Vector2(-55, 106)
 scale = Vector2(1, 3.6)
 shape = SubResource("RectangleShape2D_2fmhe")
 
-[node name="GroungAreaCollider2" type="CollisionShape2D" parent="WorldBounds/GroundArea"]
+[node name="GroungAreaCollider3" type="CollisionShape2D" parent="Ground/GroundArea"]
+position = Vector2(4145, 106)
+scale = Vector2(1, 3.6)
+shape = SubResource("RectangleShape2D_2fmhe")
+
+[node name="GroungAreaCollider2" type="CollisionShape2D" parent="Ground/GroundArea"]
 position = Vector2(3631, 3512)
 scale = Vector2(2.1200013, 3.6)
 shape = SubResource("RectangleShape2D_kiiqx")
 
-[node name="floorTest" type="Sprite2D" parent="WorldBounds/GroundArea"]
+[node name="floorTest" type="Sprite2D" parent="Ground/GroundArea"]
 self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
 position = Vector2(3507, 3595)
 rotation = 1.5707964
 scale = Vector2(1, 2.24)
 texture = ExtResource("12_fnr0w")
 
-[node name="wallTest" type="Sprite2D" parent="WorldBounds/GroundArea"]
+[node name="wallTest" type="Sprite2D" parent="Ground/GroundArea"]
 self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
 position = Vector2(-206, 1989)
 scale = Vector2(1, 0.88)
 texture = ExtResource("12_fnr0w")
 
-[node name="wallTest2" type="Sprite2D" parent="WorldBounds/GroundArea"]
+[node name="wallTest2" type="Sprite2D" parent="Ground/GroundArea"]
 self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
 position = Vector2(7240, 1861)
 scale = Vector2(1, 0.88)
 texture = ExtResource("12_fnr0w")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
 position = Vector2(-164, 2874)
 script = ExtResource("2_fiftr")
+acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
 
 [node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(7, -3)
@@ -637,7 +822,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/blend_position = Vector2(0.45079362, 0.060240984)
 
 [node name="MainCamera" type="Camera2D" parent="Player"]
-zoom = Vector2(0.55, 0.55)
+zoom = Vector2(0.5, 0.5)
 limit_left = -1350
 limit_right = 10000
 limit_bottom = 3265
@@ -753,18 +938,10 @@ position = Vector2(333, 1015)
 [node name="Acorn10" parent="Collectables" instance=ExtResource("4_5dgvu")]
 position = Vector2(-251, 1904)
 
-[node name="Nests" type="Node2D" parent="."]
-
-[node name="Nest2" parent="Nests" instance=ExtResource("22_817jg")]
-position = Vector2(3990, 2877)
-
-[node name="Nest3" parent="Nests" instance=ExtResource("22_817jg")]
-position = Vector2(6384, 4948)
-
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="TeleportationDoor" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("23_vtwju")]
-position = Vector2(2475, 2931)
+position = Vector2(5145, 6280)
 destination = NodePath("../TeleportationDoor2")
 
 [node name="TeleportationDoor2" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("23_vtwju")]
@@ -791,8 +968,15 @@ position = Vector2(2076, 3451)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("26_m8c54")
-low_limit = Vector2(-735, 3725)
-high_limit = Vector2(3925, 6795)
+low_limit = Vector2(-275, 3725)
+high_limit = Vector2(7300, 6795)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Animations" type="Node2D" parent="."]
+
+[node name="RoundEndAnimations" type="AnimationPlayer" parent="Animations"]
+libraries = {
+&"": SubResource("AnimationLibrary_k2gex")
+}

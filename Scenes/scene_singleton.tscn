@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://coshd5brbwydl"]
+
+[ext_resource type="Script" uid="uid://dvla8ydf4e0gm" path="res://Scenes/scene_singleton.gd" id="1_mj13a"]
+
+[node name="SceneSingleton" type="Node"]
+script = ExtResource("1_mj13a")
+main_menu_prefab_path = "res://Scenes/MainMenu.tscn"
+main_game_prefab_path = "res://Scenes/game_scene.tscn"
+scenes = {
+"MainGame": "res://Scenes/game_scene.tscn",
+"MainMenu": "res://Scenes/MainMenu.tscn"
+}

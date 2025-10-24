@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn0qf566xn415"]
+
+[ext_resource type="Texture2D" uid="uid://djh0vbn1d2o4v" path="res://Sprites/AboveGroundAssetsNew/task_illustration.png" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://pb27rf7umn11" path="res://Sprites/AboveGroundAssetsNew/foragerlogo.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://1ugu673dg025" path="res://Sprites/AboveGroundAssetsNew/playnow.png" id="3_8saeu"]
+[ext_resource type="Script" uid="uid://3fylssg0oeyr" path="res://Scenes/scene_selector.gd" id="3_ghw46"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tt5f1")
+expand_mode = 2
+
+[node name="Title" type="TextureRect" parent="Panel/TextureRect"]
+custom_minimum_size = Vector2(317.92, 164.82)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -279.6256
+offset_top = -169.0
+offset_right = 279.6256
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_853f1")
+expand_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SceneSelector" type="Node" parent="Panel/CenterContainer"]
+script = ExtResource("3_ghw46")
+scene_name = "MainGame"
+
+[node name="TextureButton" type="TextureButton" parent="Panel/CenterContainer"]
+custom_minimum_size = Vector2(431.71, 137.075)
+layout_mode = 2
+texture_normal = ExtResource("3_8saeu")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Panel/CenterContainer/TextureButton" to="Panel/CenterContainer/SceneSelector" method="load_scene"]
