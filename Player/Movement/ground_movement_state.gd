@@ -68,4 +68,14 @@ func update(delta: float):
 		statemachine.set_movement_state(self, fall_state)
 		print("GAVE UP BOOST!")
 	
+	# Drop down from branch handeling
+	if(input_dir.y>0):
+		print("Dropping")
+		statemachine.set_movement_state(self, fall_state)
+		character.velocity.y = 200
+		# Falling trhogh a bit will cause the collider
+		# to stop working
+		character.position.y += 10 
+		
+	
 	character.move_and_slide()
