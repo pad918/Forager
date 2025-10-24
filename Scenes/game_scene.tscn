@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=49 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="1_817jg"]
@@ -17,18 +17,33 @@
 [ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="8_4xiap"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
+[ext_resource type="Texture2D" uid="uid://cr3j1y26ypd62" path="res://Sprites/Treehuggers Concept/tree trunk.png" id="12_fnr0w"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="14_np3vi"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="15_np3vi"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="16_aq00n"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="16_mipjh"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="22_817jg"]
 [ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="23_vtwju"]
+[ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="25_kiiqx"]
+[ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="26_m8c54"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
-size = Vector2(15000, 100)
+size = Vector2(3756, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtwju"]
+size = Vector2(5386, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_817jg"]
 size = Vector2(474, 10437)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnr0w"]
+size = Vector2(375.9075, 3250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqlrj"]
+size = Vector2(7734, 346)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiiqx"]
+size = Vector2(3756, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4xiap"]
 animations = [{
@@ -367,6 +382,9 @@ height = 118.0
 radius = 29.0
 height = 124.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8c54"]
+size = Vector2(1112, 20)
+
 [node name="GameScene" type="Node2D"]
 
 [node name="MusicSingleton" type="Node2D" parent="."]
@@ -396,10 +414,11 @@ stream = ExtResource("5_aq00n")
 [node name="AcornStash" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("7_vtwju")
 
-[node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label")]
+[node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label", "timer_label")]
 unique_name_in_owner = true
 script = ExtResource("1_ldntv")
 acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
+timer_label = NodePath("../GameUi/AspectRatioContainer/TimerLabel")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 0.3)
@@ -454,19 +473,114 @@ position = Vector2(-316, -2240)
 rotation = 3.14159
 scale = Vector2(1.03383, -1)
 
+[node name="UnderGroundTree" parent="." instance=ExtResource("2_2fmhe")]
+position = Vector2(1309.9999, 7690.999)
+rotation = -0.22997308
+
+[node name="TreeBranch3" parent="UnderGroundTree" instance=ExtResource("3_ikfsv")]
+position = Vector2(-503, -687)
+rotation = -0.19024089
+scale = Vector2(-1.88, 1)
+
+[node name="TreeBranch5" parent="UnderGroundTree" instance=ExtResource("3_ikfsv")]
+position = Vector2(553, -2928)
+rotation = -0.19024089
+scale = Vector2(1.9965223, 0.9437238)
+
+[node name="TreeBranch6" parent="UnderGroundTree" instance=ExtResource("3_ikfsv")]
+position = Vector2(475.00015, -336.9995)
+rotation = -0.19024089
+scale = Vector2(1.5040454, 1)
+
+[node name="TreeBranch4" parent="UnderGroundTree" instance=ExtResource("3_ikfsv")]
+position = Vector2(457, -1886)
+scale = Vector2(1.42127, 1)
+
+[node name="UnderGroundTree4" parent="." instance=ExtResource("2_2fmhe")]
+position = Vector2(2016.9999, 6822)
+scale = Vector2(0.72, 1)
+
+[node name="TreeBranch3" parent="UnderGroundTree4" instance=ExtResource("3_ikfsv")]
+position = Vector2(-503, -687)
+rotation = -0.19024089
+scale = Vector2(-1.88, 1)
+
+[node name="TreeBranch5" parent="UnderGroundTree4" instance=ExtResource("3_ikfsv")]
+position = Vector2(553, -2928)
+rotation = -0.19024089
+scale = Vector2(1.9965223, 0.9437238)
+
+[node name="TreeBranch6" parent="UnderGroundTree4" instance=ExtResource("3_ikfsv")]
+position = Vector2(475.00015, -336.9995)
+rotation = -0.19024089
+scale = Vector2(1.5040454, 1)
+
+[node name="TreeBranch4" parent="UnderGroundTree4" instance=ExtResource("3_ikfsv")]
+position = Vector2(457, -1886)
+scale = Vector2(1.42127, 1)
+
+[node name="UnderGroundTree2" parent="." instance=ExtResource("2_2fmhe")]
+position = Vector2(3372, 7763)
+rotation = 0.09556121
+
+[node name="TreeBranch3" parent="UnderGroundTree2" instance=ExtResource("3_ikfsv")]
+position = Vector2(-478.21475, -1551.4492)
+rotation = -0.19024089
+scale = Vector2(-1.88, 1)
+
+[node name="TreeBranch5" parent="UnderGroundTree2" instance=ExtResource("3_ikfsv")]
+position = Vector2(-475.7008, -2793.3555)
+rotation = -0.19024089
+scale = Vector2(1.9965223, 0.9437238)
+
+[node name="TreeBranch6" parent="UnderGroundTree2" instance=ExtResource("3_ikfsv")]
+position = Vector2(449.79166, -3471.7566)
+rotation = -0.19024089
+scale = Vector2(1.5040454, 1)
+
+[node name="TreeBranch4" parent="UnderGroundTree2" instance=ExtResource("3_ikfsv")]
+position = Vector2(457, -1886)
+scale = Vector2(1.42127, 1)
+
+[node name="UnderGroundTree3" parent="." instance=ExtResource("2_2fmhe")]
+position = Vector2(8664, 5152.9995)
+rotation = -1.309181
+
+[node name="TreeBranch3" parent="UnderGroundTree3" instance=ExtResource("3_ikfsv")]
+position = Vector2(-489.8929, -1918.5762)
+rotation = 0.8681307
+scale = Vector2(-2.9368675, 1.5621636)
+
 [node name="WorldBounds" type="Node2D" parent="."]
 position = Vector2(0, 3177)
 
 [node name="shape" type="StaticBody2D" parent="WorldBounds"]
 
-[node name="Ground" type="CollisionShape2D" parent="WorldBounds/shape"]
-position = Vector2(-55, 106)
+[node name="Ground1" type="CollisionShape2D" parent="WorldBounds/shape"]
+position = Vector2(-177, 106)
 scale = Vector2(1, 3.6)
 shape = SubResource("RectangleShape2D_2fmhe")
+
+[node name="Ground2" type="CollisionShape2D" parent="WorldBounds/shape"]
+position = Vector2(4963, 106)
+scale = Vector2(1, 3.6)
+shape = SubResource("RectangleShape2D_vtwju")
 
 [node name="leftWall" type="CollisionShape2D" parent="WorldBounds/shape"]
 position = Vector2(-1529, -4861)
 shape = SubResource("RectangleShape2D_817jg")
+
+[node name="underground1" type="CollisionShape2D" parent="WorldBounds/shape"]
+position = Vector2(-161, 1868)
+shape = SubResource("RectangleShape2D_fnr0w")
+
+[node name="underground2" type="CollisionShape2D" parent="WorldBounds/shape"]
+position = Vector2(7193, 1844)
+shape = SubResource("RectangleShape2D_fnr0w")
+
+[node name="underground3" type="CollisionShape2D" parent="WorldBounds/shape"]
+position = Vector2(3538, 3523)
+shape = SubResource("RectangleShape2D_gqlrj")
 
 [node name="GroundArea" type="Area2D" parent="WorldBounds"]
 
@@ -474,6 +588,30 @@ shape = SubResource("RectangleShape2D_817jg")
 position = Vector2(-55, 106)
 scale = Vector2(1, 3.6)
 shape = SubResource("RectangleShape2D_2fmhe")
+
+[node name="GroungAreaCollider2" type="CollisionShape2D" parent="WorldBounds/GroundArea"]
+position = Vector2(3631, 3512)
+scale = Vector2(2.1200013, 3.6)
+shape = SubResource("RectangleShape2D_kiiqx")
+
+[node name="floorTest" type="Sprite2D" parent="WorldBounds/GroundArea"]
+self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
+position = Vector2(3507, 3595)
+rotation = 1.5707964
+scale = Vector2(1, 2.24)
+texture = ExtResource("12_fnr0w")
+
+[node name="wallTest" type="Sprite2D" parent="WorldBounds/GroundArea"]
+self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
+position = Vector2(-206, 1989)
+scale = Vector2(1, 0.88)
+texture = ExtResource("12_fnr0w")
+
+[node name="wallTest2" type="Sprite2D" parent="WorldBounds/GroundArea"]
+self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
+position = Vector2(7240, 1861)
+scale = Vector2(1, 0.88)
+texture = ExtResource("12_fnr0w")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
@@ -576,6 +714,13 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 80
 text = "0/100"
 
+[node name="TimerLabel" type="Label" parent="GameUi/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "5:00"
+
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Acorn" parent="Collectables" instance=ExtResource("4_5dgvu")]
@@ -611,10 +756,10 @@ position = Vector2(-251, 1904)
 [node name="Nests" type="Node2D" parent="."]
 
 [node name="Nest2" parent="Nests" instance=ExtResource("22_817jg")]
-position = Vector2(1841, 2949)
+position = Vector2(3990, 2877)
 
 [node name="Nest3" parent="Nests" instance=ExtResource("22_817jg")]
-position = Vector2(-385, 2922)
+position = Vector2(6384, 4948)
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -625,3 +770,29 @@ destination = NodePath("../TeleportationDoor2")
 [node name="TeleportationDoor2" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("23_vtwju")]
 position = Vector2(265, 2949)
 destination = NodePath("../TeleportationDoor")
+
+[node name="CameraLimtAreas" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
+script = ExtResource("25_kiiqx")
+camera = NodePath("../Player/MainCamera")
+
+[node name="AboveLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(2068, 3354)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("26_m8c54")
+low_limit = Vector2(-1350, -100000)
+high_limit = Vector2(10000, 3265)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/AboveLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="BelowLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(2076, 3451)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("26_m8c54")
+low_limit = Vector2(-735, 3725)
+high_limit = Vector2(3925, 6795)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/BelowLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
