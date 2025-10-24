@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=25 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_ldntv"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="8_4xiap"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
+[ext_resource type="Script" uid="uid://cxraxrj0jam1p" path="res://Other/nest.gd" id="15_a7fet"]
+[ext_resource type="Texture2D" uid="uid://cxn2rt1k2in5h" path="res://builds/TreeHugger.icon.png" id="15_w8jfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
 size = Vector2(15000, 100)
@@ -59,6 +61,9 @@ height = 118.0
 radius = 29.0
 height = 124.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfd"]
+size = Vector2(188, 181.99998)
+
 [node name="GameScene" type="Node2D"]
 
 [node name="LevelStateHandler" type="Node2D" parent="." node_paths=PackedStringArray("acorn_label")]
@@ -71,6 +76,7 @@ scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(0, -850)
 
 [node name="Background1" type="Sprite2D" parent="Parallax2D"]
+z_index = -100
 texture = ExtResource("1_1ixah")
 
 [node name="TreeLeft" parent="." instance=ExtResource("2_2fmhe")]
@@ -250,3 +256,24 @@ position = Vector2(333, 1015)
 
 [node name="Acorn10" parent="Collectables" instance=ExtResource("4_5dgvu")]
 position = Vector2(-251, 1904)
+
+[node name="Nests" type="Node2D" parent="."]
+
+[node name="Nest" type="Node2D" parent="Nests" node_paths=PackedStringArray("nest_area")]
+position = Vector2(46, 2934)
+script = ExtResource("15_a7fet")
+nest_area = NodePath("NestArea")
+
+[node name="NestSprite" type="Sprite2D" parent="Nests/Nest"]
+self_modulate = Color(1, 0.4807102, 0.28521508, 1)
+z_index = -1
+position = Vector2(0, 72)
+texture = ExtResource("15_w8jfd")
+
+[node name="NestArea" type="Area2D" parent="Nests/Nest"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="NestCollider" type="CollisionShape2D" parent="Nests/Nest/NestArea"]
+position = Vector2(-2, 72)
+shape = SubResource("RectangleShape2D_w8jfd")

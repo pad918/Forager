@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c41p78r35r52s"]
 
 [ext_resource type="Script" uid="uid://l2cvr0h5re70" path="res://Tree/acorn.gd" id="1_vcu7w"]
-[ext_resource type="Texture2D" uid="uid://cl18b1wvvbekb" path="res://Sprites/Treehuggers Concept/sprite leap.png" id="2_hpdyy"]
+[ext_resource type="Texture2D" uid="uid://b2vomw5gswj3b" path="res://Sprites/Treehuggers Concept/acorn.png" id="2_vcu7w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uscyt"]
 radius = 74.0
@@ -11,10 +11,9 @@ script = ExtResource("1_vcu7w")
 area = NodePath("AcornCollider")
 
 [node name="AcornSprite" type="Sprite2D" parent="."]
-self_modulate = Color(0.43908498, 0.24615666, 1.92523e-07, 1)
 position = Vector2(7.9999914, 4)
-scale = Vector2(0.40415335, 0.7196532)
-texture = ExtResource("2_hpdyy")
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("2_vcu7w")
 
 [node name="AcornCollider" type="Area2D" parent="."]
 collision_layer = 2147483648

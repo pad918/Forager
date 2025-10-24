@@ -17,8 +17,9 @@ func reset(new_target:int):
 	acorns_collected = acorn_target
 	update_ui()
 	
-func collected_acorn():
-	acorns_collected+=1
+func add_acorns(num:int):
+	acorns_collected+=num
+	print("state handler num acorns: ", acorns_collected)
 	update_ui()
 
 func has_reached_target():
