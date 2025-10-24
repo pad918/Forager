@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3b0icshlsrn3"]
+
+[ext_resource type="Script" uid="uid://chfa1js5dxrhl" path="res://Other/teleportation_door.gd" id="1_ij0sg"]
+[ext_resource type="Texture2D" uid="uid://b2vomw5gswj3b" path="res://Sprites/Treehuggers Concept/acorn.png" id="2_jcb64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtwju"]
+
+[node name="TeleportationDoor" type="Node2D" node_paths=PackedStringArray("area")]
+script = ExtResource("1_ij0sg")
+area = NodePath("ColliderArea")
+
+[node name="TPSprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.08243189, 0.6339024, 1)
+z_index = -1
+scale = Vector2(1, 1.575)
+texture = ExtResource("2_jcb64")
+
+[node name="ColliderArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="collider" type="CollisionShape2D" parent="ColliderArea"]
+position = Vector2(-6, 14.000004)
+scale = Vector2(10.396389, 13.161314)
+shape = SubResource("RectangleShape2D_vtwju")
