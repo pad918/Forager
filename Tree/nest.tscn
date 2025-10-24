@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqynxvrlipqhb"]
+
+[ext_resource type="Script" uid="uid://cxraxrj0jam1p" path="res://Other/nest.gd" id="1_bgsk5"]
+[ext_resource type="Texture2D" uid="uid://cxn2rt1k2in5h" path="res://builds/TreeHugger.icon.png" id="2_3hic0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfd"]
+size = Vector2(188, 181.99998)
+
+[node name="Nest" type="Node2D" node_paths=PackedStringArray("nest_area")]
+script = ExtResource("1_bgsk5")
+nest_area = NodePath("NestArea")
+
+[node name="NestSprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.4807102, 0.28521508, 1)
+z_index = -1
+position = Vector2(0, 72)
+texture = ExtResource("2_3hic0")
+
+[node name="NestArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="NestCollider" type="CollisionShape2D" parent="NestArea"]
+position = Vector2(-2, 72)
+shape = SubResource("RectangleShape2D_w8jfd")

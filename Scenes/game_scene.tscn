@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=30 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="1_817jg"]
@@ -18,11 +18,10 @@
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="8_7iton"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="8_ikfsv"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="14_np3vi"]
-[ext_resource type="Script" uid="uid://cxraxrj0jam1p" path="res://Other/nest.gd" id="15_a7fet"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="15_np3vi"]
-[ext_resource type="Texture2D" uid="uid://cxn2rt1k2in5h" path="res://builds/TreeHugger.icon.png" id="15_w8jfd"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="16_aq00n"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="16_mipjh"]
+[ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="22_817jg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
 size = Vector2(15000, 100)
@@ -67,9 +66,6 @@ height = 118.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ikfsv"]
 radius = 29.0
 height = 124.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfd"]
-size = Vector2(188, 181.99998)
 
 [node name="GameScene" type="Node2D"]
 
@@ -128,6 +124,7 @@ position = Vector2(916, 2327)
 
 [node name="TreeBranch3" parent="TreeRight" instance=ExtResource("3_ikfsv")]
 position = Vector2(-503, -687)
+rotation = -0.19024089
 scale = Vector2(-1.88, 1)
 
 [node name="TreeBranch4" parent="TreeRight" instance=ExtResource("3_ikfsv")]
@@ -294,21 +291,8 @@ position = Vector2(-251, 1904)
 
 [node name="Nests" type="Node2D" parent="."]
 
-[node name="Nest" type="Node2D" parent="Nests" node_paths=PackedStringArray("nest_area")]
-position = Vector2(46, 2934)
-script = ExtResource("15_a7fet")
-nest_area = NodePath("NestArea")
+[node name="Nest2" parent="Nests" instance=ExtResource("22_817jg")]
+position = Vector2(1841, 2949)
 
-[node name="NestSprite" type="Sprite2D" parent="Nests/Nest"]
-self_modulate = Color(1, 0.4807102, 0.28521508, 1)
-z_index = -1
-position = Vector2(0, 72)
-texture = ExtResource("15_w8jfd")
-
-[node name="NestArea" type="Area2D" parent="Nests/Nest"]
-collision_layer = 2147483648
-collision_mask = 2147483648
-
-[node name="NestCollider" type="CollisionShape2D" parent="Nests/Nest/NestArea"]
-position = Vector2(-2, 72)
-shape = SubResource("RectangleShape2D_w8jfd")
+[node name="Nest3" parent="Nests" instance=ExtResource("22_817jg")]
+position = Vector2(38, 2940)
