@@ -22,6 +22,8 @@ func stash_acorns():
 	print("stashing, player has: ", num_acorns)
 	var state_handler: LevelStateHandler = get_node("%LevelStateHandler")
 	state_handler.add_acorns(num_acorns)
+	if(num_acorns>0):
+		get_node("%SfxSingleton").play_sfx("AcornStash")
 	num_acorns = 0
 	update_fatness()
 

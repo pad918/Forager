@@ -10,6 +10,8 @@ class_name MovementStateMachine
 
 @export var sfx_player: SFXPlayer
 
+@export var animation_tree: AnimationTree
+
 func set_animation_frame(source_state:MovementState, frame_id:int):
 	if(source_state == current_state):
 		animator.frame = frame_id
@@ -23,3 +25,4 @@ func set_movement_state(source_state:MovementState, new_state:MovementState):
 	
 func _physics_process(delta: float) -> void:
 	current_state.update(delta)
+	animation_tree.set("parameters/blend_position", character_body.velocity.normalized())

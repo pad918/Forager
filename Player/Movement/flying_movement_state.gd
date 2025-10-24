@@ -60,7 +60,6 @@ func update(delta:float):
 	if(input_dir.x==0):
 		character.velocity.x *= (1-friction_x)
 	else:
-		print("delta: ", delta*input_dir.x*x_acceleration)
 		character.velocity.x += delta*input_dir.x*x_acceleration
 	character.velocity.x = min(max_speed.x, max(-max_speed.x, character.velocity.x))
 	character.move_and_slide()

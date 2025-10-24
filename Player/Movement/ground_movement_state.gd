@@ -66,5 +66,6 @@ func update(delta: float):
 		character.velocity.y += jump_boost.y # Give upward boost no matter which direction it is moving
 		character.velocity.x += jump_boost.x * input_dir.x
 		statemachine.set_movement_state(self, fall_state)
+		print("GAVE UP BOOST!")
 	
 	character.move_and_slide()

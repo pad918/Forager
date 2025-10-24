@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b4sogs0ju16ip"]
+[gd_scene load_steps=39 format=3 uid="uid://b4sogs0ju16ip"]
 
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_1ixah"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="1_817jg"]
@@ -42,6 +42,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_1ixah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1ixah")
 }],
 "loop": true,
 "name": &"VerticalMovement",
@@ -52,12 +55,301 @@ animations = [{
 resource_name = "test"
 length = 2.0
 
+[sub_resource type="Animation" id="Animation_vtwju"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"HorizontalMovement"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_fnr0w"]
+resource_name = "WalkLeft"
+length = 0.40002
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"HorizontalMovement"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64.945, -54.475)]
+}
+
+[sub_resource type="Animation" id="Animation_gqlrj"]
+resource_name = "WalkRight"
+length = 0.40002
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"HorizontalMovement"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-91.085, -54.475)]
+}
+
+[sub_resource type="Animation" id="Animation_817jg"]
+resource_name = "ClimbingUp"
+length = 0.80002004
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"VerticalMovement"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.94, -10.85)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kiiqx"]
+resource_name = "ClimbingDown"
+length = 0.80002004
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimation:frame")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimation:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"VerticalMovement"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnimation:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-31.61, -138.48)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerAnimation:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ldntv"]
 _data = {
+&"ClimbingDown": SubResource("Animation_kiiqx"),
+&"ClimbingUp": SubResource("Animation_817jg"),
+&"RESET": SubResource("Animation_vtwju"),
+&"WalkLeft": SubResource("Animation_fnr0w"),
+&"WalkRight": SubResource("Animation_gqlrj"),
 &"test": SubResource("Animation_wywco")
 }
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w8jfd"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_817jg"]
+animation = &"ClimbingUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vtwju"]
+animation = &"ClimbingDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fnr0w"]
+animation = &"WalkRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gqlrj"]
+animation = &"WalkLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kiiqx"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_817jg")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_vtwju")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_fnr0w")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_gqlrj")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6h5vk"]
 radius = 24.0
@@ -165,22 +457,23 @@ shape = SubResource("RectangleShape2D_2fmhe")
 position = Vector2(-164, 2874)
 script = ExtResource("2_fiftr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(7, -3)
 sprite_frames = SubResource("SpriteFrames_4xiap")
-animation = &"VerticalMovement"
+animation = &"HorizontalMovement"
 script = ExtResource("8_4xiap")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/AnimatedSprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/PlayerAnimation"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_ldntv")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="Player/AnimatedSprite2D"]
+[node name="AnimationTree" type="AnimationTree" parent="Player/PlayerAnimation"]
 root_node = NodePath("../..")
-tree_root = SubResource("AnimationNodeStateMachine_w8jfd")
+tree_root = SubResource("AnimationNodeBlendSpace2D_kiiqx")
 anim_player = NodePath("../AnimationPlayer")
+parameters/blend_position = Vector2(0.45555556, 0.36738706)
 
 [node name="MainCamera" type="Camera2D" parent="Player"]
 zoom = Vector2(0.55, 0.55)
@@ -191,11 +484,12 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="MovementStateMachine" type="Node2D" parent="Player" node_paths=PackedStringArray("character_body", "current_state", "sfx_player")]
+[node name="MovementStateMachine" type="Node2D" parent="Player" node_paths=PackedStringArray("character_body", "current_state", "sfx_player", "animation_tree")]
 script = ExtResource("6_rgj8m")
 character_body = NodePath("..")
 current_state = NodePath("GroundMovementState")
 sfx_player = NodePath("../../SfxSingleton")
+animation_tree = NodePath("../PlayerAnimation/AnimationTree")
 
 [node name="StemMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("area_collider", "gliding_state", "side_movement_state", "character")]
 script = ExtResource("7_2fmhe")
