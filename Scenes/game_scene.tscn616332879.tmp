@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4sogs0ju16ip"]
+
+[ext_resource type="Texture2D" uid="uid://ct7vf4y1gyc7u" path="res://Sprites/Treehuggers Concept/background 1.png" id="1_6h5vk"]
+[ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="2_fiftr"]
+[ext_resource type="Texture2D" uid="uid://bfcak0r5xy5nq" path="res://Sprites/Treehuggers Concept/sprite climb.png" id="3_1ixah"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="Background1" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_6h5vk")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_fiftr")
+
+[node name="CharacterSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_1ixah")
+
+[node name="MainCamera" type="Camera2D" parent="Player"]

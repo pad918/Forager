@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfx20ej6y4mao"]
+
+[ext_resource type="Texture2D" uid="uid://d13iqmmfu4ipa" path="res://Sprites/Treehuggers Concept/branch1.png" id="1_eeaew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikfsv"]
+size = Vector2(378, 20)
+
+[node name="TreeBranch" type="Sprite2D"]
+texture = ExtResource("1_eeaew")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-3, 0)
+
+[node name="ColShape" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, -24)
+shape = SubResource("RectangleShape2D_ikfsv")
+one_way_collision = true
+
+[node name="TreeArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="ColShape" type="CollisionShape2D" parent="TreeArea"]
+position = Vector2(4, -27)
+shape = SubResource("RectangleShape2D_ikfsv")
