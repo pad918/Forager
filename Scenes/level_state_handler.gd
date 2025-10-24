@@ -10,7 +10,7 @@ var acorn_target:int = 10
 
 var acorns_collected:int = 0
 
-var time_left:float = 10
+var time_left:float = 60*2
 
 var round_over:bool = false
 	
@@ -18,7 +18,8 @@ func add_acorns(num:int):
 	acorns_collected+=num
 	if(acorns_collected >= acorn_target):
 		round_over = true
-		print("PLAYER WON")
+		# TODO: Wait a bit, goto powerup menu?
+		get_parent().load_next_level()
 
 func has_reached_target():
 	return acorns_collected >= acorn_target
@@ -42,8 +43,6 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
-		#print("ran out of time")
-		# TODO: play hibernation animation thing?
 	update_timer_label()
 
 	

@@ -22,10 +22,10 @@ func update_fatness():
 	scale.x = 1+(num_acorns*0.2)
 
 func update_ui():
-	acorn_label.text = "%d/%d" % [num_acorns, get_node("%LevelStateHandler").acorn_target]
+	acorn_label.text = "%d/%d" % [num_acorns, get_parent().acorn_target]
 
 func try_stash_acorns() -> bool:
-	var state_handler: LevelStateHandler = get_node("%LevelStateHandler")
+	var state_handler: LevelStateHandler = get_parent()
 	if(state_handler.acorn_target<=num_acorns):
 		state_handler.add_acorns(num_acorns)
 		get_node("%SfxSingleton").play_sfx("AcornStash")
@@ -37,7 +37,7 @@ func try_stash_acorns() -> bool:
 		return false
 
 func _ready() -> void:
-	pass
+	update_ui()
 	
 func _physics_process(_delta: float) -> void:
 	pass
