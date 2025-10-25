@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=67 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -29,13 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://capbt01x2dvb6" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0001_treemediumbase.png" id="24_tffdo"]
 [ext_resource type="Texture2D" uid="uid://cl18b1wvvbekb" path="res://Sprites/Treehuggers Concept/sprite leap.png" id="25_8p7k4"]
 [ext_resource type="Texture2D" uid="uid://bfcak0r5xy5nq" path="res://Sprites/Treehuggers Concept/sprite climb.png" id="26_7ipyn"]
-[ext_resource type="PackedScene" uid="uid://dua0nlrx8x47y" path="res://Scenes/vines/Vine4.tscn" id="26_gq0du"]
 [ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="27_ph52n"]
-[ext_resource type="PackedScene" uid="uid://cawmy5v0dmb2u" path="res://Scenes/vines/Vine3.tscn" id="27_uf8qa"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="28_0crkc"]
-[ext_resource type="PackedScene" uid="uid://d1481rh82f2cl" path="res://Scenes/vines/Vine2.tscn" id="28_8fya3"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="29_2s27x"]
-[ext_resource type="PackedScene" uid="uid://c7rbo5cfj4c5s" path="res://Scenes/vines/Vine1.tscn" id="29_tqysu"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="30_2nja4"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
@@ -1779,18 +1775,6 @@ rotation = -5.113071
 scale = Vector2(1.7298124, 2.2296906)
 texture = ExtResource("23_vqsto")
 
-[node name="Vine" parent="Level" instance=ExtResource("26_gq0du")]
-position = Vector2(5275, -299)
-
-[node name="Vine2" parent="Level" instance=ExtResource("27_uf8qa")]
-position = Vector2(4535, -351)
-
-[node name="Vine3" parent="Level" instance=ExtResource("28_8fya3")]
-position = Vector2(4106, -292)
-
-[node name="Vine4" parent="Level" instance=ExtResource("29_tqysu")]
-position = Vector2(3632, -366)
-
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
 position = Vector2(-164, 2874)
@@ -2301,6 +2285,8 @@ shape = SubResource("RectangleShape2D_3iuea")
 libraries = {
 &"": SubResource("AnimationLibrary_k2gex")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity" to="GameUi/UpgradesPanel" method="try_upgrade_capacity"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed" to="GameUi/UpgradesPanel" method="try_upgrade_speed"]

@@ -9,7 +9,7 @@ var player:Player = null
 func _ready() -> void:
 	area_entered.connect(
 		func(a:Area2D):
-			var _player: Player = a.get_parent()
+			var _player = a.get_parent()
 			if(_player is Player):
 				player = _player
 	)
