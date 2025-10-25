@@ -14,3 +14,6 @@ func _ready() -> void:
 
 func update(delta:float):
 	printerr("ABSTRACT METHOD CALLED: UPDATE in MOVEMENTSTATE!")
+
+func became_active_state():
+	pass

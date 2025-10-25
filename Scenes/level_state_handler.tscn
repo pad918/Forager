@@ -16,9 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="13_8fya3"]
 [ext_resource type="AudioStream" uid="uid://h3t060dq6fnt" path="res://audio/sfx/acorn-drop_seamless.wav" id="14_tqysu"]
 [ext_resource type="AudioStream" uid="uid://cy5ehsb724stc" path="res://audio/sfx/acorn-full.wav" id="15_fl08v"]
-[ext_resource type="AudioStream" uid="uid://hms00e8d34gn" path="res://audio/BGM/countdown-32s.wav" id="16_03kpd"]
 [ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="16_c6ias"]
 [ext_resource type="Texture2D" uid="uid://7s5s2oi34p1i" path="res://Sprites/AboveGroundAssetsNew/Hometree.png" id="17_370wn"]
+[ext_resource type="AudioStream" uid="uid://do3amol3vsatv" path="res://audio/BGM/countdown-v2-34s.wav" id="17_pb5p7"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="20_tu2bp"]
@@ -660,7 +660,7 @@ stream = ExtResource("15_fl08v")
 pitch_scale = 1.79
 
 [node name="TimerCountdown" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("16_03kpd")
+stream = ExtResource("17_pb5p7")
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(0, 3177)
