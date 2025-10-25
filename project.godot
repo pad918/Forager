@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 [autoload]
 
 SceneLoaderSingleton="*res://Scenes/scene_singleton.tscn"
+BgmPlayerSingleton="*res://Scenes/bgm_player.tscn"
 
 [display]
 
