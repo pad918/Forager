@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=58 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -20,8 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="20_tu2bp"]
-[ext_resource type="Texture2D" uid="uid://bcvunctkp6238" path="res://Sprites/AboveGroundAssets/foregroundground.png" id="21_rxwia"]
-[ext_resource type="Texture2D" uid="uid://cr3j1y26ypd62" path="res://Sprites/Treehuggers Concept/tree trunk.png" id="22_svq42"]
+[ext_resource type="Texture2D" uid="uid://dingrwshsljx0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0003_treemedium.png" id="21_mccl8"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="23_m1ye1"]
 [ext_resource type="Texture2D" uid="uid://cs07uqrn4yf2l" path="res://Sprites/Treehuggers Concept/sprite walk.png" id="24_7dfb5"]
 [ext_resource type="Texture2D" uid="uid://cl18b1wvvbekb" path="res://Sprites/Treehuggers Concept/sprite leap.png" id="25_8p7k4"]
@@ -42,23 +41,8 @@ size = Vector2(956.5, 3438)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udify"]
 size = Vector2(515.4938, 1016.00006)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmhe"]
-size = Vector2(3756, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtwju"]
-size = Vector2(5386, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_817jg"]
-size = Vector2(474, 10437)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnr0w"]
-size = Vector2(375.9075, 3250)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqlrj"]
-size = Vector2(7734, 346)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiiqx"]
-size = Vector2(3756, 100)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h34ov"]
+size = Vector2(2946, 507.99994)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4xiap"]
 animations = [{
@@ -610,216 +594,165 @@ stream = ExtResource("14_tqysu")
 stream = ExtResource("15_fl08v")
 pitch_scale = 1.79
 
-[node name="HomeTree" type="Node2D" parent="."]
-position = Vector2(-692, 3080)
-script = ExtResource("16_c6ias")
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(0, 3177)
 
-[node name="Stem" type="Sprite2D" parent="HomeTree"]
-z_index = -1
-position = Vector2(122, -1723)
-texture = ExtResource("17_370wn")
+[node name="Trees" type="Node2D" parent="Level"]
 
-[node name="StemArea" type="Area2D" parent="HomeTree/Stem"]
-collision_layer = 2
-collision_mask = 2
+[node name="Place all the trees here" type="Node" parent="Level/Trees"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeTree/Stem/StemArea"]
-position = Vector2(-212.25, -40)
-shape = SubResource("RectangleShape2D_juer4")
+[node name="Make the branches children of the trees" type="Node" parent="Level/Trees"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HomeTree/Stem/StemArea"]
-position = Vector2(296.2531, -1266)
-shape = SubResource("RectangleShape2D_udify")
+[node name="TreeRight" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(916, -850)
 
-[node name="Nest" parent="HomeTree" instance=ExtResource("18_vaa8q")]
-position = Vector2(1, -2793)
-scale = Vector2(2.1599998, 2.4023538)
-
-[node name="TreeRight" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(916, 2327)
-
-[node name="TreeBranch3" parent="TreeRight" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch3" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(-503, -687)
 rotation = -0.19024089
 scale = Vector2(-1.88, 1)
 
-[node name="TreeBranch5" parent="TreeRight" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch5" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(553, -2928)
 rotation = -0.19024089
 scale = Vector2(1.9965223, 0.9437238)
 
-[node name="TreeBranch6" parent="TreeRight" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch6" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(475.00015, -336.9995)
 rotation = -0.19024089
 scale = Vector2(1.5040454, 1)
 
-[node name="TreeBranch4" parent="TreeRight" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch4" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(457, -1886)
 scale = Vector2(1.42127, 1)
 
-[node name="TreeRight2" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(3072, 2322)
+[node name="TreeRight2" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(3072, -855)
 
-[node name="TreeBranch4" parent="TreeRight2" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch4" parent="Level/Trees/TreeRight2" instance=ExtResource("20_tu2bp")]
 position = Vector2(-435, -1096)
 rotation = 3.14159
 scale = Vector2(1.88, -1)
 
-[node name="TreeBranch5" parent="TreeRight2" instance=ExtResource("20_tu2bp")]
+[node name="TreeBranch5" parent="Level/Trees/TreeRight2" instance=ExtResource("20_tu2bp")]
 position = Vector2(-316, -2240)
 rotation = 3.14159
 scale = Vector2(1.03383, -1)
 
-[node name="UnderGroundTree" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(1309.9999, 7690.999)
-rotation = -0.22997308
-scale = Vector2(0.99999994, 0.99999994)
+[node name="HomeTree" type="Node2D" parent="Level/Trees"]
+position = Vector2(-692, -97)
+script = ExtResource("16_c6ias")
 
-[node name="TreeBranch3" parent="UnderGroundTree" instance=ExtResource("20_tu2bp")]
-position = Vector2(-503, -687)
-rotation = -0.19024089
-scale = Vector2(-1.88, 1)
+[node name="Stem" type="Sprite2D" parent="Level/Trees/HomeTree"]
+z_index = -1
+position = Vector2(122, -1723)
+texture = ExtResource("17_370wn")
 
-[node name="TreeBranch5" parent="UnderGroundTree" instance=ExtResource("20_tu2bp")]
-position = Vector2(553, -2928)
-rotation = -0.19024089
-scale = Vector2(1.9965223, 0.9437238)
+[node name="StemArea" type="Area2D" parent="Level/Trees/HomeTree/Stem"]
+collision_layer = 2
+collision_mask = 2
 
-[node name="TreeBranch6" parent="UnderGroundTree" instance=ExtResource("20_tu2bp")]
-position = Vector2(475.00015, -336.9995)
-rotation = -0.19024089
-scale = Vector2(1.5040454, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Trees/HomeTree/Stem/StemArea"]
+position = Vector2(-212.25, -40)
+shape = SubResource("RectangleShape2D_juer4")
 
-[node name="TreeBranch4" parent="UnderGroundTree" instance=ExtResource("20_tu2bp")]
-position = Vector2(457, -1886)
-scale = Vector2(1.42127, 1)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Level/Trees/HomeTree/Stem/StemArea"]
+position = Vector2(296.2531, -1266)
+shape = SubResource("RectangleShape2D_udify")
 
-[node name="UnderGroundTree4" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(2016.9999, 6822)
-scale = Vector2(0.72, 1)
+[node name="Nest" parent="Level/Trees/HomeTree" instance=ExtResource("18_vaa8q")]
+position = Vector2(1, -2793)
+scale = Vector2(2.1599998, 2.4023538)
 
-[node name="TreeBranch3" parent="UnderGroundTree4" instance=ExtResource("20_tu2bp")]
-position = Vector2(-503, -687)
-rotation = -0.19024089
-scale = Vector2(-1.88, 1)
+[node name="Ground" type="Node2D" parent="Level"]
 
-[node name="TreeBranch5" parent="UnderGroundTree4" instance=ExtResource("20_tu2bp")]
-position = Vector2(553, -2928)
-rotation = -0.19024089
-scale = Vector2(1.9965223, 0.9437238)
+[node name="All Ground Colliders And Sprites should be here" type="Node" parent="Level/Ground"]
 
-[node name="TreeBranch6" parent="UnderGroundTree4" instance=ExtResource("20_tu2bp")]
-position = Vector2(475.00015, -336.9995)
-rotation = -0.19024089
-scale = Vector2(1.5040454, 1)
+[node name="ExampleGround" type="Node2D" parent="Level/Ground"]
+position = Vector2(122, 247)
 
-[node name="TreeBranch4" parent="UnderGroundTree4" instance=ExtResource("20_tu2bp")]
-position = Vector2(457, -1886)
-scale = Vector2(1.42127, 1)
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround"]
 
-[node name="UnderGroundTree2" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(3372, 7763)
-rotation = 0.09556121
-
-[node name="TreeBranch3" parent="UnderGroundTree2" instance=ExtResource("20_tu2bp")]
-position = Vector2(-478.21475, -1551.4492)
-rotation = -0.19024089
-scale = Vector2(-1.88, 1)
-
-[node name="TreeBranch5" parent="UnderGroundTree2" instance=ExtResource("20_tu2bp")]
-position = Vector2(-475.7008, -2793.3555)
-rotation = -0.19024089
-scale = Vector2(1.9965223, 0.9437238)
-
-[node name="TreeBranch6" parent="UnderGroundTree2" instance=ExtResource("20_tu2bp")]
-position = Vector2(449.79166, -3471.7566)
-rotation = -0.19024089
-scale = Vector2(1.5040454, 1)
-
-[node name="TreeBranch4" parent="UnderGroundTree2" instance=ExtResource("20_tu2bp")]
-position = Vector2(457, -1886)
-scale = Vector2(1.42127, 1)
-
-[node name="UnderGroundTree3" parent="." instance=ExtResource("19_mtimp")]
-position = Vector2(8664, 5152.9995)
-rotation = -1.309181
-
-[node name="TreeBranch3" parent="UnderGroundTree3" instance=ExtResource("20_tu2bp")]
-position = Vector2(-489.8929, -1918.5762)
-rotation = 0.8681307
-scale = Vector2(-2.9368675, 1.5621636)
-
-[node name="Ground" type="Node2D" parent="."]
-position = Vector2(0, 3177)
-
-[node name="Ground1" type="Sprite2D" parent="Ground"]
-position = Vector2(1872.0001, 200)
-scale = Vector2(2.495, 1)
-texture = ExtResource("21_rxwia")
-
-[node name="shape" type="StaticBody2D" parent="Ground"]
-
-[node name="Ground1" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(-177, 106)
-scale = Vector2(1, 3.6)
-shape = SubResource("RectangleShape2D_2fmhe")
-
-[node name="Ground2" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(4963, 106)
-scale = Vector2(1, 3.6)
-shape = SubResource("RectangleShape2D_vtwju")
-
-[node name="leftWall" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(-1529, -4861)
-shape = SubResource("RectangleShape2D_817jg")
-
-[node name="underground1" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(-161, 1868)
-shape = SubResource("RectangleShape2D_fnr0w")
-
-[node name="underground2" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(7193, 1844)
-shape = SubResource("RectangleShape2D_fnr0w")
-
-[node name="underground3" type="CollisionShape2D" parent="Ground/shape"]
-position = Vector2(3538, 3523)
-shape = SubResource("RectangleShape2D_gqlrj")
-
-[node name="GroundArea" type="Area2D" parent="Ground"]
-
-[node name="GroungAreaCollider" type="CollisionShape2D" parent="Ground/GroundArea"]
-position = Vector2(-55, 106)
-scale = Vector2(1, 3.6)
-shape = SubResource("RectangleShape2D_2fmhe")
-
-[node name="GroungAreaCollider3" type="CollisionShape2D" parent="Ground/GroundArea"]
-position = Vector2(4145, 106)
-scale = Vector2(1, 3.6)
-shape = SubResource("RectangleShape2D_2fmhe")
-
-[node name="GroungAreaCollider2" type="CollisionShape2D" parent="Ground/GroundArea"]
-position = Vector2(3631, 3512)
-scale = Vector2(2.1200013, 3.6)
-shape = SubResource("RectangleShape2D_kiiqx")
-
-[node name="floorTest" type="Sprite2D" parent="Ground/GroundArea"]
-self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
-position = Vector2(3507, 3595)
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround"]
 rotation = 1.5707964
-scale = Vector2(1, 2.24)
-texture = ExtResource("22_svq42")
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
 
-[node name="wallTest" type="Sprite2D" parent="Ground/GroundArea"]
-self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
-position = Vector2(-206, 1989)
-scale = Vector2(1, 0.88)
-texture = ExtResource("22_svq42")
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround"]
+position = Vector2(-77, 3158)
 
-[node name="wallTest2" type="Sprite2D" parent="Ground/GroundArea"]
-self_modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
-position = Vector2(7240, 1861)
-scale = Vector2(1, 0.88)
-texture = ExtResource("22_svq42")
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround2" type="Node2D" parent="Level/Ground"]
+position = Vector2(3028, 247)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround2"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround2"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround2"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround2/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround2/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround2"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround2/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround2/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround2/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround3" type="Node2D" parent="Level/Ground"]
+position = Vector2(5910, 247)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround3"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround3"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround3"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround3/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround3/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround3"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround3/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround3/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround3/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
