@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=70 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -389,7 +389,16 @@ radius = 29.0
 height = 124.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8c54"]
-size = Vector2(1112, 20)
+size = Vector2(1906.4543, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iaphp"]
+size = Vector2(2096.006, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb5p7"]
+size = Vector2(14362.097, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge7d0"]
+size = Vector2(14345.902, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iuea"]
 size = Vector2(1000, 237)
@@ -2256,6 +2265,60 @@ high_limit = Vector2(21385, 4200)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave2BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave3RightLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(21508, 2409)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(21545, 365)
+high_limit = Vector2(36620, 5425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave3RightLimits"]
+position = Vector2(396.8275, 0)
+shape = SubResource("RectangleShape2D_iaphp")
+
+[node name="Cave3LeftLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(21239, 2407)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(15600, 1205)
+high_limit = Vector2(21385, 4200)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave3LeftLimits"]
+position = Vector2(397.22668, -0.00390625)
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave4RightLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(22524.998, 714.00006)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(21545, 365)
+high_limit = Vector2(36620, 5425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave4RightLimits"]
+position = Vector2(6529.875, 0.0006713867)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_pb5p7")
+
+[node name="Cave4LeftLimits2" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(22386.002, 545)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(19275, -8610)
+high_limit = Vector2(37700, 1190)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave4LeftLimits2"]
+position = Vector2(6616.955, -0.0039978027)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_ge7d0")
 
 [node name="BGMAreas" type="Node2D" parent="."]
 
