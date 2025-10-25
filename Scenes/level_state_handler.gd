@@ -8,7 +8,7 @@ class_name LevelStateHandler
 
 var acorn_target:int = 10
 
-var time_left:float = 30
+var time_left:float =60*5
 
 var has_player_countdown_timer:bool = false
 

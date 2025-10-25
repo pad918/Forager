@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=67 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
