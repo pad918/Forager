@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
-	elif(time_left<30):
+	elif(time_left<30 && !has_player_countdown_timer):
 		has_player_countdown_timer = true
 		get_node("%SfxSingleton").play_sfx("TimerCountdown")
 	update_timer_label()
