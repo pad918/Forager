@@ -2262,8 +2262,8 @@ shape = SubResource("RectangleShape2D_m8c54")
 [node name="ForrestBGMCollider" type="Area2D" parent="BGMAreas"]
 position = Vector2(12489, 3204)
 script = ExtResource("41_iaphp")
-bgm_name = "CaveBGM"
-ambiance_name = "CaveAmbience"
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/ForrestBGMCollider"]
 position = Vector2(33, 74.5)
