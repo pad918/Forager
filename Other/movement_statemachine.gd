@@ -22,6 +22,7 @@ func set_movement_state(source_state:MovementState, new_state:MovementState):
 		printerr("Trying to set the state to null!")
 	if(source_state == current_state):
 		current_state = new_state
+		current_state.became_active_state()
 	
 func _physics_process(delta: float) -> void:
 	current_state.update(delta)

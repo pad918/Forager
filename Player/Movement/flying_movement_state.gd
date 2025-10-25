@@ -16,7 +16,12 @@ class_name FlyingMovementState
 
 @export var max_speed = Vector2(2000, 1000)
 
-var is_on_stem: bool = false
+var stem: Area2D = null
+
+var area_when_started = null
+
+func became_active_state():
+	area_when_started = stem
 
 func _ready() -> void:
 	super._ready()
@@ -25,7 +30,7 @@ func _ready() -> void:
 		func (a):
 			print("Entered area ", a.name, " colmask: ", a.collision_layer)
 			if((a.collision_layer&(1<<1)) != 0):
-				is_on_stem = true
+				stem = a
 			# Add state for entering  branch
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
@@ -42,7 +47,7 @@ func _ready() -> void:
 	player_area_collider.area_exited.connect(
 		func(a):
 			if((a.collision_layer&(1<<1)) != 0):
-				is_on_stem = false
+				stem = null
 			
 	)
 
@@ -65,7 +70,7 @@ func update(delta:float):
 	
 	# If the user is trying to move upwards, and is over the stem,
 	# go to the climbing state!
-	if(is_on_stem and input_dir.y < 0):
+	if(stem != null and input_dir.y < 0 and area_when_started != stem):
 		statemachine.set_movement_state(self, stem_climb_state)	
 	
 	if(input_dir.x==0):

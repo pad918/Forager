@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=68 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpld0nd3p3vyk" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0002_background2.png" id="5_tffdo"]
 [ext_resource type="Texture2D" uid="uid://bn7asu7u4gxo0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0001_background1.png" id="6_3iuea"]
 [ext_resource type="Texture2D" uid="uid://b0s4qeclf4eb5" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0000_backgroundleaves.png" id="7_iaphp"]
+[ext_resource type="Script" uid="uid://unlvel3om4vw" path="res://Scenes/bgm_player.gd" id="8_ge7d0"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="8_pb5p7"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="AudioStream" uid="uid://2j6wwgh4fe3p" path="res://audio/BGM/music-forest_seamless.wav" id="9_vqsto"]
@@ -16,9 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="13_8fya3"]
 [ext_resource type="AudioStream" uid="uid://h3t060dq6fnt" path="res://audio/sfx/acorn-drop_seamless.wav" id="14_tqysu"]
 [ext_resource type="AudioStream" uid="uid://cy5ehsb724stc" path="res://audio/sfx/acorn-full.wav" id="15_fl08v"]
-[ext_resource type="AudioStream" uid="uid://hms00e8d34gn" path="res://audio/BGM/countdown-32s.wav" id="16_03kpd"]
 [ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="16_c6ias"]
 [ext_resource type="Texture2D" uid="uid://7s5s2oi34p1i" path="res://Sprites/AboveGroundAssetsNew/Hometree.png" id="17_370wn"]
+[ext_resource type="AudioStream" uid="uid://do3amol3vsatv" path="res://audio/BGM/countdown-v2-34s.wav" id="17_pb5p7"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="20_tu2bp"]
@@ -422,7 +423,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
+tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -477,7 +478,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
+tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -624,13 +625,16 @@ position = Vector2(1206, 1634)
 scale = Vector2(3.06, 3.06)
 texture = ExtResource("7_iaphp")
 
-[node name="MusicSingleton" type="Node2D" parent="."]
+[node name="BGMPlayer" type="Node2D" parent="."]
+script = ExtResource("8_ge7d0")
 
-[node name="Amience" type="AudioStreamPlayer" parent="MusicSingleton"]
+[node name="Can play and crossfade between amiance and BGM" type="Node" parent="BGMPlayer"]
+
+[node name="Amience" type="AudioStreamPlayer" parent="BGMPlayer"]
 stream = ExtResource("8_pb5p7")
 autoplay = true
 
-[node name="Music" type="AudioStreamPlayer" parent="MusicSingleton"]
+[node name="Music" type="AudioStreamPlayer" parent="BGMPlayer"]
 stream = ExtResource("9_vqsto")
 autoplay = true
 
@@ -660,7 +664,7 @@ stream = ExtResource("15_fl08v")
 pitch_scale = 1.79
 
 [node name="TimerCountdown" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("16_03kpd")
+stream = ExtResource("17_pb5p7")
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(0, 3177)
@@ -1833,9 +1837,10 @@ parameters/blend_position = Vector2(0.45079362, 0.060240984)
 
 [node name="MainCamera" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
-limit_left = -1350
-limit_right = 60000
-limit_bottom = 3265
+limit_left = -1280
+limit_top = -9415
+limit_right = 37740
+limit_bottom = 3295
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -2244,26 +2249,48 @@ destination = NodePath("../TeleportationDoor")
 script = ExtResource("34_m048m")
 camera = NodePath("../Player/MainCamera")
 
-[node name="AboveLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(2068, 3354)
+[node name="Cave1AboveLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(12581, 3388)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -100000)
-high_limit = Vector2(10000, 3265)
+low_limit = Vector2(-1350, -10000000)
+high_limit = Vector2(60000, 3265)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/AboveLimits"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave1AboveLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
-[node name="BelowLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(2076, 3451)
+[node name="Cave1BelowLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(12589, 3485)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(-275, 3725)
-high_limit = Vector2(7300, 6795)
+low_limit = Vector2(10190, 3245)
+high_limit = Vector2(14990, 5540)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/BelowLimits"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave2AboveLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(17132, 1408)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(-1350, -10000000)
+high_limit = Vector2(60000, 2200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave2BelowLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(17140, 1505)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(15600, 1205)
+high_limit = Vector2(21385, 4200)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave2BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
 [node name="Animations" type="Node2D" parent="."]
