@@ -13,7 +13,14 @@ class_name StemMovementState
 @export var gliding_state: MovementState
 @export var side_movement_state: MovementState
 
-@export var jump_boost: Vector2 = Vector2(1000, 200)
+@export var jump_boost_sideways: Vector2 = Vector2(1000, 200)
+
+@export var jump_boost_up: float = 500
+@export var jump_boost_down: float = 500
+
+# Used to temporarely change the friction (e.g. when jumping)
+var friction_multiplier:Vector2 = Vector2(1, 1)
+var max_speed_multiplier:Vector2 = Vector2(1, 1)
 
 func _ready() -> void:
 	super._ready()
@@ -39,6 +46,14 @@ func linear_fiction(curr_vel:float, frame_friction:float, ease_fn = null) -> flo
 	return fric
 
 func update(delta:float):
+	# Slowly restore friction if 
+	friction_multiplier.y = min(1, friction_multiplier.y+delta*3)
+	friction_multiplier.x = min(1, friction_multiplier.x+delta*3)
+	
+	# Slowly restore max speed multiplier
+	max_speed_multiplier.x = max(1, max_speed_multiplier.x-delta*6)
+	max_speed_multiplier.y = max(1, max_speed_multiplier.y-delta*6)
+	
 	var input_dir = Vector2(0,0)
 	if Input.is_action_pressed("ui_up"):
 		input_dir += Vector2(0, -1)
@@ -59,24 +74,44 @@ func update(delta:float):
 			character.velocity.x, delta*friction.x,
 			func(s): # Easing function for X friction
 				return max(0, min(1, ease(abs(s)/max_speed.x, 0.4)))
-				)
+				) * friction_multiplier.x
 			
 	if input_dir == Vector2.ZERO:
 		character.velocity.y -= linear_fiction(
 			character.velocity.y, delta*friction.y,
 			func(s): # Easing function for Y friction
 				return max(0, min(1, ease(abs(s)/max_speed.y, 0.4)))
-				)
+				) * friction_multiplier.y
 		
 	# Limit speed to +- max_speed
-	character.velocity.x = max(-max_speed.x, min(max_speed.x, character.velocity.x)) 
-	character.velocity.y = max(-max_speed.y, min(max_speed.y, character.velocity.y)) 
-	
-	character.move_and_slide();
+	character.velocity.x = max(
+		-max_speed.x*max_speed_multiplier.x, 
+		min(max_speed.x*max_speed_multiplier.x, character.velocity.x)
+		) 
+	character.velocity.y = max(
+		-max_speed.y*max_speed_multiplier.y, 
+		min(max_speed.y*max_speed_multiplier.y, character.velocity.y)
+		) 
 	
 	# If user presses space (and side arrows), give massive x speed boost and
 	# Go to next state
-	if (input_dir.x != 0 and Input.is_key_pressed(KEY_SPACE)):
-		character.velocity.y += jump_boost.y # Give upward boost no matter which direction it is moving
-		character.velocity.x += jump_boost.x * input_dir.x
+	if (input_dir.x != 0 and Input.is_action_just_pressed("Jump")):
+		character.velocity.y += jump_boost_sideways.y # Give upward boost no matter which direction it is moving
+		character.velocity.x += jump_boost_sideways.x * input_dir.x
 		statemachine.set_movement_state(self, gliding_state)
+	#TODO: This does not look good. I can not just set the speed, it has to be 
+	# an accelleration applied over time / I have to reduce the friction for a little time after
+	# jumping up!
+	elif(input_dir.y < 0 and Input.is_action_just_pressed("Jump")):
+		print("Vertical boost")
+		friction_multiplier.y = 0.2
+		max_speed_multiplier.y = 3
+		character.velocity.y -= jump_boost_up
+	#Drop down from the tree
+	elif(input_dir.y>0 and  Input.is_action_just_pressed("Jump")):
+		character.velocity.y += jump_boost_down
+		statemachine.set_movement_state(self, gliding_state)
+	
+	character.move_and_slide();
+	
+	

@@ -850,7 +850,8 @@ friction = Vector2(12000, 10000)
 area_collider = NodePath("../../PlayerArea")
 gliding_state = NodePath("../FlyingMovementState")
 side_movement_state = NodePath("../GroundMovementState")
-jump_boost = Vector2(700, -1500)
+jump_boost_sideways = Vector2(1000, -700)
+jump_boost_up = 3000.0
 character = NodePath("../..")
 
 [node name="FlyingMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("player_area_collider", "stem_climb_state", "side_movement_state", "character")]

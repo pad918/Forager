@@ -2,7 +2,6 @@ extends "res://Other/movement_state.gd"
 
 class_name FlyingMovementState
 
-
 @export var gravity = 100
 
 @export var player_area_collider:Area2D
@@ -17,6 +16,8 @@ class_name FlyingMovementState
 
 @export var max_speed = Vector2(2000, 1000)
 
+var is_on_stem: bool = false
+
 func _ready() -> void:
 	super._ready()
 
@@ -24,7 +25,7 @@ func _ready() -> void:
 		func (a):
 			print("Entered area ", a.name, " colmask: ", a.collision_layer)
 			if((a.collision_layer&(1<<1)) != 0):
-				statemachine.set_movement_state(self, stem_climb_state)
+				is_on_stem = true
 			# Add state for entering  branch
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
@@ -37,13 +38,17 @@ func _ready() -> void:
 				print("entered ground")
 				get_sfx_player().play_sfx("LandGround")
 				statemachine.set_movement_state(self, side_movement_state)
-		
+	)
+	player_area_collider.area_exited.connect(
+		func(a):
+			if((a.collision_layer&(1<<1)) != 0):
+				is_on_stem = false
+			
 	)
 
 func update(delta:float):
 	character.velocity += delta*Vector2(0, gravity)
 	character.velocity.y = min(abs(max_speed.y), character.velocity.y)
-	
 	
 	# Get input direction
 	var input_dir: Vector2 =Vector2(0, 0)
@@ -57,6 +62,12 @@ func update(delta:float):
 		input_dir += Vector2(0, -1)
 	if Input.is_action_pressed("ui_down"):
 		input_dir += Vector2(0, 1)
+	
+	# If the user is trying to move upwards, and is over the stem,
+	# go to the climbing state!
+	if(is_on_stem and input_dir.y!=0):
+		statemachine.set_movement_state(self, stem_climb_state)	
+	
 	if(input_dir.x==0):
 		character.velocity.x *= (1-friction_x)
 	else:
