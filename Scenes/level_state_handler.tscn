@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=68 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpld0nd3p3vyk" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0002_background2.png" id="5_tffdo"]
 [ext_resource type="Texture2D" uid="uid://bn7asu7u4gxo0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0001_background1.png" id="6_3iuea"]
 [ext_resource type="Texture2D" uid="uid://b0s4qeclf4eb5" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0000_backgroundleaves.png" id="7_iaphp"]
+[ext_resource type="Script" uid="uid://unlvel3om4vw" path="res://Scenes/bgm_player.gd" id="8_ge7d0"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="8_pb5p7"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="AudioStream" uid="uid://2j6wwgh4fe3p" path="res://audio/BGM/music-forest_seamless.wav" id="9_vqsto"]
@@ -422,7 +423,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
+tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -477,7 +478,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
+tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -624,13 +625,16 @@ position = Vector2(1206, 1634)
 scale = Vector2(3.06, 3.06)
 texture = ExtResource("7_iaphp")
 
-[node name="MusicSingleton" type="Node2D" parent="."]
+[node name="BGMPlayer" type="Node2D" parent="."]
+script = ExtResource("8_ge7d0")
 
-[node name="Amience" type="AudioStreamPlayer" parent="MusicSingleton"]
+[node name="Can play and crossfade between amiance and BGM" type="Node" parent="BGMPlayer"]
+
+[node name="Amience" type="AudioStreamPlayer" parent="BGMPlayer"]
 stream = ExtResource("8_pb5p7")
 autoplay = true
 
-[node name="Music" type="AudioStreamPlayer" parent="MusicSingleton"]
+[node name="Music" type="AudioStreamPlayer" parent="BGMPlayer"]
 stream = ExtResource("9_vqsto")
 autoplay = true
 
