@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 		last_ambiance.volume_db = -60 * get_time_fade_in(time_since_last_ambiance_change, ambiance_cross_fade_time)
 	
 	if(curr_bgm!=null):
-		curr_bgm.volume_db = -60 * get_time_fade_out(time_since_last_bgm_change, bmg_cross_fade_time)
+		curr_bgm.volume_db =  -60 * get_time_fade_out(time_since_last_bgm_change, bmg_cross_fade_time)
 	
 	if(curr_ambiance!=null):
 		curr_ambiance.volume_db = -60 * get_time_fade_out(time_since_last_ambiance_change, ambiance_cross_fade_time)
