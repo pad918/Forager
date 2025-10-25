@@ -66,8 +66,13 @@ func update(delta: float):
 		character.velocity.y += jump_boost.y # Give upward boost no matter which direction it is moving
 		character.velocity.x += jump_boost.x * input_dir.x
 		statemachine.set_movement_state(self, fall_state)
+		print("GAVE UP+SIDE BOOST!")
+	elif(Input.is_action_just_pressed("Jump")):
+		# Just jump strait up
+		character.velocity.y += jump_boost.y
+		statemachine.set_movement_state(self, fall_state)
 		print("GAVE UP BOOST!")
-	
+
 	# Drop down from branch handeling
 	if(input_dir.y>0):
 		print("Dropping")

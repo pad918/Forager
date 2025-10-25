@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=70 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -7,15 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bpld0nd3p3vyk" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0002_background2.png" id="5_tffdo"]
 [ext_resource type="Texture2D" uid="uid://bn7asu7u4gxo0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0001_background1.png" id="6_3iuea"]
 [ext_resource type="Texture2D" uid="uid://b0s4qeclf4eb5" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0000_backgroundleaves.png" id="7_iaphp"]
-[ext_resource type="Script" path="res://Scenes/bgm_player.gd" id="8_ge7d0"]
-[ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="8_pb5p7"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
-[ext_resource type="AudioStream" uid="uid://2j6wwgh4fe3p" path="res://audio/BGM/music-forest_seamless.wav" id="9_vqsto"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="10_upfit"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="11_gq0du"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="12_uf8qa"]
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="13_8fya3"]
-[ext_resource type="AudioStream" uid="uid://h3t060dq6fnt" path="res://audio/sfx/acorn-drop_seamless.wav" id="14_tqysu"]
+[ext_resource type="AudioStream" uid="uid://cjd7g511or07k" path="res://audio/sfx/success-tune.wav" id="13_iaphp"]
 [ext_resource type="AudioStream" uid="uid://cy5ehsb724stc" path="res://audio/sfx/acorn-full.wav" id="15_fl08v"]
 [ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="16_c6ias"]
 [ext_resource type="Texture2D" uid="uid://7s5s2oi34p1i" path="res://Sprites/AboveGroundAssetsNew/Hometree.png" id="17_370wn"]
@@ -48,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="34_m048m"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="35_m7j3d"]
+[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
 [ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 
@@ -398,7 +396,19 @@ radius = 29.0
 height = 124.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8c54"]
-size = Vector2(1112, 20)
+size = Vector2(1906.4543, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iaphp"]
+size = Vector2(2096.006, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb5p7"]
+size = Vector2(14362.097, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge7d0"]
+size = Vector2(14345.902, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iuea"]
+size = Vector2(1000, 237)
 
 [sub_resource type="Animation" id="Animation_juer4"]
 resource_name = "DidNotMakeIt"
@@ -426,18 +436,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.3]
 }
 
 [sub_resource type="Animation" id="Animation_03kpd"]
@@ -485,34 +483,22 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../BGMPlayer/Amience:pitch_scale")
+tracks/2/path = NodePath("../GameUi/UpgradesPanel:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../GameUi/UpgradesPanel:visible")
+tracks/3/path = NodePath("../GameUi/UpgradesPanel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../GameUi/UpgradesPanel:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -632,19 +618,6 @@ position = Vector2(1206, 1634)
 scale = Vector2(3.06, 3.06)
 texture = ExtResource("7_iaphp")
 
-[node name="BGMPlayer" type="Node2D" parent="."]
-script = ExtResource("8_ge7d0")
-
-[node name="Can play and crossfade between amiance and BGM" type="Node" parent="BGMPlayer"]
-
-[node name="Amience" type="AudioStreamPlayer" parent="BGMPlayer"]
-stream = ExtResource("8_pb5p7")
-autoplay = true
-
-[node name="Music" type="AudioStreamPlayer" parent="BGMPlayer"]
-stream = ExtResource("9_vqsto")
-autoplay = true
-
 [node name="SfxSingleton" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("9_ge7d0")
@@ -664,7 +637,7 @@ stream = ExtResource("12_uf8qa")
 stream = ExtResource("13_8fya3")
 
 [node name="AcornStash" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("14_tqysu")
+stream = ExtResource("13_iaphp")
 
 [node name="AcornStashFail" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("15_fl08v")
@@ -3397,12 +3370,90 @@ high_limit = Vector2(21385, 4200)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave2BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
+[node name="Cave3RightLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(21508, 2409)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(21545, 365)
+high_limit = Vector2(36620, 5425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave3RightLimits"]
+position = Vector2(396.8275, 0)
+shape = SubResource("RectangleShape2D_iaphp")
+
+[node name="Cave3LeftLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(21239, 2407)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(15600, 1205)
+high_limit = Vector2(21385, 4200)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave3LeftLimits"]
+position = Vector2(397.22668, -0.00390625)
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave4RightLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(22524.998, 714.00006)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(21545, 365)
+high_limit = Vector2(36620, 5425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave4RightLimits"]
+position = Vector2(6529.875, 0.0006713867)
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_pb5p7")
+
+[node name="Cave4LeftLimits2" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(22386.002, 545)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(19275, -8610)
+high_limit = Vector2(37700, 1190)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave4LeftLimits2"]
+position = Vector2(6616.955, -0.0039978027)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_ge7d0")
+
+[node name="BGMAreas" type="Node2D" parent="."]
+
+[node name="ForrestBGMCollider" type="Area2D" parent="BGMAreas"]
+position = Vector2(12489, 3204)
+script = ExtResource("41_iaphp")
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/ForrestBGMCollider"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="CaveBGMCollider" type="Area2D" parent="BGMAreas"]
+position = Vector2(12517, 3590)
+script = ExtResource("41_iaphp")
+bgm_name = "CaveBGM"
+ambiance_name = "CaveAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/CaveBGMCollider"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
 [node name="Animations" type="Node2D" parent="."]
 
 [node name="RoundEndAnimations" type="AnimationPlayer" parent="Animations"]
 libraries = {
 &"": SubResource("AnimationLibrary_k2gex")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Rock1" type="Sprite2D" parent="."]
 position = Vector2(14812, 2098)
