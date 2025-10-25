@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dua0nlrx8x47y"]
+
+[ext_resource type="Script" uid="uid://c0hfi3e7u1ms1" path="res://Other/pusher_area.gd" id="1_kou42"]
+[ext_resource type="Texture2D" uid="uid://de1x8wno00slr" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0002_vinedoublewide.png" id="2_kou42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlk00"]
+size = Vector2(299.48712, 37.5967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knqpt"]
+size = Vector2(441.77576, 37.5967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4emq"]
+size = Vector2(466.84653, 37.5967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beux2"]
+size = Vector2(403.23782, 56.435043)
+
+[node name="Vine" type="Node2D"]
+
+[node name="PusherArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_kou42")
+push_force_vector = Vector2(-800, -1200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PusherArea"]
+position = Vector2(-94.99999, -79)
+rotation = -0.7447119
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_hlk00")
+
+[node name="PusherArea3" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_kou42")
+push_force_vector = Vector2(-800, -1200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PusherArea3"]
+position = Vector2(-53.781498, -37.519047)
+rotation = -0.67287165
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_knqpt")
+
+[node name="PusherArea2" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_kou42")
+push_force_vector = Vector2(800, 1200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PusherArea2"]
+position = Vector2(6.595133, 14.572437)
+rotation = -0.6642706
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_h4emq")
+
+[node name="SaticBody" type="StaticBody2D" parent="."]
+position = Vector2(-13, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaticBody"]
+position = Vector2(-29.175634, -0.8908491)
+rotation = -0.6599558
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_beux2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_kou42")
