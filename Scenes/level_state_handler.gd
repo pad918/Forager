@@ -8,23 +8,21 @@ class_name LevelStateHandler
 
 var acorn_target:int = 10
 
-var acorns_collected:int = 0
-
 var time_left:float = 60*2
 
 var has_player_countdown_timer:bool = false
 
 var round_over:bool = false
 	
-func add_acorns(num:int):
-	acorns_collected+=num
-	if(acorns_collected >= acorn_target):
+func deposit_acorns(num:int):
+	if(num >= acorn_target):
 		round_over = true
-		# TODO: Wait a bit, goto powerup menu?
-		get_parent().load_next_level()
-
-func has_reached_target():
-	return acorns_collected >= acorn_target
+		var game_state:GameStateHandler = get_parent()
+		game_state.total_collected_acorns += num
+		print("Collected ",num, " acorns this level")
+		# Display upgrades menu
+		round_animation_player.play("ShowUpgradesUi")
+		#get_parent().load_next_level()
 
 func update_timer_label():
 	@warning_ignore("integer_division")

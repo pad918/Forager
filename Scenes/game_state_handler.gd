@@ -1,9 +1,17 @@
 extends Node2D
 
+class_name GameStateHandler
+
 @export var acorn_level_requirements: Array
 @export var level_prefab_path: String
 
 var level_id:int = -1
+
+var total_collected_acorns = 0
+
+var player_speed_upgrade:float = 1
+var player_timer_upgrade:float = 1
+var player_capacity_upgrade:float = 1
 
 func load_next_level():
 	level_id += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=63 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0s4qeclf4eb5" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0000_backgroundleaves.png" id="7_iaphp"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="8_pb5p7"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
+[ext_resource type="AudioStream" uid="uid://2j6wwgh4fe3p" path="res://audio/BGM/music-forest_seamless.wav" id="9_vqsto"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="10_upfit"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="11_gq0du"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="12_uf8qa"]
@@ -32,6 +33,8 @@
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="30_2nja4"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
+[ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
+[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="32_mccl8"]
 [ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="33_6n07p"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="34_m048m"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="35_m7j3d"]
@@ -415,7 +418,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/AudioStreamPlayer:pitch_scale")
+tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -423,6 +426,22 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.3]
+}
+
+[sub_resource type="Animation" id="Animation_03kpd"]
+resource_name = "EnterBorrow"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Player/MainCamera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(1.31, 1.31)]
 }
 
 [sub_resource type="Animation" id="Animation_udify"]
@@ -454,7 +473,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../MusicSingleton/AudioStreamPlayer:pitch_scale")
+tracks/2/path = NodePath("../MusicSingleton/Amience:pitch_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -463,28 +482,65 @@ tracks/2/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../GameUi/UpgradesPanel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GameUi/UpgradesPanel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="Animation" id="Animation_03kpd"]
-resource_name = "EnterBorrow"
-length = 2.5
+[sub_resource type="Animation" id="Animation_h34ov"]
+resource_name = "ShowUpgradesUi"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Player/MainCamera:zoom")
+tracks/0/path = NodePath("../GameUi/UpgradesPanel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.06666666, 0.46666667),
+"transitions": PackedFloat32Array(1.319508, 1),
 "update": 0,
-"values": [Vector2(0.4, 0.4), Vector2(1.31, 1.31)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../GameUi/UpgradesPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k2gex"]
 _data = {
 &"DidNotMakeIt": SubResource("Animation_juer4"),
 &"EnterBorrow": SubResource("Animation_03kpd"),
-&"RESET": SubResource("Animation_udify")
+&"RESET": SubResource("Animation_udify"),
+&"ShowUpgradesUi": SubResource("Animation_h34ov")
 }
 
 [node name="LevelStateHandler" type="Node2D" node_paths=PackedStringArray("timer_label", "round_animation_player")]
@@ -566,8 +622,12 @@ texture = ExtResource("7_iaphp")
 
 [node name="MusicSingleton" type="Node2D" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MusicSingleton"]
+[node name="Amience" type="AudioStreamPlayer" parent="MusicSingleton"]
 stream = ExtResource("8_pb5p7")
+autoplay = true
+
+[node name="Music" type="AudioStreamPlayer" parent="MusicSingleton"]
+stream = ExtResource("9_vqsto")
 autoplay = true
 
 [node name="SfxSingleton" type="Node2D" parent="."]
@@ -597,7 +657,6 @@ pitch_scale = 1.79
 
 [node name="TimerCountdown" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("16_03kpd")
-pitch_scale = 1.79
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(0, 3177)
@@ -872,8 +931,106 @@ theme_override_font_sizes/font_size = 80
 text = "5:00"
 
 [node name="UpgradesPanel" type="Panel" parent="GameUi"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("32_h34ov")
+
+[node name="Label" type="Label" parent="GameUi/UpgradesPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_right = 65.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 66
+text = "UPGRADE PANEL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUi/UpgradesPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+alignment = 1
+
+[node name="UpgradeCardCapacity" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
+custom_minimum_size = Vector2(220, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_mccl8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Carry more 
+acorns
+
+€100"
+
+[node name="UpgradeCardSpeed" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
+custom_minimum_size = Vector2(220, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_mccl8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Carry more 
+acorns
+
+€100"
+
+[node name="UpgradeCardTimer" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
+custom_minimum_size = Vector2(220, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_mccl8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardTimer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Carry more 
+acorns
+
+€100"
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -949,3 +1106,7 @@ shape = SubResource("RectangleShape2D_m8c54")
 libraries = {
 &"": SubResource("AnimationLibrary_k2gex")
 }
+
+[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity" to="GameUi/UpgradesPanel" method="try_upgrade_capacity"]
+[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed" to="GameUi/UpgradesPanel" method="try_upgrade_speed"]
+[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardTimer" to="GameUi/UpgradesPanel" method="try_upgrade_time"]

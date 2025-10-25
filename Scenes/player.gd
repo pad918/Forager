@@ -27,7 +27,7 @@ func update_ui():
 func try_stash_acorns() -> bool:
 	var state_handler: LevelStateHandler = get_parent()
 	if(state_handler.acorn_target<=num_acorns):
-		state_handler.add_acorns(num_acorns)
+		state_handler.deposit_acorns(num_acorns)
 		get_node("%SfxSingleton").play_sfx("AcornStash")
 		num_acorns = 0
 		update_fatness()
