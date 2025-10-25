@@ -14,10 +14,10 @@ func _ready() -> void:
 			player = a.get_parent()
 	)
 	area.area_exited.connect(
-		func(a:Area2D):
+		func(_a:Area2D):
 			player = null
 	)
 	
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if player!=null and Input.is_key_pressed(KEY_ENTER):
 		player.position = destination.position
