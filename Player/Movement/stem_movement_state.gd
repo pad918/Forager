@@ -102,13 +102,13 @@ func update(delta:float):
 	#TODO: This does not look good. I can not just set the speed, it has to be 
 	# an accelleration applied over time / I have to reduce the friction for a little time after
 	# jumping up!
-	if(input_dir.y < 0 and Input.is_action_just_pressed("Jump")):
+	elif(input_dir.y < 0 and Input.is_action_just_pressed("Jump")):
 		print("Vertical boost")
 		friction_multiplier.y = 0.2
 		max_speed_multiplier.y = 3
 		character.velocity.y -= jump_boost_up
 	#Drop down from the tree
-	if(input_dir.y > 0 and  Input.is_action_just_pressed("Jump")):
+	elif(input_dir.y > 0 and  Input.is_action_just_pressed("Jump")):
 		print("Falling")
 		character.velocity.y += jump_boost_down
 		statemachine.set_movement_state(self, gliding_state)

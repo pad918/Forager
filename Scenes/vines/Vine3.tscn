@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cawmy5v0dmb2u"]
+
+[ext_resource type="Script" uid="uid://c0hfi3e7u1ms1" path="res://Other/pusher_area.gd" id="1_iruur"]
+[ext_resource type="Texture2D" uid="uid://bntlht6vabdqd" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0001_vinewide.png" id="2_nqauu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4emq"]
+size = Vector2(430.7981, 37.5967)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_beux2"]
+size = Vector2(403.23782, 56.435043)
+
+[node name="Vine" type="Node2D"]
+
+[node name="PusherArea" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_iruur")
+push_force_vector = Vector2(-800, -1200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PusherArea"]
+position = Vector2(-55.079353, -36.030468)
+rotation = -0.56723213
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_h4emq")
+
+[node name="PusherArea2" type="Area2D" parent="."]
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("1_iruur")
+push_force_vector = Vector2(800, 1200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PusherArea2"]
+position = Vector2(-8.000002, 26)
+rotation = -0.6260287
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_h4emq")
+
+[node name="SaticBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SaticBody"]
+position = Vector2(-29.175634, -0.8908491)
+rotation = -0.6599558
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_beux2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_nqauu")
