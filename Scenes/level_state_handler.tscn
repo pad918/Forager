@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=77 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -32,15 +32,22 @@
 [ext_resource type="Script" uid="uid://dfm02fblyw5yb" path="res://Scenes/PlayerAnimation.gd" id="27_ph52n"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="28_0crkc"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="29_2s27x"]
+[ext_resource type="Texture2D" uid="uid://bqm2xcakedxdw" path="res://Sprites/Foliage/leaves1.png" id="29_upfit"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="30_2nja4"]
+[ext_resource type="Texture2D" uid="uid://xyt8dn7n1tos" path="res://Sprites/Foliage/treetop.png" id="30_uf8qa"]
+[ext_resource type="Texture2D" uid="uid://dlpleqcpmqph5" path="res://Sprites/Foliage/rock1.png" id="31_8fya3"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
+[ext_resource type="Texture2D" uid="uid://bpvutkxf5i6e7" path="res://Sprites/Godrays/godray2.png" id="32_c6ias"]
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="32_mccl8"]
 [ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="33_6n07p"]
+[ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="34_m048m"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="35_m7j3d"]
-[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Script" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
+[ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juer4"]
 size = Vector2(956.5, 3438)
@@ -760,8 +767,6 @@ scale = Vector2(-1.3541615, 3.8235285)
 position = Vector2(451.5626, -1751.4707)
 scale = Vector2(1.627677, 2.1865506)
 
-[node name="TreeBranch" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
-
 [node name="Tree3" parent="Level/Trees" instance=ExtResource("19_mtimp")]
 position = Vector2(10488, 1081)
 scale = Vector2(1.5517534, 1.5687599)
@@ -823,6 +828,36 @@ scale = Vector2(1.680049, 2.0398617)
 position = Vector2(26316, 989)
 rotation = -0.06282485
 scale = Vector2(1.680049, 1.479797)
+
+[node name="Tree16" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(37952, 2286.0005)
+rotation = 0.4814037
+scale = Vector2(1.680049, 1.479797)
+
+[node name="Tree17" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(41542, 1398.999)
+rotation = -0.31122726
+scale = Vector2(1.680049, 1.479797)
+
+[node name="Tree21" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(40027, 4554.0005)
+rotation = -0.035120606
+scale = Vector2(2.2862895, 1.0901798)
+
+[node name="Tree18" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(46250, 4332)
+rotation = -0.00082960725
+scale = Vector2(5.6685343, 2.78643)
+
+[node name="Tree19" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(50457, 4329)
+rotation = -0.00082960725
+scale = Vector2(5.6685343, 2.78643)
+
+[node name="Tree20" parent="Level/Trees" instance=ExtResource("19_mtimp")]
+position = Vector2(53901, 4281)
+rotation = -0.00082960725
+scale = Vector2(5.6685343, 2.78643)
 
 [node name="Tree14" parent="Level/Trees" instance=ExtResource("19_mtimp")]
 position = Vector2(29618.998, -2137.9998)
@@ -937,6 +972,51 @@ scale = Vector2(-1.3338157, 2.1685948)
 position = Vector2(32169, -798.00006)
 rotation = -0.013266437
 scale = Vector2(1.2675906, 2.1685948)
+
+[node name="TreeBranch25" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(37670, -100.00006)
+rotation = -0.025888354
+scale = Vector2(1.2675906, 2.1685948)
+
+[node name="TreeBranch26" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(38939, -719.0013)
+rotation = 0.42013508
+scale = Vector2(-1.6020281, 2.7665637)
+
+[node name="TreeBranch28" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(40702, 549.0007)
+rotation = -0.21323138
+scale = Vector2(-1.6020281, 2.7665637)
+
+[node name="TreeBranch30" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(41292, -1716.9993)
+rotation = 0.26374578
+scale = Vector2(2.8337357, 2.3311946)
+
+[node name="TreeBranch31" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(47564, -2044.0002)
+rotation = -0.093126684
+scale = Vector2(4.6657867, 7.5484896)
+
+[node name="TreeBranch32" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(51952, 1389.9998)
+rotation = -0.093126684
+scale = Vector2(-7.6426034, 10.945256)
+
+[node name="TreeBranch33" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(48871.004, 2950.0002)
+rotation = 0.14913818
+scale = Vector2(-3.8969362, 11.924151)
+
+[node name="TreeBranch27" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(39052, 1273.0002)
+rotation = 0.64165664
+scale = Vector2(1.6884797, 2.7665637)
+
+[node name="TreeBranch29" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(39947, -604.0001)
+rotation = 0.3003921
+scale = Vector2(1.6884797, 2.7665637)
 
 [node name="TreeBranch15" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
 position = Vector2(20046, -5925)
@@ -1550,6 +1630,285 @@ shape = SubResource("RectangleShape2D_h34ov")
 position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_h34ov")
 
+[node name="ExampleGround33" type="Node2D" parent="Level/Ground"]
+position = Vector2(46673.004, 4882)
+rotation = 0.10200402
+scale = Vector2(5.66938, 1.7157702)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround33"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround33"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround33"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround33/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround33/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround33"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround33/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround33/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround33/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround34" type="Node2D" parent="Level/Ground"]
+position = Vector2(58726.004, -3655.9998)
+rotation = -0.0028816834
+scale = Vector2(2.4943292, 2.2663665)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround34"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround34"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround34"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround34/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround34/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround34"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround34/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround34/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround34/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround35" type="Node2D" parent="Level/Ground"]
+position = Vector2(66015, -3986)
+rotation = -0.09096925
+scale = Vector2(2.4943292, 2.2663665)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround35"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround35"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround35"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround35/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround35/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround35"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround35/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround35/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround35/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround36" type="Node2D" parent="Level/Ground"]
+position = Vector2(73235.01, -5020.002)
+rotation = -0.19811115
+scale = Vector2(2.4943292, 2.2663665)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround36"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround36"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround36"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround36/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround36/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround36"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround36/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround36/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround36/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround28" type="Node2D" parent="Level/Ground"]
+position = Vector2(37118, 2301)
+rotation = 0.543798
+scale = Vector2(0.7024511, 1.2058883)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround28"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround28"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround28"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround28/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround28/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround28"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround28/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround28/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround28/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround29" type="Node2D" parent="Level/Ground"]
+position = Vector2(42282.996, 2278)
+rotation = -0.3088742
+scale = Vector2(0.7024511, 1.2058883)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround29"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround29"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround29"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround29/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround29/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround29"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround29/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround29/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround29/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround30" type="Node2D" parent="Level/Ground"]
+position = Vector2(43954.996, -955.001)
+rotation = 0.1938119
+scale = Vector2(0.7024511, 1.2058883)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround30"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround30"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround30"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround30/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround30/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround30"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround30/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround30/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround30/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround31" type="Node2D" parent="Level/Ground"]
+position = Vector2(48508, 201.00049)
+rotation = -0.1078369
+scale = Vector2(0.7024511, 1.2058883)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround31"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround31"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround31"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround31/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround31/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround31"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround31/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround31/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround31/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="ExampleGround32" type="Node2D" parent="Level/Ground"]
+position = Vector2(52549, -1206.0005)
+rotation = -0.013178639
+scale = Vector2(0.7024511, 1.2058883)
+
+[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround32"]
+
+[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround32"]
+rotation = 1.5707964
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("21_mccl8")
+
+[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround32"]
+position = Vector2(-77, 3158)
+
+[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround32/StaticBody"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround32/StaticBody"]
+position = Vector2(81, -3149)
+shape = SubResource("RectangleShape2D_h34ov")
+
+[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround32"]
+
+[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround32/AreaCollider"]
+
+[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround32/AreaCollider"]
+
+[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround32/AreaCollider"]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_h34ov")
+
 [node name="ExampleGround25" type="Node2D" parent="Level/Ground"]
 position = Vector2(30167, -372)
 scale = Vector2(1.2000098, 2.08)
@@ -1783,6 +2142,543 @@ position = Vector2(33232.008, 1529.9999)
 rotation = -5.113071
 scale = Vector2(1.7298124, 2.2296906)
 texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide3" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(53816, 4283.0015)
+rotation = -5.8386273
+scale = Vector2(5.994999, 13.362335)
+texture = ExtResource("23_vqsto")
+
+[node name="Leaves1" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(31813, -10712)
+scale = Vector2(1.6800001, 1.8400009)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves2" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(27427, -10569.001)
+rotation = -0.020843785
+scale = Vector2(1.9199414, 2.2799082)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves3" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(23256, -10772)
+rotation = 0.10617702
+scale = Vector2(1.9199414, 2.2799082)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves4" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(25600, -9245.001)
+rotation = -0.0581363
+scale = Vector2(1.4427354, 1.6776917)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves5" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(29775.998, -9245.001)
+rotation = 0.025717638
+scale = Vector2(1.4427354, 1.6776917)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves67" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(39400, 230.00085)
+rotation = 2.1388514
+scale = Vector2(0.47306868, 0.48862785)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves68" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(39981, -9.000107)
+rotation = 3.116219
+scale = Vector2(0.47306868, 0.48862785)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves69" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(40161, 608.9999)
+rotation = 4.296504
+scale = Vector2(0.47306868, 0.48862785)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves70" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(39650.996, 984.9989)
+rotation = 6.722934
+scale = Vector2(0.47306868, 0.48862785)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves6" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(35134, -10910)
+rotation = -0.12717432
+scale = Vector2(1.4427354, 1.6776917)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves7" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(19729, -9481.001)
+rotation = -0.3358495
+scale = Vector2(1.4427354, 1.6776917)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves8" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(18153, -6842.0005)
+rotation = -0.68884367
+scale = Vector2(1.4427354, 1.6776917)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves9" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(15218, -5768)
+rotation = 0.18739487
+scale = Vector2(0.82371986, 0.9354658)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves10" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14105.001, -5295)
+rotation = -0.23383527
+scale = Vector2(0.82371986, 0.9354658)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves11" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(12736, -5275)
+rotation = 0.21852006
+scale = Vector2(0.82371986, 0.9354658)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves12" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(11121, -5098.0005)
+rotation = -0.19643508
+scale = Vector2(0.82371986, 0.9354658)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves13" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(8934.001, -5993.0005)
+rotation = -0.015508801
+scale = Vector2(1.8758289, 1.6599939)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves14" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(6351.0005, -6827.0005)
+rotation = 0.24848065
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves15" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(4627.0005, -6600.001)
+rotation = -0.1066075
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves16" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(2839, -5420)
+rotation = -0.29439795
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves17" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(766.9998, -5177.9995)
+rotation = 0.41769832
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves19" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(31531.002, -7288.999)
+rotation = 0.38286176
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves20" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(33116, -5368)
+rotation = 0.2866686
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves21" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(35603, -5733.002)
+rotation = -0.6392825
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves24" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(34207, -3919.0005)
+rotation = 0.050991893
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves35" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(33963, -6920)
+rotation = 0.050991893
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves36" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(32468.004, -8481.002)
+rotation = 0.69003254
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves37" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(34342, -8978.996)
+rotation = -0.18463343
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves38" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(36498, -8643)
+rotation = -0.45971742
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves41" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(45556, -6974.9995)
+rotation = 0.102079675
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves42" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(41629, -9530)
+rotation = 0.102079675
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves43" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(50580.996, -6215.001)
+rotation = -0.21193518
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves44" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(55436.996, -8770)
+rotation = -0.21193518
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves45" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(59871.004, -8073)
+rotation = 0.04906632
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves46" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(64305.004, -8368)
+rotation = -0.32938308
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves47" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(68464, -8494.998)
+rotation = -0.16930695
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves48" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(73152, -10184)
+rotation = 2.9619172
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves49" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(57908, 3266)
+rotation = 2.8505216
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves50" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(57802, 457.99927)
+rotation = 0.6436378
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves51" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(61708.855, 2568.9822)
+rotation = 2.1782556
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves52" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(61602.855, -239.01837)
+rotation = -0.02862829
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves53" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(66692.21, 2125.4822)
+rotation = 2.1765976
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves54" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(66586.22, -682.5186)
+rotation = -0.030286238
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves55" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(73427.484, 985.12476)
+rotation = 1.9482455
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves56" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(73321.49, -1822.8761)
+rotation = -0.25863826
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves57" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(69795, 4807.002)
+rotation = -0.25863826
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves58" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(63968, 6368.999)
+rotation = 0.4315964
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves59" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(58626, 8121.998)
+rotation = 0.40914252
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves60" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(49104.004, -10606)
+rotation = 0.039200783
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves61" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(76925.01, -7055.0024)
+rotation = 0.7787143
+scale = Vector2(2.6332505, 3.46955)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves39" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(31581, -3186.999)
+rotation = 0.36234438
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves40" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(31485, -5565.9995)
+rotation = 1.392344
+scale = Vector2(1.025586, 1.5484315)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves25" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(15601.001, -343)
+rotation = -1.5798928
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves26" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16001, -743)
+rotation = -0.4873215
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves27" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16322.001, -301.00024)
+rotation = 1.4703455
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves28" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(15994.999, -4071.0005)
+rotation = 3.746362
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves62" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14696.002, -3257.0005)
+rotation = 5.544038
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves63" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14942.999, -3332.9995)
+rotation = 6.144311
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves64" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(15112.999, -3228.9995)
+rotation = 6.661884
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves65" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14693.001, -2873.0002)
+rotation = 10.023867
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves66" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14874.999, -3330.0002)
+rotation = 9.180828
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves29" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16890, -4293.0015)
+rotation = 2.5595303
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves30" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(17580, -4259.9995)
+rotation = 3.7286987
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves31" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(18487, -4264.9995)
+rotation = 2.3577704
+scale = Vector2(0.32813936, -0.46899024)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves32" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(17970, -4964.9995)
+rotation = 3.0632644
+scale = Vector2(0.75263155, -0.8082285)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves33" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16441, -4848)
+rotation = 2.9731271
+scale = Vector2(0.75263155, -0.8082285)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves34" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(12324, -4592)
+rotation = 3.0576506
+scale = Vector2(0.75263155, -0.8082285)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves22" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(37598, -7199.9995)
+rotation = -0.07284334
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves23" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(38140, -9601.003)
+rotation = -2.4025848
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves18" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(-855, -4351)
+rotation = 3.0773547
+scale = Vector2(1.235907, 1.3018969)
+texture = ExtResource("29_upfit")
+
+[node name="Treetop" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(5775.0005, -4019)
+scale = Vector2(0.76000005, 1)
+texture = ExtResource("30_uf8qa")
+
+[node name="Treetop2" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(12457, -2219)
+scale = Vector2(-1.0400391, 1)
+texture = ExtResource("30_uf8qa")
+
+[node name="Treetop3" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(25741, -5590.0005)
+rotation = -0.09449247
+scale = Vector2(-1.7985938, 1.5176818)
+texture = ExtResource("30_uf8qa")
+
+[node name="Treetop4" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(39317, -5075.999)
+rotation = -0.29982346
+scale = Vector2(-1.7985938, 1.5176818)
+texture = ExtResource("30_uf8qa")
+
+[node name="Treetop5" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(41133, -4145.999)
+rotation = 0.43274647
+scale = Vector2(-2.0599868, 2.0288022)
+texture = ExtResource("30_uf8qa")
+
+[node name="Rock1" type="Sprite2D" parent="Level/Ground"]
+z_index = -55
+position = Vector2(4370.0005, -151)
+rotation = 3.0355282
+scale = Vector2(0.32354316, -0.28392303)
+texture = ExtResource("31_8fya3")
+
+[node name="Rock2" type="Sprite2D" parent="Level/Ground"]
+z_index = -50
+position = Vector2(11384, -268.99994)
+rotation = 3.0355282
+scale = Vector2(0.32354316, -0.28392303)
+texture = ExtResource("31_8fya3")
+
+[node name="Rock3" type="Sprite2D" parent="Level/Ground"]
+z_index = -35
+position = Vector2(20443, -2537)
+rotation = 2.8728516
+scale = Vector2(0.32354316, -0.28392303)
+texture = ExtResource("31_8fya3")
+
+[node name="Rock4" type="Sprite2D" parent="Level/Ground"]
+z_index = -35
+position = Vector2(20288.002, 192)
+rotation = 2.8797934
+scale = Vector2(0.32354316, -0.28392303)
+texture = ExtResource("31_8fya3")
+
+[node name="Godray2" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(25493, -6093)
+rotation = -0.12782864
+scale = Vector2(1.2332408, 1.0807214)
+texture = ExtResource("32_c6ias")
+
+[node name="Godray7" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(59024, -4523.0005)
+rotation = -0.12782864
+scale = Vector2(1.2332408, 1.0807214)
+texture = ExtResource("32_c6ias")
+
+[node name="Godray8" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(65707, -5378.001)
+rotation = 0.081558794
+scale = Vector2(1.2332408, 1.0807214)
+texture = ExtResource("32_c6ias")
+
+[node name="Godray10" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(65707, -5378.001)
+rotation = 0.081558794
+scale = Vector2(1.2332408, 1.0807214)
+texture = ExtResource("32_c6ias")
+
+[node name="Godray9" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(71186, -6704.0005)
+rotation = -0.28684688
+scale = Vector2(1.2332408, 1.0807214)
+texture = ExtResource("32_c6ias")
+
+[node name="Godray1" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(8434, -2847.0002)
+rotation = -0.10701437
+texture = ExtResource("33_370wn")
+
+[node name="Godray4" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(41973.004, -3227.0002)
+rotation = -0.10701437
+texture = ExtResource("33_370wn")
+
+[node name="Godray5" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(41576, -5146)
+rotation = -0.10701437
+texture = ExtResource("33_370wn")
+
+[node name="Godray6" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(43702.004, -4162.0005)
+rotation = -0.10701437
+texture = ExtResource("33_370wn")
+
+[node name="Godray3" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16050.001, -3085.0002)
+rotation = -0.12271337
+scale = Vector2(0.8409131, 0.9161853)
+texture = ExtResource("33_370wn")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
@@ -2208,6 +3104,120 @@ rotation = -0.33237898
 scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
 
+[node name="Acorn38" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(48762.992, 5343)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn39" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(52219, 3766.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn40" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(52155.996, 1296.002)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn41" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(47643, 561.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn42" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(48395, 2809.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn43" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(45681.996, 4279.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn44" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(50329, 1063.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn45" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(54089.996, 5828.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn46" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(54528.996, 2479)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn47" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(45288.004, 312.00098)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn48" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(38895, 2083)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn49" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(41938, 4154)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn50" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(56715, -1556.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn51" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(60398, -1450.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn52" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(64510, -1616.999)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn53" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(67549, -1975.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn54" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(72138, -2607.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn55" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(34426, 4401)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn56" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(30164, 4122.998)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="TeleportationDoor" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("33_6n07p")]
@@ -2350,6 +3360,180 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Rock1" type="Sprite2D" parent="."]
+position = Vector2(14812, 2098)
+rotation = -0.8966338
+scale = Vector2(1.2559766, 0.8069726)
+texture = ExtResource("31_8fya3")
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(25308, 4950)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock3" type="Sprite2D" parent="."]
+position = Vector2(22695, 4955)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock4" type="Sprite2D" parent="."]
+position = Vector2(22584, 4394)
+rotation = 1.2133179
+texture = ExtResource("47_tqysu")
+
+[node name="Rock5" type="Sprite2D" parent="."]
+position = Vector2(22332, 3953.9998)
+rotation = 1.5578784
+texture = ExtResource("47_tqysu")
+
+[node name="Rock6" type="Sprite2D" parent="."]
+position = Vector2(25607, 3912)
+rotation = 1.5578784
+texture = ExtResource("47_tqysu")
+
+[node name="Rock7" type="Sprite2D" parent="."]
+position = Vector2(25013.002, 4580.0015)
+rotation = -0.8191324
+texture = ExtResource("31_8fya3")
+
+[node name="Rock8" type="Sprite2D" parent="."]
+position = Vector2(15135, 5140.001)
+rotation = -1.0613276
+texture = ExtResource("47_tqysu")
+
+[node name="Rock9" type="Sprite2D" parent="."]
+position = Vector2(15059.001, 3862.9998)
+rotation = -1.8698862
+scale = Vector2(1.3586502, 1.1431154)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock10" type="Sprite2D" parent="."]
+position = Vector2(9727, 4663)
+rotation = -1.6128428
+scale = Vector2(1.3586502, 1.1431154)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock11" type="Sprite2D" parent="."]
+position = Vector2(25074, 2304.9998)
+rotation = -1.5612926
+scale = Vector2(0.6893386, 1.1431154)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock12" type="Sprite2D" parent="."]
+position = Vector2(29620, 1545)
+rotation = -1.5612926
+scale = Vector2(0.9806397, 1.5910227)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock13" type="Sprite2D" parent="."]
+position = Vector2(36542, 1453)
+rotation = -1.5612926
+scale = Vector2(0.9806397, 1.5910227)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock14" type="Sprite2D" parent="."]
+position = Vector2(36355.996, 71.000626)
+rotation = -1.6867138
+scale = Vector2(0.9806397, 1.5910227)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock15" type="Sprite2D" parent="."]
+position = Vector2(36245.004, -1284)
+rotation = -1.558033
+scale = Vector2(0.9806397, 1.5910227)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock16" type="Sprite2D" parent="."]
+position = Vector2(38070, 6679)
+rotation = -0.6779325
+scale = Vector2(0.9806397, 1.5910227)
+texture = ExtResource("47_tqysu")
+
+[node name="Rock17" type="Sprite2D" parent="."]
+position = Vector2(27895, 4865)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock18" type="Sprite2D" parent="."]
+position = Vector2(13484, 3058.0002)
+scale = Vector2(0.47999024, 0.5199982)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock19" type="Sprite2D" parent="."]
+z_index = -40
+position = Vector2(25035, -449.9995)
+scale = Vector2(0.47999024, 0.5199982)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock20" type="Sprite2D" parent="."]
+position = Vector2(33833, 2247.9998)
+scale = Vector2(0.47999024, 0.5199982)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock21" type="Sprite2D" parent="."]
+position = Vector2(35686.004, 4664.0015)
+rotation = 0.4615352
+scale = Vector2(0.47999024, 0.5199982)
+texture = ExtResource("48_fl08v")
+
+[node name="ForagerAssetPackV10001s0001Vinewide" type="Sprite2D" parent="."]
+position = Vector2(30183.002, -265.00098)
+rotation = -1.0901217
+scale = Vector2(4.5017877, 3.961187)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide2" type="Sprite2D" parent="."]
+position = Vector2(30378.998, -2430.001)
+rotation = -1.0901217
+scale = Vector2(4.5017877, 3.961187)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide3" type="Sprite2D" parent="."]
+position = Vector2(34489, 1262)
+rotation = -1.3739165
+scale = Vector2(4.5017877, 3.961187)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide4" type="Sprite2D" parent="."]
+position = Vector2(24273, 716.00024)
+rotation = -1.0919807
+scale = Vector2(3.7377543, 2.858687)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide5" type="Sprite2D" parent="."]
+position = Vector2(29950, -4116.001)
+rotation = -1.6089406
+scale = Vector2(3.7377543, 2.858687)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10003s0001Treemediumbase" type="Sprite2D" parent="."]
+position = Vector2(18753, 1171.0001)
+rotation = -0.032408193
+scale = Vector2(-1.4401827, 1.2553279)
+texture = ExtResource("24_tffdo")
+
+[node name="ForagerAssetPackV10003s0001Treemediumbase2" type="Sprite2D" parent="."]
+z_index = -45
+position = Vector2(6363.0005, 3118)
+rotation = -0.032408193
+scale = Vector2(-3.0419354, 3.5289488)
+texture = ExtResource("24_tffdo")
+
+[node name="ForagerAssetPackV10003s0001Treemediumbase3" type="Sprite2D" parent="."]
+position = Vector2(30939, 2236)
+rotation = -0.032408193
+scale = Vector2(-3.0419354, 3.5289488)
+texture = ExtResource("24_tffdo")
+
+[node name="ForagerAssetPackV10003s0001Treemediumbase4" type="Sprite2D" parent="."]
+position = Vector2(42583.004, 7111)
+rotation = 0.15075968
+scale = Vector2(-3.0419354, 3.5289488)
+texture = ExtResource("24_tffdo")
+
+[node name="ForagerAssetPackV10003s0001Treemediumbase5" type="Sprite2D" parent="."]
+position = Vector2(61973, 1882.0005)
+rotation = -0.023529455
+scale = Vector2(-3.0419354, 3.5289488)
+texture = ExtResource("24_tffdo")
 
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity" to="GameUi/UpgradesPanel" method="try_upgrade_capacity"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed" to="GameUi/UpgradesPanel" method="try_upgrade_speed"]
