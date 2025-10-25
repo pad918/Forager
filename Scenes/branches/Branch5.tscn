@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bngenq44po2vm"]
+
+[ext_resource type="Texture2D" uid="uid://r08bkn02ll5a" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0002s_0000_branchstub.png" id="1_ow3ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lgig"]
+size = Vector2(97, 26.539442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3s0l"]
+size = Vector2(107, 24.558952)
+
+[node name="Branch2" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ow3ry")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-19, 16)
+
+[node name="ColShape" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15, -68)
+shape = SubResource("RectangleShape2D_1lgig")
+one_way_collision = true
+
+[node name="TreeArea" type="Area2D" parent="."]
+position = Vector2(-4, 5)
+collision_layer = 4
+collision_mask = 4
+
+[node name="ColShape" type="CollisionShape2D" parent="TreeArea"]
+position = Vector2(-1.5, -63)
+shape = SubResource("RectangleShape2D_w3s0l")
