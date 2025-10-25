@@ -65,7 +65,7 @@ func update(delta:float):
 	
 	# If the user is trying to move upwards, and is over the stem,
 	# go to the climbing state!
-	if(is_on_stem and input_dir.y!=0):
+	if(is_on_stem and input_dir.y < 0):
 		statemachine.set_movement_state(self, stem_climb_state)	
 	
 	if(input_dir.x==0):
