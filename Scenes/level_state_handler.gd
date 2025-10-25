@@ -12,6 +12,8 @@ var acorns_collected:int = 0
 
 var time_left:float = 60*2
 
+var has_player_countdown_timer:bool = false
+
 var round_over:bool = false
 	
 func add_acorns(num:int):
@@ -43,6 +45,9 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
+	elif(time_left<30):
+		has_player_countdown_timer = true
+		get_node("%SfxSingleton").play_sfx("TimerCountdown")
 	update_timer_label()
 
 	
