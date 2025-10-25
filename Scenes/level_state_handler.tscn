@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=89 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -37,15 +37,27 @@
 [ext_resource type="Texture2D" uid="uid://xyt8dn7n1tos" path="res://Sprites/Foliage/treetop.png" id="30_uf8qa"]
 [ext_resource type="Texture2D" uid="uid://dlpleqcpmqph5" path="res://Sprites/Foliage/rock1.png" id="31_8fya3"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
+[ext_resource type="Texture2D" uid="uid://r6rxlpt4tj6w" path="res://Sprites/AnimationSprites/Falling0001.png" id="32_7ipyn"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
 [ext_resource type="Texture2D" uid="uid://bpvutkxf5i6e7" path="res://Sprites/Godrays/godray2.png" id="32_c6ias"]
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="32_mccl8"]
 [ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="33_6n07p"]
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
+[ext_resource type="Texture2D" uid="uid://15nsqpudape3" path="res://Sprites/AnimationSprites/Falling0002.png" id="33_ph52n"]
+[ext_resource type="Texture2D" uid="uid://mps422y1vhw3" path="res://Sprites/AnimationSprites/Falling0003.png" id="34_0crkc"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="34_m048m"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="35_m7j3d"]
-[ext_resource type="Script" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Texture2D" uid="uid://dqhvyvdkjfeev" path="res://Sprites/AnimationSprites/Walk0001.png" id="37_2s27x"]
+[ext_resource type="Texture2D" uid="uid://cdyl7p2e5fbrn" path="res://Sprites/AnimationSprites/Walk0002.png" id="38_2nja4"]
+[ext_resource type="Texture2D" uid="uid://c35olpjq6cmd1" path="res://Sprites/AnimationSprites/Walk0003.png" id="39_p1rfl"]
+[ext_resource type="Texture2D" uid="uid://c71axxrh5r6ce" path="res://Sprites/AnimationSprites/Idle0001.png" id="40_abrmp"]
+[ext_resource type="Texture2D" uid="uid://d0cedynbq2rda" path="res://Sprites/AnimationSprites/Idle0002.png" id="41_6n07p"]
+[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Texture2D" uid="uid://cvr5nyhmdctda" path="res://Sprites/AnimationSprites/Idle0003.png" id="42_m048m"]
+[ext_resource type="Texture2D" uid="uid://cotx7wjx8un83" path="res://Sprites/AnimationSprites/Climbing0001.png" id="44_m7j3d"]
+[ext_resource type="Texture2D" uid="uid://t1brst5v7hsg" path="res://Sprites/AnimationSprites/Climbing0002.png" id="45_w517i"]
+[ext_resource type="Texture2D" uid="uid://b6c7m8qwd7jod" path="res://Sprites/AnimationSprites/Climbing0003.png" id="46_in8ph"]
 [ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 
@@ -62,6 +74,20 @@ size = Vector2(2946, 507.99994)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("32_7ipyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ph52n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0crkc")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("24_7dfb5")
 }, {
 "duration": 1.0,
@@ -73,6 +99,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("37_2s27x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_2nja4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p1rfl")
+}],
+"loop": true,
+"name": &"HorizontalMovement2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_abrmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6n07p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_m048m")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("26_7ipyn")
 }, {
 "duration": 1.0,
@@ -81,6 +135,20 @@ animations = [{
 "loop": true,
 "name": &"VerticalMovement",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_m7j3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_w517i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_in8ph")
+}],
+"loop": true,
+"name": &"VerticalMovement2",
+"speed": 9.0
 }]
 
 [sub_resource type="Animation" id="Animation_kiiqx"]
