@@ -62,7 +62,7 @@ func update(delta: float):
 	if(is_on_stem and input_dir.y<0):
 		statemachine.set_movement_state(self, stem_climb_state)
 	
-	if (input_dir.x != 0 and Input.is_key_pressed(KEY_SPACE)):
+	if (input_dir.x != 0 and Input.is_action_just_pressed("Jump")):
 		character.velocity.y += jump_boost.y # Give upward boost no matter which direction it is moving
 		character.velocity.x += jump_boost.x * input_dir.x
 		statemachine.set_movement_state(self, fall_state)

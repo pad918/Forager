@@ -8,21 +8,25 @@ class_name LevelStateHandler
 
 var acorn_target:int = 10
 
-var acorns_collected:int = 0
+var time_left:float = 30
 
-var time_left:float = 60*2
+var has_player_countdown_timer:bool = false
 
 var round_over:bool = false
-	
-func add_acorns(num:int):
-	acorns_collected+=num
-	if(acorns_collected >= acorn_target):
-		round_over = true
-		# TODO: Wait a bit, goto powerup menu?
-		get_parent().load_next_level()
 
-func has_reached_target():
-	return acorns_collected >= acorn_target
+func _ready() -> void:
+	var game_state_handler: GameStateHandler = get_parent()
+	time_left *= game_state_handler.player_timer_upgrade
+	
+func deposit_acorns(num:int):
+	if(num >= acorn_target):
+		round_over = true
+		var game_state:GameStateHandler = get_parent()
+		game_state.total_collected_acorns += num
+		print("Collected ",num, " acorns this level")
+		# Display upgrades menu
+		round_animation_player.play("ShowUpgradesUi")
+		#get_parent().load_next_level()
 
 func update_timer_label():
 	@warning_ignore("integer_division")
@@ -43,6 +47,9 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
+	elif(time_left<30 && !has_player_countdown_timer):
+		has_player_countdown_timer = true
+		get_node("%SfxSingleton").play_sfx("TimerCountdown")
 	update_timer_label()
 
 	

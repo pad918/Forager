@@ -108,7 +108,8 @@ func update(delta:float):
 		max_speed_multiplier.y = 3
 		character.velocity.y -= jump_boost_up
 	#Drop down from the tree
-	elif(input_dir.y>0 and  Input.is_action_just_pressed("Jump")):
+	elif(input_dir.y > 0 and  Input.is_action_just_pressed("Jump")):
+		print("Falling")
 		character.velocity.y += jump_boost_down
 		statemachine.set_movement_state(self, gliding_state)
 	
