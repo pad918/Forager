@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=77 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
@@ -45,7 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Script" uid="uid://240jh6i0bhnb" path="res://Scenes/camera_limt_handler.gd" id="34_m048m"]
 [ext_resource type="Script" uid="uid://cj4ms7lq5qxny" path="res://Scenes/camera_limit_area.gd" id="35_m7j3d"]
-[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Script" path="res://Other/BGMArea.gd" id="41_iaphp"]
 [ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 
@@ -766,8 +766,6 @@ scale = Vector2(-1.3541615, 3.8235285)
 [node name="TreeBranch2" parent="Level/Trees/Tree2" instance=ExtResource("20_tu2bp")]
 position = Vector2(451.5626, -1751.4707)
 scale = Vector2(1.627677, 2.1865506)
-
-[node name="TreeBranch" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
 
 [node name="Tree3" parent="Level/Trees" instance=ExtResource("19_mtimp")]
 position = Vector2(10488, 1081)
@@ -2599,26 +2597,30 @@ scale = Vector2(-2.0599868, 2.0288022)
 texture = ExtResource("30_uf8qa")
 
 [node name="Rock1" type="Sprite2D" parent="Level/Ground"]
+z_index = -55
 position = Vector2(4370.0005, -151)
 rotation = 3.0355282
 scale = Vector2(0.32354316, -0.28392303)
 texture = ExtResource("31_8fya3")
 
 [node name="Rock2" type="Sprite2D" parent="Level/Ground"]
+z_index = -50
 position = Vector2(11384, -268.99994)
 rotation = 3.0355282
 scale = Vector2(0.32354316, -0.28392303)
 texture = ExtResource("31_8fya3")
 
 [node name="Rock3" type="Sprite2D" parent="Level/Ground"]
+z_index = -35
 position = Vector2(20443, -2537)
 rotation = 2.8728516
 scale = Vector2(0.32354316, -0.28392303)
 texture = ExtResource("31_8fya3")
 
 [node name="Rock4" type="Sprite2D" parent="Level/Ground"]
+z_index = -35
 position = Vector2(20288.002, 192)
-rotation = 2.8728516
+rotation = 2.8797934
 scale = Vector2(0.32354316, -0.28392303)
 texture = ExtResource("31_8fya3")
 
@@ -3252,54 +3254,6 @@ high_limit = Vector2(14990, 5540)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
-[node name="Cave1BelowLimits4" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(27253.002, 3093)
-scale = Vector2(2.100826, 1.1755234)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(10190, 3245)
-high_limit = Vector2(14990, 5540)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits4"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave1BelowLimits2" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(23945.002, 3149)
-scale = Vector2(1.4799999, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(10190, 3245)
-high_limit = Vector2(14990, 5540)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits2"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave1BelowLimits5" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(32356.002, 2280)
-scale = Vector2(1.4799999, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(10190, 3245)
-high_limit = Vector2(14990, 5540)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits5"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave1BelowLimits3" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(25424.002, -1595)
-scale = Vector2(9.7908535, 0.61649907)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(10190, 3245)
-high_limit = Vector2(14990, 5540)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits3"]
-shape = SubResource("RectangleShape2D_m8c54")
-
 [node name="Cave2AboveLimits" type="Area2D" parent="CameraLimtAreas"]
 position = Vector2(17132, 1408)
 collision_layer = 2147483648
@@ -3309,54 +3263,6 @@ low_limit = Vector2(-1350, -10000000)
 high_limit = Vector2(60000, 2200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave2AboveLimits4" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(27291, 3037)
-scale = Vector2(2.2, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -10000000)
-high_limit = Vector2(60000, 2200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits4"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave2AboveLimits5" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(32323, 2230)
-scale = Vector2(2.2, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -10000000)
-high_limit = Vector2(60000, 2200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits5"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave2AboveLimits2" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(23936, 3036)
-scale = Vector2(1.4, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -10000000)
-high_limit = Vector2(60000, 2200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits2"]
-shape = SubResource("RectangleShape2D_m8c54")
-
-[node name="Cave2AboveLimits3" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(25440, -1702)
-scale = Vector2(9.48, 1)
-collision_layer = 2147483648
-collision_mask = 2147483648
-script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -10000000)
-high_limit = Vector2(60000, 2200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits3"]
 shape = SubResource("RectangleShape2D_m8c54")
 
 [node name="Cave2BelowLimits" type="Area2D" parent="CameraLimtAreas"]
@@ -3552,6 +3458,7 @@ scale = Vector2(0.47999024, 0.5199982)
 texture = ExtResource("48_fl08v")
 
 [node name="Rock19" type="Sprite2D" parent="."]
+z_index = -40
 position = Vector2(25035, -449.9995)
 scale = Vector2(0.47999024, 0.5199982)
 texture = ExtResource("48_fl08v")
@@ -3604,6 +3511,7 @@ scale = Vector2(-1.4401827, 1.2553279)
 texture = ExtResource("24_tffdo")
 
 [node name="ForagerAssetPackV10003s0001Treemediumbase2" type="Sprite2D" parent="."]
+z_index = -45
 position = Vector2(6363.0005, 3118)
 rotation = -0.032408193
 scale = Vector2(-3.0419354, 3.5289488)
