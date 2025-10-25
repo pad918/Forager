@@ -8,11 +8,15 @@ class_name LevelStateHandler
 
 var acorn_target:int = 10
 
-var time_left:float = 60*2
+var time_left:float = 30
 
 var has_player_countdown_timer:bool = false
 
 var round_over:bool = false
+
+func _ready() -> void:
+	var game_state_handler: GameStateHandler = get_parent()
+	time_left *= game_state_handler.player_timer_upgrade
 	
 func deposit_acorns(num:int):
 	if(num >= acorn_target):

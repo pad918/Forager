@@ -1032,6 +1032,21 @@ acorns
 
 €100"
 
+[node name="Continue" type="Button" parent="GameUi/UpgradesPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -31.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 111
+text = "Next Round"
+
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="Acorn" parent="Collectables" instance=ExtResource("32_abrmp")]
@@ -1110,3 +1125,4 @@ libraries = {
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity" to="GameUi/UpgradesPanel" method="try_upgrade_capacity"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed" to="GameUi/UpgradesPanel" method="try_upgrade_speed"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardTimer" to="GameUi/UpgradesPanel" method="try_upgrade_time"]
+[connection signal="button_down" from="GameUi/UpgradesPanel/Continue" to="GameUi/UpgradesPanel" method="load_next_round"]
