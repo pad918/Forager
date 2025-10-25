@@ -1833,9 +1833,10 @@ parameters/blend_position = Vector2(0.45079362, 0.060240984)
 
 [node name="MainCamera" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
-limit_left = -1350
-limit_right = 60000
-limit_bottom = 3265
+limit_left = -1280
+limit_top = -9415
+limit_right = 37740
+limit_bottom = 3295
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -2244,26 +2245,48 @@ destination = NodePath("../TeleportationDoor")
 script = ExtResource("34_m048m")
 camera = NodePath("../Player/MainCamera")
 
-[node name="AboveLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(2068, 3354)
+[node name="Cave1AboveLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(12581, 3388)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(-1350, -100000)
-high_limit = Vector2(10000, 3265)
+low_limit = Vector2(-1350, -10000000)
+high_limit = Vector2(60000, 3265)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/AboveLimits"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave1AboveLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
-[node name="BelowLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(2076, 3451)
+[node name="Cave1BelowLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(12589, 3485)
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(-275, 3725)
-high_limit = Vector2(7300, 6795)
+low_limit = Vector2(10190, 3245)
+high_limit = Vector2(14990, 5540)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/BelowLimits"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave1BelowLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave2AboveLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(17132, 1408)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(-1350, -10000000)
+high_limit = Vector2(60000, 2200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave2AboveLimits"]
+shape = SubResource("RectangleShape2D_m8c54")
+
+[node name="Cave2BelowLimits" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(17140, 1505)
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(15600, 1205)
+high_limit = Vector2(21385, 4200)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave2BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
 
 [node name="Animations" type="Node2D" parent="."]
