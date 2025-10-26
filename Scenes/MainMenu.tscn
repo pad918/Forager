@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bn0qf566xn415"]
+[gd_scene load_steps=13 format=3 uid="uid://bn0qf566xn415"]
 
+[ext_resource type="Texture2D" uid="uid://duuj1tt2sih2h" path="res://Sprites/ui/Logo.png" id="1_koqhg"]
 [ext_resource type="Texture2D" uid="uid://x222n01dms2a" path="res://Sprites/ui/TitleScreen.png" id="1_xim88"]
 [ext_resource type="Script" uid="uid://3fylssg0oeyr" path="res://Scenes/scene_selector.gd" id="3_ghw46"]
 [ext_resource type="Texture2D" uid="uid://cxi0jdtu6fqvl" path="res://Sprites/ui/Play_Now.png" id="4_koqhg"]
@@ -67,6 +68,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+z_index = 585
+custom_minimum_size = Vector2(706.595, 214.715)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.2975
+offset_top = 13.0
+offset_right = 353.2975
+offset_bottom = 227.715
+grow_horizontal = 2
+texture = ExtResource("1_koqhg")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 1
