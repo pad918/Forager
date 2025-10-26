@@ -21,7 +21,9 @@ func randomly_sample_cards():
 		printerr("MUST EXIST AT LEAST TWO TYPES OF CARDS")
 	else:
 		add_child(cards[0].instantiate())
-		add_child(cards[rng.randi_range(1, cards.size()-1)].instantiate())
+		add_child(cards[1].instantiate())
+		add_child(cards[2].instantiate())
+		
 
 func select_me(card: UpgradeCard):
 	if(selected != null):
