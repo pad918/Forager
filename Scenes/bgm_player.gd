@@ -30,6 +30,7 @@ func play_bgm(name:String, _cross_fade_time:float):
 	bmg_cross_fade_time = _cross_fade_time
 	last_bgm = curr_bgm
 	curr_bgm = get_player(name)
+	print("Starting BGM: ", name)
 	
 func play_ambience(name:String, _cross_fade_time:float):
 	if(curr_ambiance!=null and curr_ambiance.name == name):
@@ -38,6 +39,8 @@ func play_ambience(name:String, _cross_fade_time:float):
 	ambiance_cross_fade_time = _cross_fade_time
 	last_ambiance = curr_ambiance
 	curr_ambiance = get_player(name)
+	print("Starting ambiance: ", name)
+	
 	
 # Fade in
 func get_time_fade_in(curr_time:float, total_time:float) -> float:

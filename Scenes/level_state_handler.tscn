@@ -1,6 +1,7 @@
-[gd_scene load_steps=87 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=88 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
+[ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
 [ext_resource type="Texture2D" uid="uid://bgw4ncl0pe153" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0004_background4.png" id="3_h34ov"]
 [ext_resource type="Texture2D" uid="uid://c0a7qp2p0uhq0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0003_background3.png" id="4_vqsto"]
@@ -869,6 +870,11 @@ _data = {
 script = ExtResource("1_03kpd")
 timer_label = NodePath("GameUi/AspectRatioContainer/TimerLabel")
 round_animation_player = NodePath("Animations/RoundEndAnimations")
+
+[node name="InitialBgmSetter" type="Node" parent="."]
+script = ExtResource("2_7dfb5")
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
 
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
@@ -3875,6 +3881,7 @@ rotation = -0.023529455
 scale = Vector2(-3.0419354, 3.5289488)
 texture = ExtResource("24_tffdo")
 
+[connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardCapacity" to="GameUi/UpgradesPanel" method="try_upgrade_capacity"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardSpeed" to="GameUi/UpgradesPanel" method="try_upgrade_speed"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCardTimer" to="GameUi/UpgradesPanel" method="try_upgrade_time"]
