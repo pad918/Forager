@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=121 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -22,7 +22,6 @@
 [ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="16_c6ias"]
 [ext_resource type="AudioStream" uid="uid://d3vpms5maxhtl" path="res://audio/Ogg/BGM/countdown-34s.ogg" id="16_w517i"]
 [ext_resource type="AudioStream" uid="uid://dve6rcxrb0diy" path="res://audio/Ogg/BGM/countdown-16s.ogg" id="17_in8ph"]
-[ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
 [ext_resource type="Script" uid="uid://c62e3p1aatysv" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d4hscnh3j7tfg" path="res://Sprites/AboveGroundAssetsNew/BurrowTreeNew.png" id="19_7ipyn"]
 [ext_resource type="AudioStream" uid="uid://dkjk4742wvy70" path="res://audio/sfx/acorn-grab_2.wav" id="19_abrmp"]
@@ -51,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://bpvutkxf5i6e7" path="res://Sprites/Godrays/godray2.png" id="32_c6ias"]
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
 [ext_resource type="Texture2D" uid="uid://r6rxlpt4tj6w" path="res://Sprites/AnimationSprites/Falling0001.png" id="32_svq42"]
+[ext_resource type="Script" uid="uid://cxraxrj0jam1p" path="res://Other/nest.gd" id="32_vl3or"]
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Texture2D" uid="uid://15nsqpudape3" path="res://Sprites/AnimationSprites/Falling0002.png" id="33_m1ye1"]
 [ext_resource type="Texture2D" uid="uid://mps422y1vhw3" path="res://Sprites/AnimationSprites/Falling0003.png" id="34_7dfb5"]
@@ -95,6 +95,9 @@ size = Vector2(956.5, 3438)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udify"]
 size = Vector2(515.4938, 1016.00006)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8jfd"]
+size = Vector2(343, 263)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1ye1"]
 size = Vector2(409.6115, 4962.537)
@@ -818,6 +821,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Player:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5333333, 3.7333333),
+"transitions": PackedFloat32Array(1, 0.42044824),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_03kpd"]
 resource_name = "EnterBorrow"
@@ -880,6 +895,18 @@ tracks/3/path = NodePath("../FallingLeafs:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Player:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1102,6 +1129,11 @@ position = Vector2(-503, -687)
 rotation = -0.19024089
 scale = Vector2(-1.88, 1)
 
+[node name="TreeBranch7" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
+position = Vector2(-952, -1685.0001)
+rotation = -0.062042095
+scale = Vector2(1.9496396, 1)
+
 [node name="TreeBranch5" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(553, -2928)
 rotation = -0.19024089
@@ -1150,9 +1182,20 @@ shape = SubResource("RectangleShape2D_juer4")
 position = Vector2(296.2531, -1266)
 shape = SubResource("RectangleShape2D_udify")
 
-[node name="Nest" parent="Level/Trees/HomeTree" instance=ExtResource("18_vaa8q")]
+[node name="Nest" type="Node2D" parent="Level/Trees/HomeTree" node_paths=PackedStringArray("nest_area")]
 position = Vector2(1, -2793)
 scale = Vector2(2.1599998, 2.4023538)
+script = ExtResource("32_vl3or")
+nest_area = NodePath("NestArea")
+
+[node name="NestArea" type="Area2D" parent="Level/Trees/HomeTree/Nest"]
+collision_layer = 2147483648
+collision_mask = 2147483648
+
+[node name="NestCollider" type="CollisionShape2D" parent="Level/Trees/HomeTree/Nest/NestArea"]
+position = Vector2(-5.5, 75.5)
+scale = Vector2(1.0917431, 1)
+shape = SubResource("RectangleShape2D_w8jfd")
 
 [node name="Tree" parent="Level/Trees" instance=ExtResource("19_mtimp")]
 position = Vector2(5721, -556)
