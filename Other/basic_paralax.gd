@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 
 class_name BasicParalax
 
@@ -7,4 +7,4 @@ class_name BasicParalax
 
 func _process(_delta: float) -> void:
 	var viewport_pos:Vector2 = get_viewport_transform().get_origin()
-	position = (scroll_speed-Vector2(1, 1)) * (viewport_pos-zero_point)
+	offset = ((scroll_speed-Vector2(1, 1)) * (viewport_pos-zero_point)) / scale.x
