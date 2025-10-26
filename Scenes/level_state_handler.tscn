@@ -1,9 +1,9 @@
 [gd_scene load_steps=119 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
-[ext_resource type="Script" path="res://Other/track_setter.gd" id="2_7dfb5"]
+[ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
-[ext_resource type="Script" path="res://Other/falling_leafs.gd" id="3_a2moc"]
+[ext_resource type="Script" uid="uid://bys2bcx8xcf1f" path="res://Other/falling_leafs.gd" id="3_a2moc"]
 [ext_resource type="Texture2D" uid="uid://b23wxr2crrnqu" path="res://Sprites/AboveGroundAssets/leavesback.png" id="3_nmnqg"]
 [ext_resource type="Script" uid="uid://dkt0ipsiosup8" path="res://Other/basic_paralax.gd" id="5_87qsy"]
 [ext_resource type="Texture2D" uid="uid://dgrd6j2cyw0lc" path="res://Sprites/ParalaxLayers/Sky.png" id="7_km4rw"]
@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://d3vpms5maxhtl" path="res://audio/Ogg/BGM/countdown-34s.ogg" id="16_w517i"]
 [ext_resource type="AudioStream" uid="uid://dve6rcxrb0diy" path="res://audio/Ogg/BGM/countdown-16s.ogg" id="17_in8ph"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
-[ext_resource type="Script" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
+[ext_resource type="Script" uid="uid://c62e3p1aatysv" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d4hscnh3j7tfg" path="res://Sprites/AboveGroundAssetsNew/BurrowTreeNew.png" id="19_7ipyn"]
 [ext_resource type="AudioStream" uid="uid://dkjk4742wvy70" path="res://audio/sfx/acorn-grab_2.wav" id="19_abrmp"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
@@ -63,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c71axxrh5r6ce" path="res://Sprites/AnimationSprites/Idle0001.png" id="38_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d0cedynbq2rda" path="res://Sprites/AnimationSprites/Idle0002.png" id="39_2s27x"]
 [ext_resource type="Texture2D" uid="uid://cvr5nyhmdctda" path="res://Sprites/AnimationSprites/Idle0003.png" id="40_2nja4"]
-[ext_resource type="Script" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
 [ext_resource type="Texture2D" uid="uid://cotx7wjx8un83" path="res://Sprites/AnimationSprites/Climbing0001.png" id="41_p1rfl"]
 [ext_resource type="Texture2D" uid="uid://t1brst5v7hsg" path="res://Sprites/AnimationSprites/Climbing0002.png" id="42_abrmp"]
 [ext_resource type="Texture2D" uid="uid://b6c7m8qwd7jod" path="res://Sprites/AnimationSprites/Climbing0003.png" id="43_6n07p"]
@@ -75,11 +75,12 @@
 [ext_resource type="Texture2D" uid="uid://gwnxp1475rso" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 [ext_resource type="Texture2D" uid="uid://3hc12n8w5bo0" path="res://Sprites/AssetsV3/Rune2.png" id="48_kyqma"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
-[ext_resource type="Script" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
+[ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
 [ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
 [ext_resource type="Texture2D" uid="uid://88ksyriulcsj" path="res://Sprites/ui/BlessingsBoardUI.png" id="68_kyqma"]
+[ext_resource type="Texture2D" uid="uid://b27st282xlfog" path="res://Sprites/ui/UI_overlay_wide.png" id="68_vl3or"]
 [ext_resource type="PackedScene" uid="uid://bor2vocluxpty" path="res://Scenes/Obstacles/Rock1.tscn" id="70_t4qa6"]
 [ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
 [ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
@@ -920,7 +921,7 @@ _data = {
 
 [node name="LevelStateHandler" type="Node2D" node_paths=PackedStringArray("timer_label", "round_animation_player")]
 script = ExtResource("1_03kpd")
-timer_label = NodePath("GameUi/AspectRatioContainer/TimerLabel")
+timer_label = NodePath("GameUi/AspectRatioContainer/Backdrop/TimerLabel")
 round_animation_player = NodePath("Animations/RoundEndAnimations")
 
 [node name="Explaner" type="Node2D" parent="."]
@@ -952,13 +953,14 @@ position = Vector2(-1327, 2937)
 script = ExtResource("3_a2moc")
 child_start_pos = Vector2(16000, -10000)
 spawn_pos_randomness = Vector2(24000, 0)
-movment_dist = 16000
+movment_dist = 32000
 direction = Vector2(-421.39, 300)
-spawn_every_x_seconds = 0.5
+spawn_every_x_seconds = 0.25
 
 [node name="Leafs" type="Sprite2D" parent="FallingLeafs"]
 z_index = -45
 position = Vector2(1834, -3154.8386)
+scale = Vector2(2.575, 2.575)
 texture = ExtResource("3_nmnqg")
 script = ExtResource("5_87qsy")
 scroll_speed = Vector2(0.25, 0.25)
@@ -3254,7 +3256,7 @@ scale = Vector2(1.2709104, 1)
 z_index = 1
 position = Vector2(71, 553)
 script = ExtResource("23_m1ye1")
-acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
+acorn_label = NodePath("../GameUi/AspectRatioContainer/Backdrop/AcornLabel")
 acorn_fatness_scaling = 0.02
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -3347,17 +3349,30 @@ ratio = 2.4573
 alignment_horizontal = 2
 alignment_vertical = 0
 
-[node name="AcornLabel" type="Label" parent="GameUi/AspectRatioContainer"]
+[node name="Backdrop" type="TextureRect" parent="GameUi/AspectRatioContainer"]
 layout_mode = 2
+texture = ExtResource("68_vl3or")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="AcornLabel" type="Label" parent="GameUi/AspectRatioContainer/Backdrop"]
+layout_mode = 0
+offset_left = 1706.0
+offset_right = 1920.0
+offset_bottom = 110.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9490196, 0.89411765, 0.67058825, 1)
 theme_override_font_sizes/font_size = 80
 text = "0/100"
 
-[node name="TimerLabel" type="Label" parent="GameUi/AspectRatioContainer"]
-layout_mode = 2
+[node name="TimerLabel" type="Label" parent="GameUi/AspectRatioContainer/Backdrop"]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 110.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.9490196, 0.89411765, 0.67058825, 1)
 theme_override_font_sizes/font_size = 80
 text = "5:00"
 
@@ -3386,18 +3401,6 @@ metadata/_edit_lock_ = true
 [node name="UiSoundSelector" type="Node" parent="GameUi/UpgradesPanel"]
 script = ExtResource("60_w517i")
 sfx_name = "UiAccept"
-
-[node name="Label" type="Label" parent="GameUi/UpgradesPanel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -65.0
-offset_right = 65.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 66
-text = "UPGRADE PANEL"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameUi/UpgradesPanel"]
 layout_mode = 1
