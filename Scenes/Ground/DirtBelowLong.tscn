@@ -11,6 +11,7 @@ size = Vector2(2459, 655)
 [node name="DirtBelowShort" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_uw8kn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
