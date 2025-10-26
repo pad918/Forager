@@ -15,7 +15,7 @@ func _ready() -> void:
 	)
 	area_exited.connect(
 		func(a:Area2D):
-			var _player: Player = a.get_parent()
+			var _player = a.get_parent()
 			if(_player is Player):
 				player = null
 	)
