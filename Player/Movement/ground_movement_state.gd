@@ -30,6 +30,7 @@ func _ready() -> void:
 	)
 
 func update(delta: float):
+	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
 	var input_dir: Vector2 =Vector2(0, 0)
 	time_since_last_walk_sound += delta
 	
@@ -49,8 +50,8 @@ func update(delta: float):
 		#apply friction
 		character.velocity.x *= 0.9
 	# Limit speed
-	character.velocity.x = min(max_speed.x, max(-max_speed.x, character.velocity.x))
-	character.velocity.y = min(max_speed.y, max(-max_speed.y, character.velocity.y))
+	character.velocity.x = min(scaled_max_speed.x, max(-scaled_max_speed.x, character.velocity.x))
+	character.velocity.y = min(scaled_max_speed.y, max(-scaled_max_speed.y, character.velocity.y))
 	
 	# If you are going upwards and are on a stem => change movement state
 	if(is_on_steam() and input_dir.y<0):

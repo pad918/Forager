@@ -13,6 +13,10 @@ class_name Player
 
 var num_acorns:int = 0
 
+var game_state: GameStateHandler
+
+var speed_scale:float = 1
+
 func add_acorn():
 	num_acorns += 1
 	update_fatness()
@@ -40,6 +44,7 @@ func try_stash_acorns() -> bool:
 
 func _ready() -> void:
 	update_ui()
+	game_state = get_node("/root/GameEntryPoint/GameStateHandler")
 	
 func _physics_process(_delta: float) -> void:
-	pass
+	speed_scale = game_state.player_speed_upgrade

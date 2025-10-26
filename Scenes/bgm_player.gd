@@ -33,6 +33,8 @@ func play_bgm(name:String, _cross_fade_time:float):
 		return
 	if(block_new):
 		return
+	if(last_bgm != null):
+		last_bgm.volume_db = -80
 	time_since_last_bgm_change = 0
 	bmg_cross_fade_time = _cross_fade_time
 	last_bgm = curr_bgm
@@ -44,6 +46,8 @@ func play_ambience(name:String, _cross_fade_time:float):
 		return
 	if(block_new):
 		return
+	if(last_ambiance != null):
+		last_ambiance.volume_db = -80
 	time_since_last_ambiance_change = 0
 	ambiance_cross_fade_time = _cross_fade_time
 	last_ambiance = curr_ambiance

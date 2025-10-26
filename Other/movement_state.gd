@@ -2,7 +2,7 @@ class_name MovementState
 
 extends Node2D
 
-@export var character: CharacterBody2D
+@export var character: Player
 
 @export var area_collider: Area2D
 

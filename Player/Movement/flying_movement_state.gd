@@ -44,10 +44,10 @@ func _ready() -> void:
 
 
 func update(delta:float):
-
+	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
 	time_since_started_falling += delta
 	character.velocity += delta*Vector2(0, gravity)
-	character.velocity.y = min(abs(max_speed.y), character.velocity.y)
+	character.velocity.y = min(abs(scaled_max_speed.y), character.velocity.y)
 	
 	# Get input direction
 	var input_dir: Vector2 =Vector2(0, 0)
@@ -71,7 +71,7 @@ func update(delta:float):
 		character.velocity.x *= (1-friction_x)
 	else:
 		character.velocity.x += delta*input_dir.x*x_acceleration
-	character.velocity.x = min(max_speed.x, max(-max_speed.x, character.velocity.x))
+	character.velocity.x = min(scaled_max_speed.x, max(-scaled_max_speed.x, character.velocity.x))
 	character.move_and_slide()
 	
 	play_animation("FallRight" if character.velocity.x>0 else "FallLeft")

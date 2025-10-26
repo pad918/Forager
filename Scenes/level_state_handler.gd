@@ -16,7 +16,7 @@ var round_over:bool = false
 
 func _ready() -> void:
 	var game_state_handler: GameStateHandler = get_parent()
-	time_left *= game_state_handler.player_timer_upgrade
+	time_left = game_state_handler.player_timer_upgrade
 	
 func deposit_acorns(num:int):
 	if(num >= acorn_target):
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
-	elif(time_left<34 && !has_player_countdown_timer):
+	elif(!round_over and time_left<34 and !has_player_countdown_timer):
 		has_player_countdown_timer = true
 		get_node("%SfxSingleton").play_sfx("TimerCountdown")
 		BgmPlayerSingleton.play_bgm("Silent", 10)

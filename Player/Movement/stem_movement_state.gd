@@ -53,6 +53,7 @@ func linear_fiction(curr_vel:float, frame_friction:float, ease_fn = null) -> flo
 	return fric
 
 func update(delta:float):
+	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
 	# Slowly restore friction if 
 	friction_multiplier.y = min(1, friction_multiplier.y+delta*3)
 	friction_multiplier.x = min(1, friction_multiplier.x+delta*3)
@@ -80,24 +81,24 @@ func update(delta:float):
 		character.velocity.x -= linear_fiction(
 			character.velocity.x, delta*friction.x,
 			func(s): # Easing function for X friction
-				return max(0, min(1, ease(abs(s)/max_speed.x, 0.4)))
+				return max(0, min(1, ease(abs(s)/scaled_max_speed.x, 0.4)))
 				) * friction_multiplier.x
 			
 	if input_dir == Vector2.ZERO:
 		character.velocity.y -= linear_fiction(
 			character.velocity.y, delta*friction.y,
 			func(s): # Easing function for Y friction
-				return max(0, min(1, ease(abs(s)/max_speed.y, 0.4)))
+				return max(0, min(1, ease(abs(s)/scaled_max_speed.y, 0.4)))
 				) * friction_multiplier.y
 		
 	# Limit speed to +- max_speed
 	character.velocity.x = max(
-		-max_speed.x*max_speed_multiplier.x, 
-		min(max_speed.x*max_speed_multiplier.x, character.velocity.x)
+		-scaled_max_speed.x*max_speed_multiplier.x, 
+		min(scaled_max_speed.x*max_speed_multiplier.x, character.velocity.x)
 		) 
 	character.velocity.y = max(
-		-max_speed.y*max_speed_multiplier.y, 
-		min(max_speed.y*max_speed_multiplier.y, character.velocity.y)
+		-scaled_max_speed.y*max_speed_multiplier.y, 
+		min(scaled_max_speed.y*max_speed_multiplier.y, character.velocity.y)
 		) 
 	
 	# If user presses space (and side arrows), give massive x speed boost and
