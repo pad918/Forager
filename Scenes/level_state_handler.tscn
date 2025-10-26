@@ -3600,6 +3600,40 @@ position = Vector2(6616.955, -0.0039978027)
 scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_ge7d0")
 
+[node name="Cave5RightLimits2" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(37155, 931)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(37140, -10295)
+high_limit = Vector2(77525, 9285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave5RightLimits2"]
+rotation = 1.5682089
+scale = Vector2(1.0000004, 1.0000004)
+shape = SubResource("RectangleShape2D_pb5p7")
+
+[node name="Camera2D" type="Camera2D" parent="CameraLimtAreas/Cave5RightLimits2"]
+limit_left = 77525
+limit_top = 9285
+limit_right = 37140
+limit_bottom = -10295
+
+[node name="Cave5LeftLimits3" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(37035, 762)
+rotation = -0.0045431387
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(21545, 365)
+high_limit = Vector2(37700, 5425)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave5LeftLimits3"]
+rotation = 1.5682089
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_ge7d0")
+
 [node name="BGMAreas" type="Node2D" parent="."]
 
 [node name="ForrestBGMCollider" type="Area2D" parent="BGMAreas"]
