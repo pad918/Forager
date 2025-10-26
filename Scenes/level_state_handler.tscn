@@ -3019,6 +3019,7 @@ z_index = 1
 position = Vector2(-164, 2874)
 script = ExtResource("23_m1ye1")
 acorn_label = NodePath("../GameUi/AspectRatioContainer/AcornLabel")
+acorn_fatness_scaling = 0.02
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-15.360001, -139.685)
