@@ -3310,7 +3310,7 @@ grow_vertical = 2
 theme_override_constants/separation = 54
 alignment = 1
 script = ExtResource("60_m048m")
-cards = [ExtResource("62_w517i"), ExtResource("63_in8ph"), ExtResource("61_m7j3d")]
+cards = [ExtResource("61_m7j3d"), ExtResource("62_w517i"), ExtResource("63_in8ph")]
 
 [node name="UpgradeTimeCard" parent="GameUi/UpgradesPanel/HBoxContainer" instance=ExtResource("61_m7j3d")]
 layout_mode = 2
