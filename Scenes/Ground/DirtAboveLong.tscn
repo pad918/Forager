@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://doli1ucdqterx"]
+[gd_scene load_steps=4 format=3 uid="uid://btwcdqrrawe3p"]
 
 [ext_resource type="Texture2D" uid="uid://cq68nbsrk5db2" path="res://Sprites/AboveGroundAssetsNew/orangedirtlarge.png" id="1_rspxh"]
 
@@ -11,6 +11,7 @@ size = Vector2(2446, 781)
 [node name="DirtAboveLong" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_rspxh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

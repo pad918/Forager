@@ -16,6 +16,7 @@ position = Vector2(-63, 20)
 texture = ExtResource("1_pei1b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 texture = ExtResource("1_3wt2r")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

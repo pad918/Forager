@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=117 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -68,8 +68,12 @@
 [ext_resource type="Texture2D" uid="uid://t1brst5v7hsg" path="res://Sprites/AnimationSprites/Climbing0002.png" id="42_abrmp"]
 [ext_resource type="Texture2D" uid="uid://b6c7m8qwd7jod" path="res://Sprites/AnimationSprites/Climbing0003.png" id="43_6n07p"]
 [ext_resource type="Script" uid="uid://dskjp6mx3icma" path="res://Player/Animation/animation_state_machine.gd" id="44_m1ye1"]
+[ext_resource type="Texture2D" uid="uid://1ykc07vekifd" path="res://Sprites/AssetsV3/Rune3.png" id="45_m56cf"]
+[ext_resource type="Texture2D" uid="uid://x3pk8xe3gla2" path="res://Sprites/AssetsV3/Rune1.png" id="46_ewrx0"]
 [ext_resource type="Texture2D" uid="uid://bqvsrh8ulregg" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
+[ext_resource type="Texture2D" uid="uid://dglkwwwbpigmt" path="res://Sprites/AssetsV3/Rune4.png" id="47_vl3or"]
 [ext_resource type="Texture2D" uid="uid://gwnxp1475rso" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
+[ext_resource type="Texture2D" uid="uid://3hc12n8w5bo0" path="res://Sprites/AssetsV3/Rune2.png" id="48_kyqma"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
 [ext_resource type="Script" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
@@ -77,6 +81,12 @@
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
 [ext_resource type="PackedScene" uid="uid://bor2vocluxpty" path="res://Scenes/Obstacles/Rock1.tscn" id="70_t4qa6"]
 [ext_resource type="PackedScene" uid="uid://d0pg4iub34wah" path="res://Scenes/branches/Branch2.tscn" id="71_km4rw"]
+[ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
+[ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
+[ext_resource type="PackedScene" uid="uid://eck11r4aa688" path="res://Scenes/Ground/DirtBelowShort.tscn" id="79_km4rw"]
+[ext_resource type="PackedScene" uid="uid://btwcdqrrawe3p" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
+[ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
+[ext_resource type="PackedScene" uid="uid://bep3igiy8ivrg" path="res://Scenes/Ground/DirtBelowLong.tscn" id="83_q1d4q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juer4"]
 size = Vector2(956.5, 3438)
@@ -1198,13 +1208,13 @@ rotation = 1.6928227
 scale = Vector2(2.330893, 1.9976358)
 
 [node name="Vine6" parent="Level/Trees/Tree2" instance=ExtResource("35_aglxm")]
-position = Vector2(7698.661, 1172.1151)
-rotation = -6.717301
+position = Vector2(7659.4717, 1235.5768)
+rotation = -6.52203
 scale = Vector2(1.4581627, 2.8261597)
 
 [node name="Vine7" parent="Level/Trees/Tree2" instance=ExtResource("35_aglxm")]
-position = Vector2(7966.229, 1220.192)
-rotation = -4.148938
+position = Vector2(8028.391, 1195.192)
+rotation = -4.4561505
 scale = Vector2(1.4581627, 2.8261597)
 
 [node name="Vine8" parent="Level/Trees/Tree2" instance=ExtResource("35_aglxm")]
@@ -1213,8 +1223,8 @@ rotation = -1.2430563
 scale = Vector2(1.4581627, 2.8261597)
 
 [node name="Vine9" parent="Level/Trees/Tree2" instance=ExtResource("35_aglxm")]
-position = Vector2(7817.58, -344.23074)
-rotation = -3.4695487
+position = Vector2(7864.2017, -346.1538)
+rotation = -3.2171462
 scale = Vector2(1.4581627, 2.8261597)
 
 [node name="Vine10" parent="Level/Trees/Tree2" instance=ExtResource("35_aglxm")]
@@ -1382,18 +1392,6 @@ scale = Vector2(-1.0105271, 1.8159765)
 
 [node name="TreeBranch9" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
 position = Vector2(16758, -2986)
-
-[node name="ForagerAssetPackV10001s0001Vinewide" type="Sprite2D" parent="Level/Trees"]
-position = Vector2(19060, -1066.9996)
-rotation = -1.4076991
-scale = Vector2(1.9515927, 1.6021501)
-texture = ExtResource("23_vqsto")
-
-[node name="ForagerAssetPackV10001s0001Vinewide2" type="Sprite2D" parent="Level/Trees"]
-position = Vector2(19133, 513.0005)
-rotation = -4.202587
-scale = Vector2(2.4273386, 1.7007235)
-texture = ExtResource("23_vqsto")
 
 [node name="TreeBranch11" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
 position = Vector2(23393, -2701.9998)
@@ -2560,6 +2558,42 @@ rotation = -2.608864
 scale = Vector2(1.7298124, 2.2296906)
 texture = ExtResource("23_vqsto")
 
+[node name="ForagerAssetPackV10001s0001Vinewide4" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(25944.002, 1029.0005)
+rotation = -4.462329
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide5" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(20514.002, 1066)
+rotation = -2.9280195
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide6" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(8587.001, 1783.0002)
+rotation = -1.7467945
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide7" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(32552, 2394.001)
+rotation = -2.4287868
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide8" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(34985, 2689)
+rotation = -2.2692807
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
+[node name="ForagerAssetPackV10001s0001Vinewide9" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(27893, 2413.0007)
+rotation = -2.0793686
+scale = Vector2(1.7298124, 2.2296906)
+texture = ExtResource("23_vqsto")
+
 [node name="ForagerAssetPackV10001s0001Vinewide2" type="Sprite2D" parent="Level/Ground"]
 position = Vector2(33232.008, 1529.9999)
 rotation = -5.113071
@@ -2961,6 +2995,24 @@ rotation = 3.0632644
 scale = Vector2(0.75263155, -0.8082285)
 texture = ExtResource("29_upfit")
 
+[node name="Leaves71" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(19510.002, -5148.001)
+rotation = 0.57255983
+scale = Vector2(0.5531393, -0.8082285)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves72" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(19101, -4399)
+rotation = 2.93549
+scale = Vector2(0.5531393, -0.8082285)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves73" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(18715.002, -5851.0005)
+rotation = 5.982548
+scale = Vector2(0.5531393, -0.8082285)
+texture = ExtResource("29_upfit")
+
 [node name="Leaves33" type="Sprite2D" parent="Level/Ground"]
 position = Vector2(16441, -4848)
 rotation = 2.9731271
@@ -3021,9 +3073,9 @@ texture = ExtResource("30_uf8qa")
 
 [node name="Rock1" type="Sprite2D" parent="Level/Ground"]
 z_index = -55
-position = Vector2(4370.0005, -151)
+position = Vector2(4382, -302)
 rotation = 3.0355282
-scale = Vector2(0.32354316, -0.28392303)
+scale = Vector2(1.2299006, -0.765466)
 texture = ExtResource("31_8fya3")
 
 [node name="Rock2" type="Sprite2D" parent="Level/Ground"]
@@ -3103,6 +3155,100 @@ rotation = -0.12271337
 scale = Vector2(0.8409131, 0.9161853)
 texture = ExtResource("33_370wn")
 
+[node name="Rune3" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(3080, -1196)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune1" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(7680.0005, -3485.0002)
+rotation = 0.5071641
+texture = ExtResource("46_ewrx0")
+
+[node name="Rune4" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(12537.001, -76.000015)
+rotation = -2.699354
+scale = Vector2(0.8645014, 1.3551247)
+texture = ExtResource("47_vl3or")
+
+[node name="Rune5" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14414, -1367.0004)
+rotation = -0.63096285
+scale = Vector2(1.4598458, 1.0152552)
+texture = ExtResource("47_vl3or")
+
+[node name="Rune2" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(21488, -3858)
+scale = Vector2(1.2185632, 1.3742173)
+texture = ExtResource("48_kyqma")
+
+[node name="Rune6" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(29669.002, -6158.9995)
+rotation = -0.21512915
+scale = Vector2(4.336134, 4.2248225)
+texture = ExtResource("46_ewrx0")
+
+[node name="Rune7" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(41145, 22)
+rotation = -0.42647076
+texture = ExtResource("48_kyqma")
+
+[node name="Rune8" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(39741.004, -1261.0013)
+rotation = 0.7275926
+scale = Vector2(1.5921929, 2.2194836)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune9" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(45845, 4177)
+scale = Vector2(9.768316, 3.6811361)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune10" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(46722.004, 4312)
+rotation = 0.14089762
+scale = Vector2(9.768316, 3.6811361)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune11" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(50294, 4455)
+rotation = 0.075552255
+scale = Vector2(9.768316, 3.6811361)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune17" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(46444, -3266.9998)
+rotation = -2.9365463
+scale = Vector2(4.394847, 2.5886912)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune12" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(53508.008, 4661)
+rotation = 0.00391721
+scale = Vector2(9.768316, 3.6811361)
+texture = ExtResource("45_m56cf")
+
+[node name="Rune13" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(46257, 3881)
+scale = Vector2(1.3765013, 1.3832983)
+texture = ExtResource("46_ewrx0")
+
+[node name="Rune14" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(54599, -5424.997)
+rotation = 0.5450852
+scale = Vector2(1.3765013, 1.3832983)
+texture = ExtResource("46_ewrx0")
+
+[node name="Rune15" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(24436, -6391.9995)
+rotation = 0.6962725
+texture = ExtResource("47_vl3or")
+
+[node name="Rune16" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(14224.001, -4209)
+rotation = -2.5868871
+scale = Vector2(0.4267676, 0.41529298)
+texture = ExtResource("48_kyqma")
+
 [node name="GroundAboveLong" parent="Level" instance=ExtResource("32_8p7k4")]
 position = Vector2(-152, 357)
 
@@ -3110,7 +3256,8 @@ position = Vector2(-152, 357)
 position = Vector2(2184, 357)
 
 [node name="GroundAboveLong3" parent="Level" instance=ExtResource("32_8p7k4")]
-position = Vector2(4716, 365)
+position = Vector2(4711, 148)
+scale = Vector2(1.2709104, 1)
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
@@ -3394,7 +3541,7 @@ scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
 
 [node name="Acorn24" parent="Collectables" instance=ExtResource("32_abrmp")]
-position = Vector2(19154, 2806)
+position = Vector2(19078, 2848.0005)
 rotation = -0.33237898
 scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
@@ -3622,22 +3769,22 @@ rotation = -1.3237894
 scale = Vector2(1.5050191, 0.9013406)
 
 [node name="Branch2" parent="Collectables" instance=ExtResource("71_km4rw")]
-position = Vector2(24588, 4492)
-scale = Vector2(2.76, 3.4800048)
+position = Vector2(24588, 4440)
+scale = Vector2(6.439823, 5.651458)
 
 [node name="Branch3" parent="Collectables" instance=ExtResource("71_km4rw")]
-position = Vector2(24741.998, 3826)
-scale = Vector2(2.76, 3.4800048)
+position = Vector2(24786.998, 3819.0002)
+scale = Vector2(5.12, 3.4800048)
 
 [node name="Branch4" parent="Collectables" instance=ExtResource("71_km4rw")]
-position = Vector2(23156, 4159)
+position = Vector2(23347.002, 4348.0005)
 rotation = 0.06881115
-scale = Vector2(-2.7353904, 3.4800048)
+scale = Vector2(-5.8439054, 3.4800048)
 
 [node name="Branch5" parent="Collectables" instance=ExtResource("71_km4rw")]
-position = Vector2(22964.002, 3664.0002)
+position = Vector2(23039.002, 3767.9998)
 rotation = 0.26118743
-scale = Vector2(-3.8131564, 2.183797)
+scale = Vector2(-5.6527653, 2.183797)
 
 [node name="Branch6" parent="Collectables" instance=ExtResource("71_km4rw")]
 position = Vector2(23500, 3290.0002)
@@ -3647,7 +3794,7 @@ scale = Vector2(-3.8131564, 2.183797)
 [node name="Branch7" parent="Collectables" instance=ExtResource("71_km4rw")]
 position = Vector2(24510, 3331)
 rotation = -0.42153934
-scale = Vector2(2.6284454, 2.183797)
+scale = Vector2(4.1325593, 3.0535567)
 
 [node name="Branch8" parent="Collectables" instance=ExtResource("71_km4rw")]
 position = Vector2(24468.002, 2774)
@@ -3998,6 +4145,20 @@ texture = ExtResource("24_tffdo")
 [node name="Rock22" parent="." instance=ExtResource("70_t4qa6")]
 position = Vector2(25296, 2432)
 
+[node name="Rock46" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(14990, 3166)
+
+[node name="Rock47" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(25356, 5285)
+
+[node name="Rock48" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(26987.998, 4673.9995)
+rotation = -1.9290361
+
+[node name="Rock49" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(26568, 3354)
+rotation = -1.7973604
+
 [node name="Rock23" parent="." instance=ExtResource("70_t4qa6")]
 position = Vector2(25531, 1662)
 
@@ -4159,7 +4320,275 @@ position = Vector2(7191, 3535)
 
 [node name="GroundAboveLong2" parent="." instance=ExtResource("32_8p7k4")]
 position = Vector2(9446.001, 3539)
-scale = Vector2(0.84000003, 1)
+scale = Vector2(0.96000004, 1)
+
+[node name="GroundAboveShort" parent="." instance=ExtResource("72_a2moc")]
+position = Vector2(10990.999, 3495.9998)
+rotation = -0.10979745
+scale = Vector2(1.4738867, 1)
+
+[node name="GroundAboveLong3" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(18771, 1427)
+scale = Vector2(1, 0.6)
+
+[node name="GroundAboveLong4" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(20546, 993.9997)
+rotation = -0.42509225
+scale = Vector2(0.76030743, 0.6996263)
+
+[node name="GroundAboveLong5" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(21757, 643)
+rotation = -0.021433765
+scale = Vector2(0.48050275, 0.6996263)
+
+[node name="GroundAboveLong6" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(25210.002, -257)
+rotation = -0.021433765
+scale = Vector2(0.7196043, 0.5413774)
+
+[node name="GroundAboveLong7" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(26953, -291.99997)
+rotation = -0.021433765
+scale = Vector2(0.7196043, 0.5413774)
+
+[node name="GroundAboveLong8" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(13799, 3391)
+rotation = 0.14888243
+scale = Vector2(0.6639818, 0.73246557)
+
+[node name="GroundAboveLong9" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(29390.998, 2743.0002)
+rotation = 0.012719881
+scale = Vector2(0.7834545, 1.2036399)
+
+[node name="GroundAboveLong10" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(31006, 2767)
+rotation = 0.012719881
+scale = Vector2(0.7834545, 1.2036399)
+
+[node name="GroundAboveLong11" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(34247.996, 2962)
+rotation = 0.012719881
+scale = Vector2(1.1434155, 1.8435875)
+
+[node name="GroundAboveLong12" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(36076.996, 2974.0002)
+rotation = 0.012719881
+scale = Vector2(1.1434155, 1.8435875)
+
+[node name="GroundAboveLong13" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(42272.004, 5406.0005)
+rotation = -0.3278379
+scale = Vector2(0.8880201, 0.9312227)
+
+[node name="GroundAboveLong14" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(37212, 5485.9985)
+rotation = 0.56055224
+scale = Vector2(0.8880201, 0.9312227)
+
+[node name="GroundAboveLong15" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(40078, 7168.999)
+rotation = 0.10662109
+scale = Vector2(1.4276546, 1.5630689)
+
+[node name="GroundAboveLong16" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(43464, 7698)
+rotation = 0.10662109
+scale = Vector2(1.4276546, 1.2278614)
+
+[node name="GroundAboveLong17" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(46891, 8007)
+rotation = 0.082227424
+scale = Vector2(1.4276546, 1.2278614)
+
+[node name="GroundAboveLong18" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(50269, 8145)
+rotation = 0.0014050081
+scale = Vector2(1.4276546, 1.2278614)
+
+[node name="GroundAboveLong19" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(53639.004, 8398)
+rotation = 0.13777596
+scale = Vector2(1.4276546, 1.2278614)
+
+[node name="GroundAboveLong20" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(56801, -621)
+rotation = -0.009739906
+scale = Vector2(1.3952129, 1.3922181)
+
+[node name="GroundAboveLong21" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(60672.008, -621.00006)
+rotation = -0.009739906
+scale = Vector2(1.8351934, 1.3922181)
+
+[node name="GroundAboveLong22" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(64996, -817.9995)
+rotation = -0.069291055
+scale = Vector2(1.8351934, 1.3922181)
+
+[node name="GroundAboveLong23" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(69320, -1261)
+rotation = -0.15283021
+scale = Vector2(1.8351934, 1.3922181)
+
+[node name="GroundAboveLong24" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(73556.01, -2138.001)
+rotation = -0.27236813
+scale = Vector2(1.8351934, 1.3922181)
+
+[node name="DirtBelowShort" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(5873, 4272)
+scale = Vector2(2.3167877, -1.5485909)
+
+[node name="DirtBelowShort2" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(3532.0002, 4272)
+scale = Vector2(2.3167877, -1.5485909)
+
+[node name="DirtBelowShort3" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(4839, 5217)
+scale = Vector2(2.3167877, -1.5485909)
+
+[node name="DirtBelowShort4" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(18215, 5043.0005)
+scale = Vector2(1.9167974, -1.5485909)
+
+[node name="DirtBelowShort5" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(24007, 5782)
+scale = Vector2(1.9167974, -1.5485909)
+
+[node name="DirtBelowShort6" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(29394, 5746)
+scale = Vector2(1.9167974, -1.5485909)
+
+[node name="DirtBelowShort7" parent="." instance=ExtResource("79_km4rw")]
+position = Vector2(36701.004, 6210.999)
+rotation = 0.61095476
+scale = Vector2(1.9167974, -1.5485909)
+
+[node name="DirtAboveLong" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(1004, 4021)
+
+[node name="DirtAboveLong2" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(8286, 4021)
+
+[node name="DirtAboveLong3" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(13721, 5968)
+
+[node name="DirtAboveLong4" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(11195, 5961)
+scale = Vector2(1.16, 1)
+
+[node name="DirtAboveLong5" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(41305, 9782.001)
+rotation = 0.1172699
+scale = Vector2(2.6352444, 4.5834475)
+
+[node name="DirtAboveLong6" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(46726.996, 10113.999)
+rotation = 0.04528369
+scale = Vector2(2.6352444, 4.5834475)
+
+[node name="DirtAboveLong7" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(52812.992, 10504)
+rotation = 0.12587458
+scale = Vector2(2.6352444, 4.5834475)
+
+[node name="DirtAboveLong8" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(66841, 1144.0002)
+rotation = -0.15531215
+scale = Vector2(2.6352444, 4.5834475)
+
+[node name="DirtAboveLong9" parent="." instance=ExtResource("80_kddj7")]
+position = Vector2(72670, 76.00049)
+rotation = -0.2797848
+scale = Vector2(2.9731565, 4.464361)
+
+[node name="GroundBelowShort" parent="." instance=ExtResource("73_87qsy")]
+position = Vector2(10768, 5424)
+
+[node name="GroundBelowShort2" parent="." instance=ExtResource("73_87qsy")]
+position = Vector2(14300, 5416)
+
+[node name="GroundBelowLong" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(12473, 5431)
+scale = Vector2(1.08, 1)
+
+[node name="DirtBelowShort8" parent="." instance=ExtResource("83_q1d4q")]
+position = Vector2(11050, 6014)
+scale = Vector2(1.481421, 1.5668184)
+
+[node name="DirtBelowShort9" parent="." instance=ExtResource("83_q1d4q")]
+position = Vector2(13905.999, 5999)
+scale = Vector2(1.481421, 1.5668184)
+
+[node name="DirtBelowShort10" parent="." instance=ExtResource("83_q1d4q")]
+position = Vector2(12318, 6853.0005)
+scale = Vector2(1.481421, 1.5668184)
+
+[node name="GroundBelowShort3" parent="." instance=ExtResource("73_87qsy")]
+position = Vector2(17735, 4365)
+
+[node name="GroundBelowShort4" parent="." instance=ExtResource("73_87qsy")]
+position = Vector2(18765, 4354)
+
+[node name="GroundBelowLong2" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(16297, 3819.9995)
+rotation = 0.542331
+
+[node name="GroundBelowLong3" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(20343, 3841.9998)
+rotation = -0.37811452
+scale = Vector2(1, 0.80274415)
+
+[node name="GroundBelowLong4" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(22499, 3132)
+rotation = -0.035577264
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong5" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(21404.002, 3390.9995)
+rotation = -0.45947278
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong6" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(23976.998, 5215.0005)
+rotation = 0.007812202
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong7" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(27457.002, 5190)
+rotation = 0.007812202
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong8" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(26603.002, 5163)
+rotation = 0.007812202
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong9" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(28730, 5180)
+rotation = 0.007812202
+scale = Vector2(0.56003916, 0.80274415)
+
+[node name="GroundBelowLong10" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(30472.998, 4850)
+rotation = 0.007812202
+scale = Vector2(0.97164, 1.0650624)
+
+[node name="GroundBelowLong11" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(31684, 4837)
+rotation = 0.007812202
+scale = Vector2(0.97164, 1.0650624)
+
+[node name="GroundBelowLong12" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(34005, 5093)
+rotation = 0.007812202
+scale = Vector2(0.97164, 1.0650624)
+
+[node name="GroundBelowLong13" parent="." instance=ExtResource("82_o8o58")]
+position = Vector2(35256, 5066)
+rotation = 0.007812202
+scale = Vector2(0.97164, 1.0650624)
 
 [connection signal="level_over" from="." to="Player/MovementStateMachine" method="queue_free"]
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
