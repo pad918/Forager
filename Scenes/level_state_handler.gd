@@ -14,6 +14,8 @@ var has_player_countdown_timer:bool = false
 
 var round_over:bool = false
 
+signal level_over
+
 func _ready() -> void:
 	var game_state_handler: GameStateHandler = get_parent()
 	time_left = game_state_handler.player_timer_upgrade
@@ -21,6 +23,7 @@ func _ready() -> void:
 func deposit_acorns(num:int):
 	if(num >= acorn_target):
 		round_over = true
+		level_over.emit()
 		var game_state:GameStateHandler = get_parent()
 		game_state.total_collected_acorns += num
 		print("Collected ",num, " acorns this level")
@@ -36,7 +39,8 @@ func update_timer_label():
 	timer_label.text = label
 	
 func _physics_process(delta: float) -> void:
-	time_left -= delta
+	if(!round_over):
+		time_left -= delta
 	
 	if(time_left<0):
 		if(not round_over):
@@ -47,6 +51,7 @@ func _physics_process(delta: float) -> void:
 					SceneLoaderSingleton.load_scene("MainMenu")
 			)
 		round_over = true
+		level_over.emit()
 	elif(!round_over and time_left<34 and !has_player_countdown_timer):
 		has_player_countdown_timer = true
 		get_node("%SfxSingleton").play_sfx("TimerCountdown")
