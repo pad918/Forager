@@ -19,7 +19,9 @@ func add_acorn():
 	update_ui()
 
 func update_fatness():
-	scale.x = 1+(num_acorns*0.2)
+	pass
+	# Should just be removed? It does not look good
+	#scale.x = 1+(num_acorns*0.2)
 
 func update_ui():
 	acorn_label.text = "%d/%d" % [num_acorns, get_parent().acorn_target]

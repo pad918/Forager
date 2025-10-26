@@ -3571,12 +3571,12 @@ high_limit = Vector2(21385, 4200)
 shape = SubResource("RectangleShape2D_m8c54")
 
 [node name="Cave3RightLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(21508, 2409)
+position = Vector2(21792.998, 2408.9998)
 rotation = -1.5627596
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(21545, 365)
+low_limit = Vector2(21000, 365)
 high_limit = Vector2(36620, 5425)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave3RightLimits"]
@@ -3584,13 +3584,13 @@ position = Vector2(396.8275, 0)
 shape = SubResource("RectangleShape2D_iaphp")
 
 [node name="Cave3LeftLimits" type="Area2D" parent="CameraLimtAreas"]
-position = Vector2(21239, 2407)
+position = Vector2(20888.998, 2585.9998)
 rotation = -1.5627596
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
 low_limit = Vector2(15600, 1205)
-high_limit = Vector2(21385, 4200)
+high_limit = Vector2(22000, 4200)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave3LeftLimits"]
 position = Vector2(397.22668, -0.00390625)
