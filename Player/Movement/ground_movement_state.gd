@@ -30,7 +30,7 @@ func _ready() -> void:
 	)
 
 func update(delta: float):
-	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
+	var scaled_max_speed:Vector2 = Vector2(max_speed.x*character.speed_scale, max_speed.y)
 	var input_dir: Vector2 =Vector2(0, 0)
 	time_since_last_walk_sound += delta
 	

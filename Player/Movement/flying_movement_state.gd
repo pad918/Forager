@@ -44,7 +44,7 @@ func _ready() -> void:
 
 
 func update(delta:float):
-	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
+	var scaled_max_speed:Vector2 = Vector2(max_speed.x*character.speed_scale, max_speed.y) 
 	time_since_started_falling += delta
 	character.velocity += delta*Vector2(0, gravity)
 	character.velocity.y = min(abs(scaled_max_speed.y), character.velocity.y)

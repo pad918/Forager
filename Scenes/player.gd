@@ -11,6 +11,8 @@ class_name Player
 
 @export var acorn_label: Label
 
+@export var acorn_fatness_scaling:float = 0.05
+
 var num_acorns:int = 0
 
 var game_state: GameStateHandler
@@ -47,4 +49,4 @@ func _ready() -> void:
 	game_state = get_node("/root/GameEntryPoint/GameStateHandler")
 	
 func _physics_process(_delta: float) -> void:
-	speed_scale = game_state.player_speed_upgrade
+	speed_scale = max(0.5, game_state.player_speed_upgrade - num_acorns*acorn_fatness_scaling/game_state.player_capacity_upgrade)

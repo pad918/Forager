@@ -53,7 +53,7 @@ func linear_fiction(curr_vel:float, frame_friction:float, ease_fn = null) -> flo
 	return fric
 
 func update(delta:float):
-	var scaled_max_speed:Vector2 = max_speed * character.speed_scale
+	var scaled_max_speed:Vector2 = Vector2(max_speed.x*character.speed_scale, max_speed.y)  
 	# Slowly restore friction if 
 	friction_multiplier.y = min(1, friction_multiplier.y+delta*3)
 	friction_multiplier.x = min(1, friction_multiplier.x+delta*3)

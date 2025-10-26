@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=100 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -48,7 +48,6 @@
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
 [ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="32_mccl8"]
 [ext_resource type="Texture2D" uid="uid://r6rxlpt4tj6w" path="res://Sprites/AnimationSprites/Falling0001.png" id="32_svq42"]
-[ext_resource type="PackedScene" uid="uid://d3b0icshlsrn3" path="res://Tree/teleportation_door.tscn" id="33_6n07p"]
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Texture2D" uid="uid://15nsqpudape3" path="res://Sprites/AnimationSprites/Falling0002.png" id="33_m1ye1"]
 [ext_resource type="Texture2D" uid="uid://mps422y1vhw3" path="res://Sprites/AnimationSprites/Falling0003.png" id="34_7dfb5"]
@@ -3190,6 +3189,7 @@ texture_normal = ExtResource("32_mccl8")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("63_w517i")
+capacity_upgrade_amount = 1.0
 
 [node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeCapacityCard"]
 layout_mode = 1
@@ -3552,16 +3552,6 @@ position = Vector2(30164, 4122.998)
 rotation = -0.33237898
 scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
-
-[node name="Doors" type="Node2D" parent="."]
-
-[node name="TeleportationDoor" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("33_6n07p")]
-position = Vector2(5145, 6280)
-destination = NodePath("../TeleportationDoor2")
-
-[node name="TeleportationDoor2" parent="Doors" node_paths=PackedStringArray("destination") instance=ExtResource("33_6n07p")]
-position = Vector2(265, 2949)
-destination = NodePath("../TeleportationDoor")
 
 [node name="CameraLimtAreas" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("34_m048m")
