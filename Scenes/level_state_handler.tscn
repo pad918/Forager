@@ -3859,6 +3859,7 @@ rotation = -0.023529455
 scale = Vector2(-3.0419354, 3.5289488)
 texture = ExtResource("24_tffdo")
 
+[connection signal="level_over" from="." to="Player/MovementStateMachine" method="queue_free"]
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
 [connection signal="visibility_changed" from="GameUi/UpgradesPanel" to="GameUi/UpgradesPanel/HBoxContainer" method="randomly_sample_cards"]
 [connection signal="card_selected" from="GameUi/UpgradesPanel/HBoxContainer" to="GameUi/UpgradesPanel/UiSoundSelector" method="play"]
