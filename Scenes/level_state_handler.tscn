@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=119 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -84,6 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pg4iub34wah" path="res://Scenes/branches/Branch2.tscn" id="71_km4rw"]
 [ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
 [ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
+[ext_resource type="Texture2D" uid="uid://cxi0jdtu6fqvl" path="res://Sprites/ui/Play_Now.png" id="75_vl3or"]
 [ext_resource type="PackedScene" uid="uid://eck11r4aa688" path="res://Scenes/Ground/DirtBelowShort.tscn" id="79_km4rw"]
 [ext_resource type="PackedScene" uid="uid://doli1ucdqterx" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
 [ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
@@ -3447,20 +3448,22 @@ layout_mode = 2
 [node name="UpgradeSpeedCard" parent="GameUi/UpgradesPanel/HBoxContainer" instance=ExtResource("63_in8ph")]
 layout_mode = 2
 
-[node name="Continue" type="Button" parent="GameUi/UpgradesPanel"]
+[node name="ContinueBtn" type="TextureButton" parent="GameUi/UpgradesPanel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -31.0
-offset_right = 50.0
+offset_left = -237.0
+offset_top = -219.0
+offset_right = 882.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 111
-text = "Next Round"
+scale = Vector2(0.4508812, 0.4508812)
+texture_normal = ExtResource("75_vl3or")
+stretch_mode = 4
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -4626,4 +4629,4 @@ scale = Vector2(0.97164, 1.0650624)
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
 [connection signal="visibility_changed" from="GameUi/UpgradesPanel" to="GameUi/UpgradesPanel/HBoxContainer" method="randomly_sample_cards"]
 [connection signal="card_selected" from="GameUi/UpgradesPanel/HBoxContainer" to="GameUi/UpgradesPanel/UiSoundSelector" method="play"]
-[connection signal="button_down" from="GameUi/UpgradesPanel/Continue" to="GameUi/UpgradesPanel" method="load_next_round"]
+[connection signal="button_down" from="GameUi/UpgradesPanel/ContinueBtn" to="GameUi/UpgradesPanel" method="load_next_round"]
