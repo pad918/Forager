@@ -1,35 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn0qf566xn415"]
+[gd_scene load_steps=12 format=3 uid="uid://bn0qf566xn415"]
 
-[ext_resource type="Texture2D" uid="uid://djh0vbn1d2o4v" path="res://Sprites/AboveGroundAssetsNew/task_illustration.png" id="1_tt5f1"]
-[ext_resource type="Texture2D" uid="uid://pb27rf7umn11" path="res://Sprites/AboveGroundAssetsNew/foragerlogo.png" id="2_853f1"]
-[ext_resource type="Texture2D" uid="uid://1ugu673dg025" path="res://Sprites/AboveGroundAssetsNew/playnow.png" id="3_8saeu"]
+[ext_resource type="Texture2D" uid="uid://x222n01dms2a" path="res://Sprites/ui/TitleScreen.png" id="1_xim88"]
 [ext_resource type="Script" uid="uid://3fylssg0oeyr" path="res://Scenes/scene_selector.gd" id="3_ghw46"]
+[ext_resource type="Texture2D" uid="uid://cxi0jdtu6fqvl" path="res://Sprites/ui/Play_Now.png" id="4_koqhg"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="5_df05h"]
 [ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="6_8um5k"]
 [ext_resource type="Script" uid="uid://byqr5647x2abn" path="res://Other/audio_volume_slider.gd" id="7_xim88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
-bg_color = Color(0.80784315, 0.5294118, 0.31764707, 1)
+bg_color = Color(0.8392157, 0.76862746, 0.6039216, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
 bg_color = Color(1, 0.33737046, 0.32435572, 1)
-
-[sub_resource type="Animation" id="Animation_xim88"]
-resource_name = "UpDown"
-length = 2.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/CenterContainer/TextureButton:custom_minimum_size")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.0666667, 2.2),
-"transitions": PackedFloat32Array(1, 0.5946036, 0.3415101),
-"update": 0,
-"values": [Vector2(367.51, 137.075), Vector2(431.71, 137.075), Vector2(367.51, 137.075)]
-}
 
 [sub_resource type="Animation" id="Animation_koqhg"]
 length = 0.001
@@ -44,6 +26,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(431.71, 137.075)]
+}
+
+[sub_resource type="Animation" id="Animation_xim88"]
+resource_name = "UpDown"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/CenterContainer/TextureButton:custom_minimum_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.086962, 2.1666667),
+"transitions": PackedFloat32Array(0.6155722, 0.63728046, 0.7845841),
+"update": 0,
+"values": [Vector2(372.065, 143.21), Vector2(410.63, 149.675), Vector2(372.065, 143.21)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_koqhg"]
@@ -76,24 +75,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_tt5f1")
+texture = ExtResource("1_xim88")
 expand_mode = 2
-
-[node name="Title" type="TextureRect" parent="Panel/TextureRect"]
-custom_minimum_size = Vector2(317.92, 164.82)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -279.6256
-offset_top = -169.0
-offset_right = 279.6256
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_853f1")
-expand_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel"]
 layout_mode = 1
@@ -110,7 +93,7 @@ scene_name = "MainGame"
 [node name="TextureButton" type="TextureButton" parent="Panel/CenterContainer"]
 custom_minimum_size = Vector2(431.71, 137.075)
 layout_mode = 2
-texture_normal = ExtResource("3_8saeu")
+texture_normal = ExtResource("4_koqhg")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -126,43 +109,39 @@ script = ExtResource("6_8um5k")
 sfx_name = "UiAccept"
 
 [node name="AudioVolume" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = 275.0
-offset_right = 33.5
-offset_bottom = 298.0
+offset_left = -96.0
+offset_top = 348.0
+offset_right = 96.0
+offset_bottom = 412.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.39215687, 0.1764706, 0.003921569, 1)
+theme_override_colors/font_color = Color(0.3211936, 0.13974488, 0.0026072187, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 46
 text = "VOLUME"
 
 [node name="HSlider" type="HSlider" parent="."]
 custom_minimum_size = Vector2(510.525, 31.25)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -404.0
-offset_top = 283.00006
-offset_right = 106.525024
-offset_bottom = 349.98932
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.5682814, 1.5916737)
+layout_mode = 0
+offset_left = 378.00003
+offset_top = 764.0
+offset_right = 888.5251
+offset_bottom = 932.0
+scale = Vector2(2.5256503, 2.6111064)
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8um5k")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xim88")
 min_value = -60.0
 max_value = 0.0
 step = 0.5
+value = -18.0
 script = ExtResource("7_xim88")
 
 [node name="UpDownHover" type="AnimationPlayer" parent="."]
