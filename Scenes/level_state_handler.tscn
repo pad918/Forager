@@ -1,14 +1,12 @@
-[gd_scene load_steps=109 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=107 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
-[ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
+[ext_resource type="Script" path="res://Other/track_setter.gd" id="2_7dfb5"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
-[ext_resource type="Script" uid="uid://bys2bcx8xcf1f" path="res://Other/falling_leafs.gd" id="3_a2moc"]
+[ext_resource type="Script" path="res://Other/falling_leafs.gd" id="3_a2moc"]
 [ext_resource type="Texture2D" uid="uid://b23wxr2crrnqu" path="res://Sprites/AboveGroundAssets/leavesback.png" id="3_nmnqg"]
 [ext_resource type="Script" uid="uid://dkt0ipsiosup8" path="res://Other/basic_paralax.gd" id="5_87qsy"]
 [ext_resource type="Texture2D" uid="uid://dgrd6j2cyw0lc" path="res://Sprites/ParalaxLayers/Sky.png" id="7_km4rw"]
-[ext_resource type="Texture2D" uid="uid://cksj4c0ucsjj0" path="res://Sprites/ParalaxLayers/Tree2.png" id="7_t4qa6"]
-[ext_resource type="Texture2D" uid="uid://bma608kgdmf04" path="res://Sprites/ParalaxLayers/Tree1.png" id="8_km4rw"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="Texture2D" uid="uid://dl2lhecra45x7" path="res://Sprites/ParalaxLayers/BackA.png" id="9_t4qa6"]
 [ext_resource type="Texture2D" uid="uid://d14gsx7yjp66y" path="res://Sprites/ParalaxLayers/BackB.png" id="10_t4qa6"]
@@ -25,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://d3vpms5maxhtl" path="res://audio/Ogg/BGM/countdown-34s.ogg" id="16_w517i"]
 [ext_resource type="AudioStream" uid="uid://dve6rcxrb0diy" path="res://audio/Ogg/BGM/countdown-16s.ogg" id="17_in8ph"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
-[ext_resource type="Script" uid="uid://c62e3p1aatysv" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
+[ext_resource type="Script" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d4hscnh3j7tfg" path="res://Sprites/AboveGroundAssetsNew/BurrowTreeNew.png" id="19_7ipyn"]
 [ext_resource type="AudioStream" uid="uid://dkjk4742wvy70" path="res://audio/sfx/acorn-grab_2.wav" id="19_abrmp"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
@@ -65,7 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://c71axxrh5r6ce" path="res://Sprites/AnimationSprites/Idle0001.png" id="38_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d0cedynbq2rda" path="res://Sprites/AnimationSprites/Idle0002.png" id="39_2s27x"]
 [ext_resource type="Texture2D" uid="uid://cvr5nyhmdctda" path="res://Sprites/AnimationSprites/Idle0003.png" id="40_2nja4"]
-[ext_resource type="Script" uid="uid://x026c12xbns8" path="res://Other/BGMArea.gd" id="41_iaphp"]
+[ext_resource type="Script" path="res://Other/BGMArea.gd" id="41_iaphp"]
 [ext_resource type="Texture2D" uid="uid://cotx7wjx8un83" path="res://Sprites/AnimationSprites/Climbing0001.png" id="41_p1rfl"]
 [ext_resource type="Texture2D" uid="uid://t1brst5v7hsg" path="res://Sprites/AnimationSprites/Climbing0002.png" id="42_abrmp"]
 [ext_resource type="Texture2D" uid="uid://b6c7m8qwd7jod" path="res://Sprites/AnimationSprites/Climbing0003.png" id="43_6n07p"]
@@ -73,7 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://bqvsrh8ulregg" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://gwnxp1475rso" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
-[ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
+[ext_resource type="Script" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
 [ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
@@ -954,7 +952,6 @@ script = ExtResource("2_mccl8")
 z_index = -1026
 position = Vector2(34851, -3415.9995)
 scale = Vector2(5, 5)
-texture = ExtResource("7_t4qa6")
 
 [node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.8, 0.8)
@@ -966,7 +963,6 @@ z_index = -100
 texture_repeat = 2
 position = Vector2(32400, -2582)
 scale = Vector2(5, 5)
-texture = ExtResource("8_km4rw")
 
 [node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.9, 0.9)
@@ -4157,6 +4153,13 @@ position = Vector2(4961.9995, -2344)
 rotation = -0.22473615
 scale = Vector2(0.5137558, 0.481255)
 texture = ExtResource("29_upfit")
+
+[node name="GroundAboveLong" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(7191, 3535)
+
+[node name="GroundAboveLong2" parent="." instance=ExtResource("32_8p7k4")]
+position = Vector2(9446.001, 3539)
+scale = Vector2(0.84000003, 1)
 
 [connection signal="level_over" from="." to="Player/MovementStateMachine" method="queue_free"]
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
