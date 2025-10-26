@@ -183,6 +183,114 @@ tracks/3/keys = {
 "values": [Vector2(-0.285, -0.285)]
 }
 
+[sub_resource type="Animation" id="Animation_7ipyn"]
+resource_name = "ClimbStillDown"
+length = 0.25000834
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Vertical"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12.895, -138.28)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.285, -0.285)]
+}
+
+[sub_resource type="Animation" id="Animation_ph52n"]
+resource_name = "ClimbStillUp"
+length = 0.25000834
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Vertical"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12.895, -9.855)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.285, 0.285)]
+}
+
 [sub_resource type="Animation" id="Animation_svq42"]
 resource_name = "ClimbUp"
 length = 0.25000834
@@ -610,114 +718,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.285, 0.285)]
-}
-
-[sub_resource type="Animation" id="Animation_7ipyn"]
-resource_name = "ClimbStillDown"
-length = 0.25000834
-loop_mode = 1
-step = 0.083333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Vertical"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 0, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12.895, -138.28)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.285, -0.285)]
-}
-
-[sub_resource type="Animation" id="Animation_ph52n"]
-resource_name = "ClimbStillUp"
-length = 0.25000834
-loop_mode = 1
-step = 0.083333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Vertical"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 0, 0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-12.895, -9.855)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.285, 0.285)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_in8ph"]
@@ -3061,29 +3061,28 @@ current_state = NodePath("GroundMovementState")
 sfx_player = NodePath("../../SfxSingleton")
 anim_states = NodePath("../AnimatedSprite2D/AnimationStateMachine")
 
-[node name="StemMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("area_collider", "gliding_state", "side_movement_state", "character")]
+[node name="StemMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("gliding_state", "side_movement_state", "character", "area_collider")]
 script = ExtResource("29_2s27x")
 friction = Vector2(12000, 10000)
-area_collider = NodePath("../../PlayerArea")
 gliding_state = NodePath("../FlyingMovementState")
 side_movement_state = NodePath("../GroundMovementState")
 jump_boost_sideways = Vector2(1000, -700)
 jump_boost_up = 3000.0
 character = NodePath("../..")
+area_collider = NodePath("../../PlayerArea")
 
-[node name="FlyingMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("player_area_collider", "stem_climb_state", "side_movement_state", "character")]
+[node name="FlyingMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("stem_climb_state", "side_movement_state", "character", "area_collider")]
 script = ExtResource("30_2nja4")
 gravity = 5000
-player_area_collider = NodePath("../../PlayerArea")
 stem_climb_state = NodePath("../StemMovementState")
 side_movement_state = NodePath("../GroundMovementState")
 x_acceleration = 2000
 max_speed = Vector2(2000, 3000)
 character = NodePath("../..")
+area_collider = NodePath("../../PlayerArea")
 
-[node name="GroundMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("player_area_collider", "stem_climb_state", "fall_state", "character")]
+[node name="GroundMovementState" type="Node2D" parent="Player/MovementStateMachine" node_paths=PackedStringArray("stem_climb_state", "fall_state", "character", "area_collider")]
 script = ExtResource("31_p1rfl")
-player_area_collider = NodePath("../../PlayerArea")
 stem_climb_state = NodePath("../StemMovementState")
 fall_state = NodePath("../FlyingMovementState")
 friction_x = 0.2
@@ -3092,6 +3091,7 @@ sideways_mov_acceleration = 400.0
 max_speed = Vector2(1000, 2000)
 jump_boost = Vector2(2000, -3000)
 character = NodePath("../..")
+area_collider = NodePath("../../PlayerArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-15, -75)

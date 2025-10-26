@@ -8,8 +8,6 @@ class_name StemMovementState
 
 @export var friction: Vector2 = Vector2(200, 100)
 
-@export var area_collider: Area2D 
-
 @export var gliding_state: MovementState
 @export var side_movement_state: MovementState
 
@@ -24,20 +22,13 @@ var last_mov_y_dir: float = 1
 var friction_multiplier:Vector2 = Vector2(1, 1)
 var max_speed_multiplier:Vector2 = Vector2(1, 1)
 
-# To fix the problem with multiple intersecting trees:
-var colliding_trees: Array = []
 
 func _ready() -> void:
 	super._ready()
 	area_collider.area_exited.connect(
 		func (a:Area2D):
 			if((a.collision_layer&(1<<1)) != 0):
-				
-				var pos:int = colliding_trees.find(a)
-				if(pos>=0):
-					colliding_trees.remove_at(pos)
-				print("Exited area ", a.name)
-				if(colliding_trees.is_empty()):
+				if(!is_on_steam()):
 					print("Exiting tree stem!")
 					statemachine.set_movement_state(self, gliding_state)
 	)
@@ -46,8 +37,11 @@ func _ready() -> void:
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
 				statemachine.set_movement_state(self, side_movement_state)
-			if(a.collision_layer&(1<<1) != 0):
-				colliding_trees.append(a)
+			# If entered ground
+			if((a.collision_layer&(1<<0)) != 0):
+				print("entered ground")
+				get_sfx_player().play_sfx("LandGround")
+				statemachine.set_movement_state(self, side_movement_state)
 	)
 
 func linear_fiction(curr_vel:float, frame_friction:float, ease_fn = null) -> float:

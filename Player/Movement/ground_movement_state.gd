@@ -2,8 +2,6 @@ extends "res://Other/movement_state.gd"
 
 class_name GroundMovementState
 
-@export var player_area_collider:Area2D
-
 @export var stem_climb_state: MovementState
 @export var fall_state: MovementState
 
@@ -15,26 +13,19 @@ class_name GroundMovementState
 
 @export var jump_boost: Vector2 = Vector2(1000, 200)
 
-var is_on_stem: bool = false
-
 
 func _ready() -> void:
 	super._ready()
 
-	player_area_collider.area_entered.connect(
-		func (a:Area2D):
-			# Collision layer 1 is used by the stems
-			if(((a.collision_layer&(1<<1)) != 0)):
-				is_on_stem = true
+	area_collider.area_entered.connect(
+		func (_a:Area2D):
+			pass
 	)
-	player_area_collider.area_exited.connect(
+	area_collider.area_exited.connect(
 		func (a:Area2D):
-			# Collision layer 1 is used by the stems
-			if(((a.collision_layer&(1<<1)) != 0)):
-				is_on_stem = false
 			# If you exit a branch, fall
 			if(((a.collision_layer&(1<<2)) != 0)):
-				statemachine.set_movement_state(self, fall_state if !is_on_stem else stem_climb_state)		
+				statemachine.set_movement_state(self, fall_state if !is_on_steam() else stem_climb_state)		
 	)
 
 func update(delta: float):
@@ -60,7 +51,7 @@ func update(delta: float):
 	character.velocity.y = min(max_speed.y, max(-max_speed.y, character.velocity.y))
 	
 	# If you are going upwards and are on a stem => change movement state
-	if(is_on_stem and input_dir.y<0):
+	if(is_on_steam() and input_dir.y<0):
 		statemachine.set_movement_state(self, stem_climb_state)
 	
 	if (input_dir.x != 0 and Input.is_action_just_pressed("Jump")):
@@ -75,7 +66,7 @@ func update(delta: float):
 		print("GAVE UP BOOST!")
 
 	# Drop down from branch handeling
-	if(input_dir.y>0):
+	if(input_dir.y>0 and not is_on_ground()):
 		print("Dropping")
 		statemachine.set_movement_state(self, fall_state)
 		character.velocity.y = 200

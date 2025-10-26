@@ -4,8 +4,6 @@ class_name FlyingMovementState
 
 @export var gravity = 100
 
-@export var player_area_collider:Area2D
-
 @export var stem_climb_state: MovementState
 
 @export var side_movement_state: MovementState
@@ -18,8 +16,6 @@ class_name FlyingMovementState
 
 var time_since_started_falling:float = 0
 
-var is_on_stem:bool = false
-
 var area_when_started = null
 
 func became_active_state():
@@ -28,11 +24,9 @@ func became_active_state():
 func _ready() -> void:
 	super._ready()
 
-	player_area_collider.area_entered.connect(
+	area_collider.area_entered.connect(
 		func (a):
 			print("Entered area ", a.name, " colmask: ", a.collision_layer)
-			if((a.collision_layer&(1<<1)) != 0):
-				is_on_stem = true
 			# Add state for entering  branch
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
@@ -44,16 +38,13 @@ func _ready() -> void:
 			if((a.collision_layer&(1<<0)) != 0):
 				print("entered ground")
 				get_sfx_player().play_sfx("LandGround")
-				statemachine.set_movement_state(self, side_movement_state)
-	)
-	player_area_collider.area_exited.connect(
-		func(a):
-			if((a.collision_layer&(1<<1)) != 0):
-				is_on_stem = false
-			
+				if(is_on_ground()):
+					statemachine.set_movement_state(self, side_movement_state)
 	)
 
+
 func update(delta:float):
+
 	time_since_started_falling += delta
 	character.velocity += delta*Vector2(0, gravity)
 	character.velocity.y = min(abs(max_speed.y), character.velocity.y)
@@ -73,7 +64,7 @@ func update(delta:float):
 	
 	# If the user is trying to move upwards, and is over the stem,
 	# go to the climbing state!
-	if(is_on_stem and input_dir.y < 0 and time_since_started_falling>0.25):
+	if(is_on_steam() and input_dir.y < 0 and time_since_started_falling>0.25):
 		statemachine.set_movement_state(self, stem_climb_state)	
 	
 	if(input_dir.x==0):
