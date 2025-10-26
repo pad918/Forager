@@ -106,6 +106,7 @@ func update(delta:float):
 		character.velocity.y += jump_boost_sideways.y # Give upward boost no matter which direction it is moving
 		character.velocity.x += jump_boost_sideways.x * input_dir.x
 		statemachine.set_movement_state(self, gliding_state)
+		get_node("%SfxSingleton").play_sfx("JumpBoost")
 	#TODO: This does not look good. I can not just set the speed, it has to be 
 	# an accelleration applied over time / I have to reduce the friction for a little time after
 	# jumping up!
@@ -114,6 +115,7 @@ func update(delta:float):
 		friction_multiplier.y = 0.2
 		max_speed_multiplier.y = 3
 		character.velocity.y -= jump_boost_up
+		get_node("%SfxSingleton").play_sfx("JumpBoost")
 	#Drop down from the tree
 	elif(input_dir.y > 0 and  Input.is_action_just_pressed("Jump")):
 		print("Falling")

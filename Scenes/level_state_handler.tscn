@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=90 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="10_upfit"]
 [ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="11_gq0du"]
+[ext_resource type="AudioStream" uid="uid://b1lq2nqyqdpw" path="res://audio/sfx/jump_3.wav" id="12_8p7k4"]
 [ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="12_uf8qa"]
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="13_8fya3"]
 [ext_resource type="AudioStream" uid="uid://cjd7g511or07k" path="res://audio/sfx/success-tune.wav" id="13_iaphp"]
@@ -957,6 +958,9 @@ pitch_scale = 1.41
 
 [node name="Jump" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("12_uf8qa")
+
+[node name="JumpBoost" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("12_8p7k4")
 
 [node name="AcornGrab" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("13_8fya3")

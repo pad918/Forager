@@ -59,11 +59,13 @@ func update(delta: float):
 		character.velocity.x += jump_boost.x * input_dir.x
 		statemachine.set_movement_state(self, fall_state)
 		print("GAVE UP+SIDE BOOST!")
+		get_node("%SfxSingleton").play_sfx("Jump")
 	elif(Input.is_action_just_pressed("Jump")):
 		# Just jump strait up
 		character.velocity.y += jump_boost.y
 		statemachine.set_movement_state(self, fall_state)
 		print("GAVE UP BOOST!")
+		get_node("%SfxSingleton").play_sfx("Jump")
 
 	# Drop down from branch handeling
 	if(input_dir.y>0 and not is_on_ground()):
