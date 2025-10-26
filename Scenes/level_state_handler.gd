@@ -39,7 +39,8 @@ func update_timer_label():
 	timer_label.text = label
 	
 func _physics_process(delta: float) -> void:
-	time_left -= delta
+	if(!round_over):
+		time_left -= delta
 	
 	if(time_left<0):
 		if(not round_over):
