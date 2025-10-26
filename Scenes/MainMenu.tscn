@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn0qf566xn415"]
+[gd_scene load_steps=6 format=3 uid="uid://bn0qf566xn415"]
 
 [ext_resource type="Texture2D" uid="uid://djh0vbn1d2o4v" path="res://Sprites/AboveGroundAssetsNew/task_illustration.png" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://pb27rf7umn11" path="res://Sprites/AboveGroundAssetsNew/foragerlogo.png" id="2_853f1"]
 [ext_resource type="Texture2D" uid="uid://1ugu673dg025" path="res://Sprites/AboveGroundAssetsNew/playnow.png" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://3fylssg0oeyr" path="res://Scenes/scene_selector.gd" id="3_ghw46"]
+[ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="5_df05h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -67,4 +68,12 @@ texture_normal = ExtResource("3_8saeu")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="BgmStarter" type="Node" parent="."]
+script = ExtResource("5_df05h")
+bgm_name = "TitleBGM"
+ambiance_name = "ForrestAmbience"
+cross_fade_time = 2.0
+reset_blocking = true
+
 [connection signal="pressed" from="Panel/CenterContainer/TextureButton" to="Panel/CenterContainer/SceneSelector" method="load_scene"]
+[connection signal="ready" from="BgmStarter" to="BgmStarter" method="play_tracks"]

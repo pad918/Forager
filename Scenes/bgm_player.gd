@@ -15,6 +15,11 @@ var time_since_last_ambiance_change:float = 0
 var bmg_cross_fade_time:float = 1
 var ambiance_cross_fade_time:float = 1
 
+var block_new:bool = false
+
+func reset():
+	block_new = false
+
 func _ready() -> void:
 	play_bgm("TitleBGM", 1)
 	play_ambience("ForrestAmbience", 1)
@@ -26,6 +31,8 @@ func get_player(name:String)-> AudioStreamPlayer:
 func play_bgm(name:String, _cross_fade_time:float):
 	if(curr_bgm!=null and curr_bgm.name == name):
 		return
+	if(block_new):
+		return
 	time_since_last_bgm_change = 0
 	bmg_cross_fade_time = _cross_fade_time
 	last_bgm = curr_bgm
@@ -34,6 +41,8 @@ func play_bgm(name:String, _cross_fade_time:float):
 	
 func play_ambience(name:String, _cross_fade_time:float):
 	if(curr_ambiance!=null and curr_ambiance.name == name):
+		return
+	if(block_new):
 		return
 	time_since_last_ambiance_change = 0
 	ambiance_cross_fade_time = _cross_fade_time

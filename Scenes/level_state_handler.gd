@@ -50,6 +50,8 @@ func _physics_process(delta: float) -> void:
 	elif(time_left<34 && !has_player_countdown_timer):
 		has_player_countdown_timer = true
 		get_node("%SfxSingleton").play_sfx("TimerCountdown")
+		BgmPlayerSingleton.play_bgm("Silent", 10)
+		BgmPlayerSingleton.block_new = true
 	update_timer_label()
 
 	
