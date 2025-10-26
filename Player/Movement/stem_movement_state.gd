@@ -24,19 +24,30 @@ var last_mov_y_dir: float = 1
 var friction_multiplier:Vector2 = Vector2(1, 1)
 var max_speed_multiplier:Vector2 = Vector2(1, 1)
 
+# To fix the problem with multiple intersecting trees:
+var colliding_trees: Array = []
+
 func _ready() -> void:
 	super._ready()
 	area_collider.area_exited.connect(
 		func (a:Area2D):
-			print("Exited area ", a.name)
 			if((a.collision_layer&(1<<1)) != 0):
-				statemachine.set_movement_state(self, gliding_state)
+				
+				var pos:int = colliding_trees.find(a)
+				if(pos>=0):
+					colliding_trees.remove_at(pos)
+				print("Exited area ", a.name)
+				if(colliding_trees.is_empty()):
+					print("Exiting tree stem!")
+					statemachine.set_movement_state(self, gliding_state)
 	)
 	area_collider.area_entered.connect(
 		func(a:Area2D):
 			if((a.collision_layer&(1<<2)) != 0):
 				print("entered branch")
 				statemachine.set_movement_state(self, side_movement_state)
+			if(a.collision_layer&(1<<1) != 0):
+				colliding_trees.append(a)
 	)
 
 func linear_fiction(curr_vel:float, frame_friction:float, ease_fn = null) -> float:
