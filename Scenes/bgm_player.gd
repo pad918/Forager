@@ -16,7 +16,7 @@ var bmg_cross_fade_time:float = 1
 var ambiance_cross_fade_time:float = 1
 
 func _ready() -> void:
-	play_bgm("ForrestBGM", 1)
+	play_bgm("TitleBGM", 1)
 	play_ambience("ForrestAmbience", 1)
 
 func get_player(name:String)-> AudioStreamPlayer:

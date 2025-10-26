@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1rp3gh185ofp"]
+[gd_scene load_steps=7 format=3 uid="uid://dukt8bqjwebpg"]
 
 [ext_resource type="Script" uid="uid://unlvel3om4vw" path="res://Scenes/bgm_player.gd" id="1_pg0mb"]
+[ext_resource type="AudioStream" uid="uid://cfid7jla62tfc" path="res://audio/BGM/music-title_seamless.wav" id="2_2jsp0"]
 [ext_resource type="AudioStream" uid="uid://bxp3xxj0gse2" path="res://audio/sfx/ambience-forest_seamless.wav" id="2_bhn12"]
 [ext_resource type="AudioStream" uid="uid://2j6wwgh4fe3p" path="res://audio/BGM/music-forest_seamless.wav" id="3_2jsp0"]
 [ext_resource type="AudioStream" uid="uid://bvao435jb6cb1" path="res://audio/BGM/music-cave_seamless.wav" id="4_c14gg"]
@@ -10,6 +11,11 @@
 script = ExtResource("1_pg0mb")
 
 [node name="Can play and crossfade between amiance and BGM" type="Node" parent="."]
+
+[node name="TitleBGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2jsp0")
+volume_db = -80.0
+autoplay = true
 
 [node name="ForrestAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_bhn12")

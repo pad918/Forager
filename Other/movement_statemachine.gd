@@ -26,4 +26,4 @@ func set_movement_state(source_state:MovementState, new_state:MovementState):
 	
 func _physics_process(delta: float) -> void:
 	current_state.update(delta)
-	animation_tree.set("parameters/blend_position", character_body.velocity.normalized())
+	#animation_tree.set("parameters/blend_position", character_body.velocity.normalized())
