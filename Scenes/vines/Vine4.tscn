@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dua0nlrx8x47y"]
 
 [ext_resource type="Script" uid="uid://c0hfi3e7u1ms1" path="res://Other/pusher_area.gd" id="1_kou42"]
-[ext_resource type="Texture2D" uid="uid://de1x8wno00slr" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0002_vinedoublewide.png" id="2_kou42"]
+[ext_resource type="Texture2D" uid="uid://br1toj8x0xc02" path="res://Sprites/AssetsV3/vinedoublewide.png" id="2_kou42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hlk00"]
 size = Vector2(299.48712, 37.5967)
@@ -63,4 +63,5 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_beux2")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.46, 0.46)
 texture = ExtResource("2_kou42")

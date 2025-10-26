@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1481rh82f2cl"]
 
 [ext_resource type="Script" uid="uid://c0hfi3e7u1ms1" path="res://Other/pusher_area.gd" id="1_gnpyj"]
-[ext_resource type="Texture2D" uid="uid://b8iwvy1lkebnm" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0003_vineground.png" id="2_gnpyj"]
+[ext_resource type="Texture2D" uid="uid://cw5t0fi5tx8hw" path="res://Sprites/AssetsV3/vineground.png" id="2_gnpyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4emq"]
 size = Vector2(283.456, 37.5967)
