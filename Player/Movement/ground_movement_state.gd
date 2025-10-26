@@ -13,6 +13,7 @@ class_name GroundMovementState
 
 @export var jump_boost: Vector2 = Vector2(1000, 200)
 
+var time_since_last_walk_sound:float = 0
 
 func _ready() -> void:
 	super._ready()
@@ -30,6 +31,7 @@ func _ready() -> void:
 
 func update(delta: float):
 	var input_dir: Vector2 =Vector2(0, 0)
+	time_since_last_walk_sound += delta
 	
 	if Input.is_action_pressed("ui_left"):
 		input_dir += Vector2(-1, 0)
@@ -82,3 +84,6 @@ func update(delta: float):
 		play_animation("IdleRight" if character.velocity.x>0 else "IdleLeft")
 	else:
 		play_animation("WalkRight" if character.velocity.x>0 else "WalkLeft")
+		if(time_since_last_walk_sound>0.5):
+			get_node("%SfxSingleton").play_sfx("Walk")
+			time_since_last_walk_sound = 0
