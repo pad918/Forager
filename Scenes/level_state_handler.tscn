@@ -1,12 +1,15 @@
-[gd_scene load_steps=122 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=125 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
+[ext_resource type="Texture2D" uid="uid://uh4kjo5fcj74" path="res://Sprites/ui/textbubble.png" id="2_dh4uv"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
 [ext_resource type="Script" uid="uid://bys2bcx8xcf1f" path="res://Other/falling_leafs.gd" id="3_a2moc"]
 [ext_resource type="Texture2D" uid="uid://b23wxr2crrnqu" path="res://Sprites/AboveGroundAssets/leavesback.png" id="3_nmnqg"]
 [ext_resource type="Script" uid="uid://dkt0ipsiosup8" path="res://Other/basic_paralax.gd" id="5_87qsy"]
 [ext_resource type="Texture2D" uid="uid://dgrd6j2cyw0lc" path="res://Sprites/ParalaxLayers/Sky.png" id="7_km4rw"]
+[ext_resource type="Texture2D" uid="uid://bma608kgdmf04" path="res://Sprites/ParalaxLayers/Tree1.png" id="8_1yfsm"]
+[ext_resource type="Texture2D" uid="uid://cksj4c0ucsjj0" path="res://Sprites/ParalaxLayers/Tree2.png" id="9_dh4uv"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="Texture2D" uid="uid://dl2lhecra45x7" path="res://Sprites/ParalaxLayers/BackA.png" id="9_t4qa6"]
 [ext_resource type="Texture2D" uid="uid://d14gsx7yjp66y" path="res://Sprites/ParalaxLayers/BackB.png" id="10_t4qa6"]
@@ -79,11 +82,11 @@
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
 [ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
-[ext_resource type="Texture2D" uid="uid://88ksyriulcsj" path="res://Sprites/ui/BlessingsBoardUI.png" id="68_kyqma"]
 [ext_resource type="Texture2D" uid="uid://b27st282xlfog" path="res://Sprites/ui/UI_overlay_wide.png" id="68_vl3or"]
 [ext_resource type="PackedScene" uid="uid://bor2vocluxpty" path="res://Scenes/Obstacles/Rock1.tscn" id="70_t4qa6"]
 [ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
 [ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
+[ext_resource type="Texture2D" uid="uid://d15i3ujqgi4xp" path="res://Sprites/ui/BLESSINGS.png" id="73_dh4uv"]
 [ext_resource type="Texture2D" uid="uid://cxi0jdtu6fqvl" path="res://Sprites/ui/Play_Now.png" id="75_vl3or"]
 [ext_resource type="Script" uid="uid://cwgat0yvo7w4r" path="res://Scenes/continue_btn.gd" id="77_kyqma"]
 [ext_resource type="PackedScene" uid="uid://eck11r4aa688" path="res://Scenes/Ground/DirtBelowShort.tscn" id="79_km4rw"]
@@ -958,6 +961,7 @@ round_animation_player = NodePath("Animations/RoundEndAnimations")
 [node name="Explaner" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Explaner"]
+visible = false
 z_index = 160
 offset_left = -314.00012
 offset_top = 24.0
@@ -972,6 +976,11 @@ theme_override_font_sizes/font_size = 166
 text = "<== Return your acorns here 
 when you have reached the target"
 
+[node name="Textbubble" type="Sprite2D" parent="Explaner"]
+position = Vector2(59, 250)
+scale = Vector2(0.71369445, 0.71369445)
+texture = ExtResource("2_dh4uv")
+
 [node name="InitialBgmSetter" type="Node" parent="."]
 script = ExtResource("2_7dfb5")
 bgm_name = "ForrestBGM"
@@ -982,9 +991,9 @@ reset_blocking = true
 [node name="FallingLeafs" type="Node2D" parent="."]
 position = Vector2(-1327, 2937)
 script = ExtResource("3_a2moc")
-child_start_pos = Vector2(8000, -7000)
-spawn_pos_randomness = Vector2(24000.035, 0)
-movment_dist = 14000
+child_start_pos = Vector2(12000, -4000)
+spawn_pos_randomness = Vector2(24000, 0)
+movment_dist = 10000
 direction = Vector2(-421.39, 300)
 spawn_every_x_seconds = 1.0
 
@@ -994,7 +1003,7 @@ position = Vector2(1834, -3154.8386)
 scale = Vector2(2.8500504, 2.8500504)
 texture = ExtResource("3_nmnqg")
 script = ExtResource("5_87qsy")
-scroll_speed = Vector2(0.01, 0.01)
+scroll_speed = Vector2(1.01, 1.01)
 
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
@@ -1013,6 +1022,7 @@ script = ExtResource("2_mccl8")
 z_index = -1026
 position = Vector2(34851, -3415.9995)
 scale = Vector2(5, 5)
+texture = ExtResource("8_1yfsm")
 
 [node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.8, 0.8)
@@ -1024,6 +1034,7 @@ z_index = -100
 texture_repeat = 2
 position = Vector2(32400, -2582)
 scale = Vector2(5, 5)
+texture = ExtResource("9_dh4uv")
 
 [node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
 scroll_scale = Vector2(0.9, 0.9)
@@ -1033,7 +1044,7 @@ script = ExtResource("2_mccl8")
 [node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(6180, -3837)
+position = Vector2(6180, -4255.65)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("9_t4qa6")
 
@@ -3487,7 +3498,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("68_kyqma")
+texture = ExtResource("73_dh4uv")
 expand_mode = 2
 metadata/_edit_lock_ = true
 
@@ -3816,7 +3827,7 @@ scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
 
 [node name="Acorn45" parent="Collectables" instance=ExtResource("32_abrmp")]
-position = Vector2(54089.996, 5828.001)
+position = Vector2(50512, 3546.001)
 rotation = -0.33237898
 scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
@@ -4347,6 +4358,18 @@ position = Vector2(25403, 920)
 
 [node name="Rock25" parent="." instance=ExtResource("70_t4qa6")]
 position = Vector2(25210, 375)
+
+[node name="Rock56" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(-1503.0001, 2595.0002)
+rotation = -1.6005975
+
+[node name="Rock57" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(-1523.0001, 1350.0002)
+rotation = -1.6005975
+
+[node name="Rock58" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(-1577.0001, 428.00012)
+rotation = -1.6005975
 
 [node name="Rock26" parent="." instance=ExtResource("70_t4qa6")]
 position = Vector2(14601.998, 3240.0002)

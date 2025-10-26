@@ -11,6 +11,6 @@ texture_normal = ExtResource("1_hswda")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("2_gkbe7")
-capacity_upgrade_amount = 1.0
+capacity_upgrade_amount = 1.5
 
 [connection signal="button_down" from="." to="." method="buy_card"]
