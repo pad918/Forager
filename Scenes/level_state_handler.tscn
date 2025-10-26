@@ -951,19 +951,19 @@ reset_blocking = true
 [node name="FallingLeafs" type="Node2D" parent="."]
 position = Vector2(-1327, 2937)
 script = ExtResource("3_a2moc")
-child_start_pos = Vector2(16000, -10000)
-spawn_pos_randomness = Vector2(24000, 0)
-movment_dist = 32000
+child_start_pos = Vector2(8000, -7000)
+spawn_pos_randomness = Vector2(24000.035, 0)
+movment_dist = 14000
 direction = Vector2(-421.39, 300)
-spawn_every_x_seconds = 0.25
+spawn_every_x_seconds = 1.0
 
 [node name="Leafs" type="Sprite2D" parent="FallingLeafs"]
 z_index = -45
 position = Vector2(1834, -3154.8386)
-scale = Vector2(2.575, 2.575)
+scale = Vector2(2.8500504, 2.8500504)
 texture = ExtResource("3_nmnqg")
 script = ExtResource("5_87qsy")
-scroll_speed = Vector2(0.25, 0.25)
+scroll_speed = Vector2(0.1, 0.1)
 
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
