@@ -1,6 +1,9 @@
 extends HBoxContainer
 
 class_name CardContainer
+
+signal card_selected
+
 var selected: UpgradeCard = null
 
 # array of packed scenes
@@ -26,6 +29,7 @@ func select_me(card: UpgradeCard):
 	if(selected != null):
 		printerr("SELECTED A SECOND CARD IS NOT ALLOWED!")
 	else:
+		card_selected.emit()
 		card.perform_upgrade()
 		selected = card
 		for child:Control in get_children():

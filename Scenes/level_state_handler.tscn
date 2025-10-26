@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=101 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -9,32 +9,33 @@
 [ext_resource type="Texture2D" uid="uid://bn7asu7u4gxo0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0005s_0001_background1.png" id="6_3iuea"]
 [ext_resource type="Texture2D" uid="uid://bwk1bs76gtqjk" path="res://Sprites/Background/backgroundtest.png" id="7_7ipyn"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
-[ext_resource type="AudioStream" uid="uid://dclrorotmf2ww" path="res://audio/sfx/land_4.wav" id="10_upfit"]
-[ext_resource type="AudioStream" uid="uid://dnf7hc158l62a" path="res://audio/sfx/step_1.wav" id="11_gq0du"]
-[ext_resource type="AudioStream" uid="uid://b1lq2nqyqdpw" path="res://audio/sfx/jump_3.wav" id="12_8p7k4"]
-[ext_resource type="AudioStream" uid="uid://c7hcwdutbf01o" path="res://audio/sfx/jump_1.wav" id="12_uf8qa"]
+[ext_resource type="AudioStream" uid="uid://c7qfmo6top4dp" path="res://audio/Ogg/SFX/land_4.ogg" id="10_w517i"]
+[ext_resource type="AudioStream" uid="uid://bpvjpqykgm73i" path="res://audio/Ogg/SFX/step_1.ogg" id="11_w517i"]
+[ext_resource type="AudioStream" uid="uid://wbkdepuqduhg" path="res://audio/Ogg/SFX/jump_1.ogg" id="12_w517i"]
 [ext_resource type="AudioStream" uid="uid://bc01konfj46wl" path="res://audio/sfx/acorn-grab_1.wav" id="13_8fya3"]
-[ext_resource type="AudioStream" uid="uid://cjd7g511or07k" path="res://audio/sfx/success-tune.wav" id="13_iaphp"]
+[ext_resource type="AudioStream" uid="uid://bqdnaav14o0ng" path="res://audio/Ogg/SFX/jump_3.ogg" id="13_in8ph"]
+[ext_resource type="AudioStream" uid="uid://djbyfj328qlnn" path="res://audio/Ogg/SFX/success-tune.ogg" id="14_w517i"]
 [ext_resource type="AudioStream" uid="uid://cy5ehsb724stc" path="res://audio/sfx/acorn-full.wav" id="15_fl08v"]
 [ext_resource type="Script" uid="uid://dr0tgxnnab5d7" path="res://Tree/tree.gd" id="16_c6ias"]
-[ext_resource type="AudioStream" uid="uid://do3amol3vsatv" path="res://audio/BGM/countdown-v2-34s.wav" id="17_pb5p7"]
-[ext_resource type="AudioStream" uid="uid://bgc8fwsigltf2" path="res://audio/sfx/step_2.wav" id="17_ph52n"]
+[ext_resource type="AudioStream" uid="uid://d3vpms5maxhtl" path="res://audio/Ogg/BGM/countdown-34s.ogg" id="16_w517i"]
+[ext_resource type="AudioStream" uid="uid://dve6rcxrb0diy" path="res://audio/Ogg/BGM/countdown-16s.ogg" id="17_in8ph"]
 [ext_resource type="PackedScene" uid="uid://bqynxvrlipqhb" path="res://Tree/nest.tscn" id="18_vaa8q"]
 [ext_resource type="Script" uid="uid://c62e3p1aatysv" path="res://Scenes/sound_rotator.gd" id="19_0crkc"]
 [ext_resource type="Texture2D" uid="uid://d4hscnh3j7tfg" path="res://Sprites/AboveGroundAssetsNew/BurrowTreeNew.png" id="19_7ipyn"]
 [ext_resource type="AudioStream" uid="uid://dkjk4742wvy70" path="res://audio/sfx/acorn-grab_2.wav" id="19_abrmp"]
 [ext_resource type="PackedScene" uid="uid://76tqrwamutik" path="res://Tree/tree.tscn" id="19_mtimp"]
-[ext_resource type="AudioStream" uid="uid://dnsp0a2sj4bks" path="res://audio/sfx/step_3.wav" id="20_2s27x"]
 [ext_resource type="AudioStream" uid="uid://ddqe8se0px8id" path="res://audio/sfx/acorn-grab_4.wav" id="20_6n07p"]
 [ext_resource type="AudioStream" uid="uid://ddqhte2dhrfni" path="res://audio/sfx/acorn-grab_3.wav" id="20_m048m"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="20_tu2bp"]
-[ext_resource type="AudioStream" uid="uid://cuxiiqpkoudad" path="res://audio/sfx/step_4.wav" id="21_2nja4"]
 [ext_resource type="Texture2D" uid="uid://de1x8wno00slr" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0002_vinedoublewide.png" id="21_03kpd"]
 [ext_resource type="Texture2D" uid="uid://dingrwshsljx0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0003_treemedium.png" id="21_mccl8"]
 [ext_resource type="Texture2D" uid="uid://ccvlg2bi6fcnc" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0000_vinemedium.png" id="22_mccl8"]
+[ext_resource type="AudioStream" uid="uid://hcob4veog2gf" path="res://audio/Ogg/SFX/step_2.ogg" id="23_in8ph"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="23_m1ye1"]
 [ext_resource type="Texture2D" uid="uid://bntlht6vabdqd" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0001_vinewide.png" id="23_vqsto"]
+[ext_resource type="AudioStream" uid="uid://bnpudsmjisgp" path="res://audio/Ogg/SFX/step_3.ogg" id="24_in8ph"]
 [ext_resource type="Texture2D" uid="uid://capbt01x2dvb6" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0001_treemediumbase.png" id="24_tffdo"]
+[ext_resource type="AudioStream" uid="uid://54j6m653qm02" path="res://audio/Ogg/SFX/step_4.ogg" id="25_in8ph"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="28_0crkc"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="29_2s27x"]
 [ext_resource type="Texture2D" uid="uid://bqm2xcakedxdw" path="res://Sprites/Foliage/leaves1.png" id="29_upfit"]
@@ -66,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
+[ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
 [ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
@@ -958,28 +960,31 @@ unique_name_in_owner = true
 script = ExtResource("9_ge7d0")
 
 [node name="LandGround" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("10_upfit")
+stream = ExtResource("10_w517i")
 
 [node name="LandBranch" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("11_gq0du")
+stream = ExtResource("11_w517i")
 volume_db = -19.369
 pitch_scale = 1.41
 
 [node name="Jump" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("12_uf8qa")
+stream = ExtResource("12_w517i")
 
 [node name="JumpBoost" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("12_8p7k4")
+stream = ExtResource("13_in8ph")
 
 [node name="AcornStash" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("13_iaphp")
+stream = ExtResource("14_w517i")
 
 [node name="AcornStashFail" type="AudioStreamPlayer" parent="SfxSingleton"]
 stream = ExtResource("15_fl08v")
 pitch_scale = 1.79
 
 [node name="TimerCountdown" type="AudioStreamPlayer" parent="SfxSingleton"]
-stream = ExtResource("17_pb5p7")
+stream = ExtResource("16_w517i")
+
+[node name="TimerCountdown10s" type="AudioStreamPlayer" parent="SfxSingleton"]
+stream = ExtResource("17_in8ph")
 
 [node name="AcornGrab" type="Node2D" parent="SfxSingleton"]
 script = ExtResource("19_0crkc")
@@ -1000,13 +1005,13 @@ stream = ExtResource("20_6n07p")
 script = ExtResource("19_0crkc")
 
 [node name="Walk1" type="AudioStreamPlayer" parent="SfxSingleton/Walk"]
-stream = ExtResource("17_ph52n")
+stream = ExtResource("23_in8ph")
 
 [node name="Walk2" type="AudioStreamPlayer" parent="SfxSingleton/Walk"]
-stream = ExtResource("20_2s27x")
+stream = ExtResource("24_in8ph")
 
 [node name="Walk3" type="AudioStreamPlayer" parent="SfxSingleton/Walk"]
-stream = ExtResource("21_2nja4")
+stream = ExtResource("25_in8ph")
 
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(0, 3177)
@@ -3133,6 +3138,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("32_h34ov")
 
+[node name="UiSoundSelector" type="Node" parent="GameUi/UpgradesPanel"]
+script = ExtResource("60_w517i")
+sfx_name = "UiAccept"
+
 [node name="Label" type="Label" parent="GameUi/UpgradesPanel"]
 layout_mode = 1
 anchors_preset = 5
@@ -3798,4 +3807,5 @@ texture = ExtResource("24_tffdo")
 
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
 [connection signal="visibility_changed" from="GameUi/UpgradesPanel" to="GameUi/UpgradesPanel/HBoxContainer" method="randomly_sample_cards"]
+[connection signal="card_selected" from="GameUi/UpgradesPanel/HBoxContainer" to="GameUi/UpgradesPanel/UiSoundSelector" method="play"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/Continue" to="GameUi/UpgradesPanel" method="load_next_round"]

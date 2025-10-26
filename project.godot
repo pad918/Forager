@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 
 SceneLoaderSingleton="*res://Scenes/scene_singleton.tscn"
 BgmPlayerSingleton="*res://Scenes/bgm_player.tscn"
+UiSfxSingleton="*res://Scenes/ui_sfx.tscn"
 
 [display]
 

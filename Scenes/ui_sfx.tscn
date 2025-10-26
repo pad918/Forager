@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvq82s7w6choe"]
+
+[ext_resource type="Script" uid="uid://1dpiefkc5l5g" path="res://Scenes/ui_sfx.gd" id="1_6hwl4"]
+[ext_resource type="AudioStream" uid="uid://dqywhnxfvk65" path="res://audio/Ogg/SFX/ui_select.ogg" id="2_6hwl4"]
+
+[node name="UISfx" type="Node"]
+script = ExtResource("1_6hwl4")
+
+[node name="UiAccept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6hwl4")
