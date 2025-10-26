@@ -12,13 +12,11 @@ func _ready() -> void:
 	nest_area.area_entered.connect(
 		func(a:Area2D):
 			player = a.get_parent()
+			if(player is Player):
+				player.try_stash_acorns()
 	)
 	
 	nest_area.area_exited.connect(
 		func(_a):
 			player = null
 	)	
-
-func _input(_ev):
-	if player!=null and Input.is_key_pressed(KEY_ENTER):
-		player.try_stash_acorns()
