@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=118 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -79,12 +79,13 @@
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
 [ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
 [ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
+[ext_resource type="Texture2D" uid="uid://88ksyriulcsj" path="res://Sprites/ui/BlessingsBoardUI.png" id="68_kyqma"]
 [ext_resource type="PackedScene" uid="uid://bor2vocluxpty" path="res://Scenes/Obstacles/Rock1.tscn" id="70_t4qa6"]
 [ext_resource type="PackedScene" uid="uid://d0pg4iub34wah" path="res://Scenes/branches/Branch2.tscn" id="71_km4rw"]
 [ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
 [ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
 [ext_resource type="PackedScene" uid="uid://eck11r4aa688" path="res://Scenes/Ground/DirtBelowShort.tscn" id="79_km4rw"]
-[ext_resource type="PackedScene" uid="uid://btwcdqrrawe3p" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
+[ext_resource type="PackedScene" uid="uid://doli1ucdqterx" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
 [ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
 [ext_resource type="PackedScene" uid="uid://bep3igiy8ivrg" path="res://Scenes/Ground/DirtBelowLong.tscn" id="83_q1d4q"]
 
@@ -3387,7 +3388,20 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 80
 text = "5:00"
 
+[node name="TextureRect" type="TextureRect" parent="GameUi"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("68_kyqma")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
 [node name="UpgradesPanel" type="Panel" parent="GameUi"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3418,7 +3432,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 54
+theme_override_constants/separation = 209
 alignment = 1
 script = ExtResource("60_m048m")
 cards = [ExtResource("61_m7j3d"), ExtResource("62_w517i"), ExtResource("63_in8ph")]

@@ -1,29 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://0ho6jble3xjk"]
 
-[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_sqwmx"]
+[ext_resource type="Texture2D" uid="uid://cbjxxdqbq286x" path="res://Sprites/ui/Coffee.png" id="1_sqwmx"]
 [ext_resource type="Script" uid="uid://bvh7ycrwf0baw" path="res://Player/Movement/upgrade_speed_card.gd" id="2_3ffci"]
 
 [node name="UpgradeSpeedCard" type="TextureButton"]
-custom_minimum_size = Vector2(220, 400)
+custom_minimum_size = Vector2(440, 600)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("1_sqwmx")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("2_3ffci")
-
-[node name="BuyLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-text = "Faster Speed
-
-+ 1 speed"
 
 [connection signal="button_down" from="." to="." method="buy_card"]
