@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn0qf566xn415"]
+[gd_scene load_steps=10 format=3 uid="uid://bn0qf566xn415"]
 
 [ext_resource type="Texture2D" uid="uid://djh0vbn1d2o4v" path="res://Sprites/AboveGroundAssetsNew/task_illustration.png" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://pb27rf7umn11" path="res://Sprites/AboveGroundAssetsNew/foragerlogo.png" id="2_853f1"]
@@ -6,6 +6,13 @@
 [ext_resource type="Script" uid="uid://3fylssg0oeyr" path="res://Scenes/scene_selector.gd" id="3_ghw46"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="5_df05h"]
 [ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="6_8um5k"]
+[ext_resource type="Script" uid="uid://byqr5647x2abn" path="res://Other/audio_volume_slider.gd" id="7_xim88"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8um5k"]
+bg_color = Color(0.80784315, 0.5294118, 0.31764707, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xim88"]
+bg_color = Color(1, 0.33737046, 0.32435572, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -79,6 +86,46 @@ reset_blocking = true
 [node name="UiSoundSelector" type="Node" parent="."]
 script = ExtResource("6_8um5k")
 sfx_name = "UiAccept"
+
+[node name="AudioVolume" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = 275.0
+offset_right = 33.5
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.39215687, 0.1764706, 0.003921569, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 46
+text = "VOLUME"
+
+[node name="HSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(510.525, 31.25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -404.0
+offset_top = 283.00006
+offset_right = 106.525024
+offset_bottom = 349.98932
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5682814, 1.5916737)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_8um5k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xim88")
+min_value = -60.0
+max_value = 0.0
+step = 0.5
+script = ExtResource("7_xim88")
 
 [connection signal="pressed" from="Panel/CenterContainer/TextureButton" to="Panel/CenterContainer/SceneSelector" method="load_scene_delayed"]
 [connection signal="pressed" from="Panel/CenterContainer/TextureButton" to="UiSoundSelector" method="play"]
