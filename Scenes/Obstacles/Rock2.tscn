@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://mkptthlurbyl"]
+
+[ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/Rock3.png" id="1_2j3pq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ll7wb"]
+radius = 526.87
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_idyu6"]
+radius = 575.63
+
+[node name="Rock1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.008726646
+texture = ExtResource("1_2j3pq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(9.5, 0.5)
+shape = SubResource("CircleShape2D_ll7wb")
+
+[node name="GroundCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
+position = Vector2(8, -1.5)
+shape = SubResource("CircleShape2D_idyu6")

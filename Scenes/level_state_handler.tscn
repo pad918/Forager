@@ -1,16 +1,14 @@
-[gd_scene load_steps=111 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=109 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
-[ext_resource type="Script" path="res://Other/falling_leafs.gd" id="3_a2moc"]
+[ext_resource type="Script" uid="uid://bys2bcx8xcf1f" path="res://Other/falling_leafs.gd" id="3_a2moc"]
 [ext_resource type="Texture2D" uid="uid://b23wxr2crrnqu" path="res://Sprites/AboveGroundAssets/leavesback.png" id="3_nmnqg"]
 [ext_resource type="Script" uid="uid://dkt0ipsiosup8" path="res://Other/basic_paralax.gd" id="5_87qsy"]
-[ext_resource type="Texture2D" uid="uid://bwk1bs76gtqjk" path="res://Sprites/Background/backgroundtest.png" id="7_7ipyn"]
 [ext_resource type="Texture2D" uid="uid://dgrd6j2cyw0lc" path="res://Sprites/ParalaxLayers/Sky.png" id="7_km4rw"]
 [ext_resource type="Texture2D" uid="uid://cksj4c0ucsjj0" path="res://Sprites/ParalaxLayers/Tree2.png" id="7_t4qa6"]
 [ext_resource type="Texture2D" uid="uid://bma608kgdmf04" path="res://Sprites/ParalaxLayers/Tree1.png" id="8_km4rw"]
-[ext_resource type="PackedScene" uid="uid://d1481rh82f2cl" path="res://Scenes/vines/Vine2.tscn" id="9_7shxv"]
 [ext_resource type="Script" uid="uid://25drj4us0f1j" path="res://audio/sfx_handler.gd" id="9_ge7d0"]
 [ext_resource type="Texture2D" uid="uid://dl2lhecra45x7" path="res://Sprites/ParalaxLayers/BackA.png" id="9_t4qa6"]
 [ext_resource type="Texture2D" uid="uid://d14gsx7yjp66y" path="res://Sprites/ParalaxLayers/BackB.png" id="10_t4qa6"]
@@ -34,21 +32,21 @@
 [ext_resource type="AudioStream" uid="uid://ddqe8se0px8id" path="res://audio/sfx/acorn-grab_4.wav" id="20_6n07p"]
 [ext_resource type="AudioStream" uid="uid://ddqhte2dhrfni" path="res://audio/sfx/acorn-grab_3.wav" id="20_m048m"]
 [ext_resource type="PackedScene" uid="uid://bfx20ej6y4mao" path="res://Tree/tree_branch.tscn" id="20_tu2bp"]
-[ext_resource type="Texture2D" uid="uid://de1x8wno00slr" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0002_vinedoublewide.png" id="21_03kpd"]
+[ext_resource type="Texture2D" uid="uid://de1x8wno00slr" path="res://Sprites/AboveGroundAssetsNew/vinedoublewide.png" id="21_03kpd"]
 [ext_resource type="Texture2D" uid="uid://dingrwshsljx0" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0003_treemedium.png" id="21_mccl8"]
-[ext_resource type="Texture2D" uid="uid://ccvlg2bi6fcnc" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0000_vinemedium.png" id="22_mccl8"]
+[ext_resource type="Texture2D" uid="uid://ccvlg2bi6fcnc" path="res://Sprites/AboveGroundAssetsNew/vinemedium.png" id="22_mccl8"]
 [ext_resource type="AudioStream" uid="uid://hcob4veog2gf" path="res://audio/Ogg/SFX/step_2.ogg" id="23_in8ph"]
 [ext_resource type="Script" uid="uid://br6cllyyfg1jb" path="res://Scenes/player.gd" id="23_m1ye1"]
-[ext_resource type="Texture2D" uid="uid://bntlht6vabdqd" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0001s_0001_vinewide.png" id="23_vqsto"]
+[ext_resource type="Texture2D" uid="uid://bntlht6vabdqd" path="res://Sprites/AssetsV3/vinewide.png" id="23_vqsto"]
 [ext_resource type="AudioStream" uid="uid://bnpudsmjisgp" path="res://audio/Ogg/SFX/step_3.ogg" id="24_in8ph"]
 [ext_resource type="Texture2D" uid="uid://capbt01x2dvb6" path="res://Sprites/AboveGroundAssetsNew/ForagerAssetPack-V1_0003s_0001_treemediumbase.png" id="24_tffdo"]
 [ext_resource type="AudioStream" uid="uid://54j6m653qm02" path="res://audio/Ogg/SFX/step_4.ogg" id="25_in8ph"]
 [ext_resource type="Script" uid="uid://kp3jjcb14hdu" path="res://Other/movement_statemachine.gd" id="28_0crkc"]
 [ext_resource type="Script" uid="uid://be7t3fta3mhdr" path="res://Player/Movement/stem_movement_state.gd" id="29_2s27x"]
-[ext_resource type="Texture2D" uid="uid://bqm2xcakedxdw" path="res://Sprites/Foliage/leaves1.png" id="29_upfit"]
+[ext_resource type="Texture2D" uid="uid://d2xrt5j3do4uj" path="res://Sprites/Foliage/leaves1.png" id="29_upfit"]
 [ext_resource type="Script" uid="uid://cxvciga6twweb" path="res://Player/Movement/flying_movement_state.gd" id="30_2nja4"]
 [ext_resource type="Texture2D" uid="uid://xyt8dn7n1tos" path="res://Sprites/Foliage/treetop.png" id="30_uf8qa"]
-[ext_resource type="Texture2D" uid="uid://dlpleqcpmqph5" path="res://Sprites/Foliage/rock1.png" id="31_8fya3"]
+[ext_resource type="Texture2D" uid="uid://cc41sd55xxucu" path="res://Sprites/Foliage/rock1.png" id="31_8fya3"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
 [ext_resource type="PackedScene" uid="uid://b7gne6kw521kb" path="res://Scenes/Ground/GroundAboveLong.tscn" id="32_8p7k4"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
@@ -72,8 +70,8 @@
 [ext_resource type="Texture2D" uid="uid://t1brst5v7hsg" path="res://Sprites/AnimationSprites/Climbing0002.png" id="42_abrmp"]
 [ext_resource type="Texture2D" uid="uid://b6c7m8qwd7jod" path="res://Sprites/AnimationSprites/Climbing0003.png" id="43_6n07p"]
 [ext_resource type="Script" uid="uid://dskjp6mx3icma" path="res://Player/Animation/animation_state_machine.gd" id="44_m1ye1"]
-[ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
-[ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
+[ext_resource type="Texture2D" uid="uid://bqvsrh8ulregg" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
+[ext_resource type="Texture2D" uid="uid://gwnxp1475rso" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
 [ext_resource type="Script" uid="uid://sr7bodoshjew" path="res://Other/ui_sound_selector.gd" id="60_w517i"]
 [ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
@@ -941,109 +939,62 @@ scroll_speed = Vector2(0.25, 0.25)
 
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
-[node name="Parallax2D2" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.03, 0.03)
-scroll_offset = Vector2(-1100, 0)
-script = ExtResource("2_mccl8")
-
-[node name="Tree3" type="Sprite2D" parent="ParalaxLayers/Parallax2D2"]
+[node name="Sky" type="Sprite2D" parent="ParalaxLayers"]
 z_index = -1026
-position = Vector2(6237, -451.83838)
+position = Vector2(35987, 213)
+scale = Vector2(4.95, 4.95)
 texture = ExtResource("7_km4rw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="ParalaxLayers"]
+scroll_scale = Vector2(0.6, 0.6)
+scroll_offset = Vector2(-1100, 3159)
+script = ExtResource("2_mccl8")
 
 [node name="Tree2" type="Sprite2D" parent="ParalaxLayers/Parallax2D2"]
 z_index = -1026
-position = Vector2(6237, -451.83838)
+position = Vector2(34851, -3415.9995)
+scale = Vector2(5, 5)
 texture = ExtResource("7_t4qa6")
 
 [node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.05, 0.05)
-scroll_offset = Vector2(-1100, 0)
+scroll_scale = Vector2(0.8, 0.8)
+scroll_offset = Vector2(-1100, 3135)
 script = ExtResource("2_mccl8")
 
 [node name="Background3" type="Sprite2D" parent="ParalaxLayers/Parallax2D"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(6084, 142.16138)
+position = Vector2(32400, -2582)
+scale = Vector2(5, 5)
 texture = ExtResource("8_km4rw")
 
 [node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-1100, 0)
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(-1100, 3091)
 script = ExtResource("2_mccl8")
 
 [node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(4887, -1672.8386)
-scale = Vector2(3.440002, 3.440002)
+position = Vector2(6180, -3837)
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("9_t4qa6")
 
 [node name="BackgroundFront" type="Parallax2D" parent="ParalaxLayers"]
-scroll_scale = Vector2(0.3, 0.3)
+scroll_scale = Vector2(0.9, 0.9)
+scroll_offset = Vector2(39120, 6924)
 script = ExtResource("2_mccl8")
 
 [node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgroundFront"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(43163, 5166)
+position = Vector2(9190, -5232)
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("10_t4qa6")
 
-[node name="BackgrounLeaves" type="Parallax2D" parent="ParalaxLayers"]
-visible = false
-scroll_scale = Vector2(0.4, 0.4)
-autoscroll = Vector2(0, 200)
-script = ExtResource("2_mccl8")
-
-[node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgrounLeaves"]
-z_index = -100
-texture_repeat = 2
-position = Vector2(35746, -1118.28)
-texture = ExtResource("7_7ipyn")
-
-[node name="Vine" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("9_7shxv")]
-position = Vector2(31382.998, 3474.001)
-rotation = -2.646347
-scale = Vector2(3.6123633, 2.5556934)
-
-[node name="Vine2" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("9_7shxv")]
-position = Vector2(33366.996, 4698.0015)
-rotation = -5.391694
-scale = Vector2(3.6123633, 2.5556934)
-
-[node name="Vine3" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(34385, 1269)
-rotation = -1.3476996
-scale = Vector2(4.2922244, 2.966865)
-
-[node name="Vine4" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(28948, -45.99939)
-rotation = -1.076768
-scale = Vector2(4.2922244, 2.966865)
-
-[node name="Vine5" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(29266.002, -1584.0006)
-rotation = -0.76265764
-scale = Vector2(4.2922244, 2.966865)
-
-[node name="Vine6" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(29319.002, -3347.9995)
-rotation = -1.3588632
-scale = Vector2(4.2922244, 2.966865)
-
-[node name="Vine7" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(29359.998, -2262.0002)
-rotation = -1.1357906
-scale = Vector2(4.2922244, 2.966865)
-
-[node name="Vine8" parent="ParalaxLayers/BackgrounLeaves" instance=ExtResource("10_t5ofv")]
-position = Vector2(28847.002, -5265.0005)
-rotation = -1.792011
-scale = Vector2(4.2922244, 2.966865)
-
 [node name="Cave" type="Sprite2D" parent="ParalaxLayers"]
-position = Vector2(27822.002, 4292)
-scale = Vector2(4.847159, 4.847159)
+position = Vector2(28141, 4712)
+scale = Vector2(5.587, 5.587)
 texture = ExtResource("15_kddj7")
 
 [node name="SfxSingleton" type="Node2D" parent="."]
