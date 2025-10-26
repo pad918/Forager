@@ -12,6 +12,11 @@ class_name MovementStateMachine
 
 @export var animation_tree: AnimationTree
 
+@export var anim_states: AnimationStateMachine
+
+func play_animation(anim_name:String):
+	anim_states.play_animation(anim_name)
+
 func set_animation_frame(source_state:MovementState, frame_id:int):
 	if(source_state == current_state):
 		animator.frame = frame_id
@@ -26,4 +31,4 @@ func set_movement_state(source_state:MovementState, new_state:MovementState):
 	
 func _physics_process(delta: float) -> void:
 	current_state.update(delta)
-	animation_tree.set("parameters/blend_position", character_body.velocity.normalized())
+	#animation_tree.set("parameters/blend_position", character_body.velocity.normalized())
