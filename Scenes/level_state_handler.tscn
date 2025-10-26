@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=120 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -779,6 +779,9 @@ size = Vector2(1906.4543, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iaphp"]
 size = Vector2(2096.006, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vl3or"]
+size = Vector2(2352.9663, 102.41882)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb5p7"]
 size = Vector2(14362.097, 20)
 
@@ -1203,7 +1206,7 @@ position = Vector2(451.5626, -1751.4707)
 scale = Vector2(1.627677, 2.1865506)
 
 [node name="Vine" parent="Level/Trees/Tree2" instance=ExtResource("10_t5ofv")]
-position = Vector2(890.5416, 448.07678)
+position = Vector2(409.45978, 301.92294)
 rotation = 1.2913547
 scale = Vector2(2.330893, 1.9976358)
 
@@ -1458,9 +1461,14 @@ rotation = -0.08084479
 scale = Vector2(1.4786059, 2.1685948)
 
 [node name="TreeBranch21" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
-position = Vector2(32536, 473)
-rotation = -0.013266437
+position = Vector2(32536, 599)
+rotation = -0.12873855
 scale = Vector2(-1.4447924, 2.1685948)
+
+[node name="TreeBranch34" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
+position = Vector2(28467.004, 2491.9995)
+rotation = -0.12873855
+scale = Vector2(-1.7307315, 2.597782)
 
 [node name="TreeBranch22" parent="Level/Trees" instance=ExtResource("20_tu2bp")]
 position = Vector2(32169.002, 51)
@@ -1561,6 +1569,11 @@ position = Vector2(20561, -7021.999)
 rotation = -2.7794802
 scale = Vector2(5.1146097, 2.312213)
 texture = ExtResource("22_mccl8")
+
+[node name="Vine" parent="Level/Trees" instance=ExtResource("10_t5ofv")]
+position = Vector2(34393, -2874)
+rotation = -2.6263697
+scale = Vector2(3.810752, 3.810752)
 
 [node name="Ground" type="Node2D" parent="Level"]
 
@@ -2952,6 +2965,42 @@ rotation = 6.661884
 scale = Vector2(0.20639917, -0.2772394)
 texture = ExtResource("29_upfit")
 
+[node name="Leaves74" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16471, -2043.0009)
+rotation = 8.532084
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves75" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16375, -2218)
+rotation = 6.9450283
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves76" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16471, -2242.9998)
+rotation = 4.8270793
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves77" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16296, -2330.9988)
+rotation = 5.53938
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves78" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16194.002, -2104)
+rotation = 10.32832
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
+[node name="Leaves79" type="Sprite2D" parent="Level/Ground"]
+position = Vector2(16682, -2170)
+rotation = 7.9958935
+scale = Vector2(0.20639917, -0.2772394)
+texture = ExtResource("29_upfit")
+
 [node name="Leaves65" type="Sprite2D" parent="Level/Ground"]
 position = Vector2(14693.001, -2873.0002)
 rotation = 10.023867
@@ -3279,7 +3328,7 @@ zoom = Vector2(0.5, 0.5)
 limit_left = -1280
 limit_top = -9015
 limit_right = 37740
-limit_bottom = 3640
+limit_bottom = 4010
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -3684,6 +3733,18 @@ rotation = -0.33237898
 scale = Vector2(2.400608, 2.4721162)
 skew = -0.07916081
 
+[node name="Acorn59" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(53564, -296.00098)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
+[node name="Acorn60" parent="Collectables" instance=ExtResource("32_abrmp")]
+position = Vector2(54735, -1542.001)
+rotation = -0.33237898
+scale = Vector2(2.400608, 2.4721162)
+skew = -0.07916081
+
 [node name="Acorn41" parent="Collectables" instance=ExtResource("32_abrmp")]
 position = Vector2(47643, 561.999)
 rotation = -0.33237898
@@ -3853,7 +3914,7 @@ collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
 low_limit = Vector2(15600, 1205)
-high_limit = Vector2(21385, 4200)
+high_limit = Vector2(21385, 6000)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave2BelowLimits"]
 shape = SubResource("RectangleShape2D_m8c54")
@@ -3864,8 +3925,8 @@ rotation = -1.5627596
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(21000, 365)
-high_limit = Vector2(36620, 5425)
+low_limit = Vector2(20875, 450)
+high_limit = Vector2(37345, 6755)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave3RightLimits"]
 position = Vector2(396.8275, 0)
@@ -3884,14 +3945,46 @@ high_limit = Vector2(22000, 4200)
 position = Vector2(397.22668, -0.00390625)
 shape = SubResource("RectangleShape2D_m8c54")
 
+[node name="Cave3RightLimits2" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(20813.002, -71.999985)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(19555, -7525)
+high_limit = Vector2(41220, 975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave3RightLimits2"]
+position = Vector2(396.8275, 0)
+shape = SubResource("RectangleShape2D_iaphp")
+
+[node name="Camera2D" type="Camera2D" parent="CameraLimtAreas/Cave3RightLimits2"]
+limit_left = 41220
+limit_top = 975
+limit_right = 19555
+limit_bottom = -7525
+
+[node name="Cave3LeftLimits2" type="Area2D" parent="CameraLimtAreas"]
+position = Vector2(20365.998, 71.999985)
+rotation = -1.5627596
+collision_layer = 2147483648
+collision_mask = 2147483648
+script = ExtResource("35_m7j3d")
+low_limit = Vector2(-1350, -10000000)
+high_limit = Vector2(60000, 2200)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave3LeftLimits2"]
+position = Vector2(411.2554, -94.30581)
+shape = SubResource("RectangleShape2D_vl3or")
+
 [node name="Cave4RightLimits" type="Area2D" parent="CameraLimtAreas"]
 position = Vector2(22524.998, 714.00006)
 rotation = -0.0045431387
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(21545, 365)
-high_limit = Vector2(36620, 5425)
+low_limit = Vector2(20875, 450)
+high_limit = Vector2(37345, 6755)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraLimtAreas/Cave4RightLimits"]
 position = Vector2(6529.875, 0.0006713867)
@@ -3926,20 +4019,14 @@ rotation = 1.5682089
 scale = Vector2(1.0000004, 1.0000004)
 shape = SubResource("RectangleShape2D_pb5p7")
 
-[node name="Camera2D" type="Camera2D" parent="CameraLimtAreas/Cave5RightLimits2"]
-limit_left = 77525
-limit_top = 9285
-limit_right = 37140
-limit_bottom = -10295
-
 [node name="Cave5LeftLimits3" type="Area2D" parent="CameraLimtAreas"]
 position = Vector2(37035, 762)
 rotation = -0.0045431387
 collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
-low_limit = Vector2(21545, 365)
-high_limit = Vector2(37700, 5425)
+low_limit = Vector2(20875, 450)
+high_limit = Vector2(37345, 6755)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave5LeftLimits3"]
 rotation = 1.5682089
@@ -3976,6 +4063,18 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Vine2" parent="." instance=ExtResource("10_t5ofv")]
+z_index = 15
+position = Vector2(19457, -3358.0007)
+rotation = 2.8269913
+scale = Vector2(2.5839534, 2.5839534)
+
+[node name="Vine3" parent="." instance=ExtResource("10_t5ofv")]
+z_index = 15
+position = Vector2(19632.002, -2306)
+rotation = 1.7033548
+scale = Vector2(2.5839534, 2.5839534)
 
 [node name="Rock1" type="Sprite2D" parent="."]
 position = Vector2(14812, 2098)
@@ -4085,6 +4184,17 @@ texture = ExtResource("48_fl08v")
 [node name="Rock18" type="Sprite2D" parent="."]
 position = Vector2(13484, 3058.0002)
 scale = Vector2(0.47999024, 0.5199982)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock53" type="Sprite2D" parent="."]
+z_index = -15
+position = Vector2(15877.001, 1104)
+scale = Vector2(0.26141554, 0.28320494)
+texture = ExtResource("48_fl08v")
+
+[node name="Rock54" type="Sprite2D" parent="."]
+position = Vector2(19251.002, 3765)
+scale = Vector2(0.26141554, 0.28320494)
 texture = ExtResource("48_fl08v")
 
 [node name="Rock19" type="Sprite2D" parent="."]

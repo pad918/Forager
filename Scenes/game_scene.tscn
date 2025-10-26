@@ -4,5 +4,5 @@
 
 [node name="GameStateHandler" type="Node2D"]
 script = ExtResource("1_k2gex")
-acorn_level_requirements = [5, 10, 14, 18, 22]
+acorn_level_requirements = [5, 10, 14, 18, 22, 30, 35, 45, 55]
 level_prefab_path = "res://Scenes/level_state_handler.tscn"
