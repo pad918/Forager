@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrqlwk0tiv8f"]
+
+[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_8d4sf"]
+[ext_resource type="Script" uid="uid://bygnwj2k5s6xr" path="res://Player/Upgrades/upgrade_time_card.gd" id="2_k1c13"]
+
+[node name="UpgradeTimeCard" type="TextureButton"]
+custom_minimum_size = Vector2(220, 400)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_8d4sf")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_k1c13")
+
+[node name="BuyLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "More Time
+
++ 15s"
+
+[connection signal="button_down" from="." to="." method="buy_card"]

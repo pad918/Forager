@@ -3,6 +3,25 @@ extends HBoxContainer
 class_name CardContainer
 var selected: UpgradeCard = null
 
+# array of packed scenes
+@export var cards: Array = []
+
+func randomly_sample_cards():
+	# First, kill all the children
+	for c in get_children():
+		c.queue_free() 
+	
+	# Select 2 random cards (not the same)
+	cards.shuffle()
+	# WHAT WHY IS SPEED THE FIRST CARD 90% OF THE TIME?
+	print(cards[0])
+	#take the two first
+	if(cards.size()<2):
+		printerr("MUST EXIST AT LEAST TWO TYPES OF CARDS")
+	else:
+		add_child(cards[0].instantiate())
+		add_child(cards[1].instantiate())
+
 func select_me(card: UpgradeCard):
 	if(selected != null):
 		printerr("SELECTED A SECOND CARD IS NOT ALLOWED!")

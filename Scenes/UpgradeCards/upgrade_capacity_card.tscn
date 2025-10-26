@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgxtompmitimv"]
+
+[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="1_hswda"]
+[ext_resource type="Script" uid="uid://cqin2gwbr84uk" path="res://Scenes/upgrade_capacity_card.gd" id="2_gkbe7"]
+
+[node name="UpgradeCapacityCard" type="TextureButton"]
+custom_minimum_size = Vector2(220, 400)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_hswda")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_gkbe7")
+capacity_upgrade_amount = 1.0
+
+[node name="BuyLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Increase
+Capacity
++ loose 10kg
+of weight"
+
+[connection signal="button_down" from="." to="." method="buy_card"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=99 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -46,7 +46,6 @@
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
 [ext_resource type="Texture2D" uid="uid://bpvutkxf5i6e7" path="res://Sprites/Godrays/godray2.png" id="32_c6ias"]
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
-[ext_resource type="Texture2D" uid="uid://cedrvlwu8hyvn" path="res://Sprites/Treehuggers Concept/background_stretch.png" id="32_mccl8"]
 [ext_resource type="Texture2D" uid="uid://r6rxlpt4tj6w" path="res://Sprites/AnimationSprites/Falling0001.png" id="32_svq42"]
 [ext_resource type="Texture2D" uid="uid://bdixo2436ifgw" path="res://Sprites/Godrays/godray1.png" id="33_370wn"]
 [ext_resource type="Texture2D" uid="uid://15nsqpudape3" path="res://Sprites/AnimationSprites/Falling0002.png" id="33_m1ye1"]
@@ -67,9 +66,9 @@
 [ext_resource type="Texture2D" uid="uid://cwl67i3bwac1g" path="res://Sprites/Foliage/rock2.png" id="47_tqysu"]
 [ext_resource type="Texture2D" uid="uid://iceq3rsjttct" path="res://Sprites/Foliage/rock3.png" id="48_fl08v"]
 [ext_resource type="Script" uid="uid://dlpcxbj82sjrg" path="res://Player/Upgrades/card_container.gd" id="60_m048m"]
-[ext_resource type="Script" uid="uid://bygnwj2k5s6xr" path="res://Player/Upgrades/upgrade_time_card.gd" id="62_m7j3d"]
-[ext_resource type="Script" uid="uid://cqin2gwbr84uk" path="res://Scenes/upgrade_capacity_card.gd" id="63_w517i"]
-[ext_resource type="Script" uid="uid://bvh7ycrwf0baw" path="res://Player/Movement/upgrade_speed_card.gd" id="64_in8ph"]
+[ext_resource type="PackedScene" uid="uid://blrqlwk0tiv8f" path="res://Scenes/UpgradeCards/upgrade_time_card.tscn" id="61_m7j3d"]
+[ext_resource type="PackedScene" uid="uid://dgxtompmitimv" path="res://Scenes/UpgradeCards/upgrade_capacity_card.tscn" id="62_w517i"]
+[ext_resource type="PackedScene" uid="uid://0ho6jble3xjk" path="res://Scenes/UpgradeCards/upgrade_speed_card.tscn" id="63_in8ph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juer4"]
 size = Vector2(956.5, 3438)
@@ -3155,80 +3154,16 @@ grow_vertical = 2
 theme_override_constants/separation = 54
 alignment = 1
 script = ExtResource("60_m048m")
+cards = [ExtResource("62_w517i"), ExtResource("63_in8ph"), ExtResource("61_m7j3d")]
 
-[node name="UpgradeTimeCard" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
-custom_minimum_size = Vector2(220, 400)
+[node name="UpgradeTimeCard" parent="GameUi/UpgradesPanel/HBoxContainer" instance=ExtResource("61_m7j3d")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("32_mccl8")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("62_m7j3d")
 
-[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeTimeCard"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-text = "More Time
-
-+ 15s"
-
-[node name="UpgradeCapacityCard" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
-custom_minimum_size = Vector2(220, 400)
+[node name="UpgradeCapacityCard" parent="GameUi/UpgradesPanel/HBoxContainer" instance=ExtResource("62_w517i")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("32_mccl8")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("63_w517i")
-capacity_upgrade_amount = 1.0
 
-[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeCapacityCard"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-text = "Increase
-Capacity
-+ loose 10kg
-of weight"
-
-[node name="UpgradeSpeedCard" type="TextureButton" parent="GameUi/UpgradesPanel/HBoxContainer"]
-custom_minimum_size = Vector2(220, 400)
+[node name="UpgradeSpeedCard" parent="GameUi/UpgradesPanel/HBoxContainer" instance=ExtResource("63_in8ph")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource("32_mccl8")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("64_in8ph")
-
-[node name="BuyLabel" type="Label" parent="GameUi/UpgradesPanel/HBoxContainer/UpgradeSpeedCard"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 36
-text = "Faster Speed
-
-+ 1 speed"
 
 [node name="Continue" type="Button" parent="GameUi/UpgradesPanel"]
 layout_mode = 1
@@ -3861,7 +3796,5 @@ scale = Vector2(-3.0419354, 3.5289488)
 texture = ExtResource("24_tffdo")
 
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
-[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeTimeCard" to="GameUi/UpgradesPanel/HBoxContainer/UpgradeTimeCard" method="buy_card"]
-[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeCapacityCard" to="GameUi/UpgradesPanel/HBoxContainer/UpgradeCapacityCard" method="buy_card"]
-[connection signal="button_down" from="GameUi/UpgradesPanel/HBoxContainer/UpgradeSpeedCard" to="GameUi/UpgradesPanel/HBoxContainer/UpgradeSpeedCard" method="buy_card"]
+[connection signal="visibility_changed" from="GameUi/UpgradesPanel" to="GameUi/UpgradesPanel/HBoxContainer" method="randomly_sample_cards"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/Continue" to="GameUi/UpgradesPanel" method="load_next_round"]
