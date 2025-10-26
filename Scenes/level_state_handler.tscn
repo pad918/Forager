@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=89 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://xyt8dn7n1tos" path="res://Sprites/Foliage/treetop.png" id="30_uf8qa"]
 [ext_resource type="Texture2D" uid="uid://dlpleqcpmqph5" path="res://Sprites/Foliage/rock1.png" id="31_8fya3"]
 [ext_resource type="Script" uid="uid://bo05g4hfjqg5t" path="res://Player/Movement/ground_movement_state.gd" id="31_p1rfl"]
+[ext_resource type="PackedScene" uid="uid://b7gne6kw521kb" path="res://Scenes/Ground/GroundAboveLong.tscn" id="32_8p7k4"]
 [ext_resource type="PackedScene" uid="uid://c41p78r35r52s" path="res://Tree/acorn.tscn" id="32_abrmp"]
 [ext_resource type="Texture2D" uid="uid://bpvutkxf5i6e7" path="res://Sprites/Godrays/godray2.png" id="32_c6ias"]
 [ext_resource type="Script" uid="uid://bjljmv67di52l" path="res://Other/upgrades_handler.gd" id="32_h34ov"]
@@ -879,10 +880,9 @@ ambiance_name = "ForrestAmbience"
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
 [node name="Parallax2D2" type="Parallax2D" parent="ParalaxLayers"]
+visible = false
 scroll_scale = Vector2(0.03, 0.03)
 scroll_offset = Vector2(-1100, 3000)
-repeat_size = Vector2(7492.1, 0)
-repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background4" type="Sprite2D" parent="ParalaxLayers/Parallax2D2"]
@@ -893,10 +893,9 @@ scale = Vector2(3.06, 3.06)
 texture = ExtResource("3_h34ov")
 
 [node name="Parallax2D" type="Parallax2D" parent="ParalaxLayers"]
+visible = false
 scroll_scale = Vector2(0.05, 0.05)
 scroll_offset = Vector2(-1100, 3000)
-repeat_size = Vector2(7492.1, 0)
-repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background3" type="Sprite2D" parent="ParalaxLayers/Parallax2D"]
@@ -907,10 +906,9 @@ scale = Vector2(3.06, 3.06)
 texture = ExtResource("4_vqsto")
 
 [node name="BackgroundBack" type="Parallax2D" parent="ParalaxLayers"]
+visible = false
 scroll_scale = Vector2(0.075, 0.075)
 scroll_offset = Vector2(-1100, 3000)
-repeat_size = Vector2(7492.1, 0)
-repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
@@ -921,10 +919,9 @@ scale = Vector2(3.06, 3.06)
 texture = ExtResource("5_tffdo")
 
 [node name="BackgroundFront" type="Parallax2D" parent="ParalaxLayers"]
+visible = false
 scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-1100, 3000)
-repeat_size = Vector2(7492.1, 0)
-repeat_times = 2
 script = ExtResource("2_mccl8")
 
 [node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgroundFront"]
@@ -942,7 +939,7 @@ script = ExtResource("2_mccl8")
 [node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgrounLeaves"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(37422, 52)
+position = Vector2(35746, -1118.28)
 scale = Vector2(5.4, 5.4)
 texture = ExtResource("7_7ipyn")
 
@@ -985,7 +982,7 @@ position = Vector2(3, 0)
 [node name="Make the branches children of the trees" type="Node" parent="Level/Trees"]
 
 [node name="TreeRight" parent="Level/Trees" instance=ExtResource("19_mtimp")]
-position = Vector2(916, -850)
+position = Vector2(916, -712)
 
 [node name="TreeBranch3" parent="Level/Trees/TreeRight" instance=ExtResource("20_tu2bp")]
 position = Vector2(-503, -687)
@@ -1007,7 +1004,7 @@ position = Vector2(457, -1886)
 scale = Vector2(1.42127, 1)
 
 [node name="TreeRight2" parent="Level/Trees" instance=ExtResource("19_mtimp")]
-position = Vector2(3072, -855)
+position = Vector2(3072, -717)
 
 [node name="TreeBranch4" parent="Level/Trees/TreeRight2" instance=ExtResource("20_tu2bp")]
 position = Vector2(-435, -1096)
@@ -1410,64 +1407,6 @@ texture = ExtResource("22_mccl8")
 [node name="Ground" type="Node2D" parent="Level"]
 
 [node name="All Ground Colliders And Sprites should be here" type="Node" parent="Level/Ground"]
-
-[node name="ExampleGround" type="Node2D" parent="Level/Ground"]
-position = Vector2(122, 247)
-
-[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround"]
-
-[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround"]
-rotation = 1.5707964
-scale = Vector2(3.19, 3.19)
-texture = ExtResource("21_mccl8")
-
-[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround"]
-position = Vector2(-77, 3158)
-
-[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround/StaticBody"]
-
-[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround/StaticBody"]
-position = Vector2(81, -3149)
-shape = SubResource("RectangleShape2D_h34ov")
-
-[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround"]
-
-[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround/AreaCollider"]
-
-[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround/AreaCollider"]
-
-[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround/AreaCollider"]
-position = Vector2(0, -23)
-shape = SubResource("RectangleShape2D_h34ov")
-
-[node name="ExampleGround2" type="Node2D" parent="Level/Ground"]
-position = Vector2(3028, 247)
-
-[node name="Each Ground Object has two colliders" type="Node" parent="Level/Ground/ExampleGround2"]
-
-[node name="Sprite" type="Sprite2D" parent="Level/Ground/ExampleGround2"]
-rotation = 1.5707964
-scale = Vector2(3.19, 3.19)
-texture = ExtResource("21_mccl8")
-
-[node name="StaticBody" type="StaticBody2D" parent="Level/Ground/ExampleGround2"]
-position = Vector2(-77, 3158)
-
-[node name="This collider is used for physics" type="Node" parent="Level/Ground/ExampleGround2/StaticBody"]
-
-[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround2/StaticBody"]
-position = Vector2(81, -3149)
-shape = SubResource("RectangleShape2D_h34ov")
-
-[node name="AreaCollider" type="Area2D" parent="Level/Ground/ExampleGround2"]
-
-[node name="This collider is used for detecting gorund collition" type="Node" parent="Level/Ground/ExampleGround2/AreaCollider"]
-
-[node name="It has to be above the other collider, so that collision is detected" type="Node" parent="Level/Ground/ExampleGround2/AreaCollider"]
-
-[node name="PhysicCollider" type="CollisionShape2D" parent="Level/Ground/ExampleGround2/AreaCollider"]
-position = Vector2(0, -23)
-shape = SubResource("RectangleShape2D_h34ov")
 
 [node name="ExampleGround3" type="Node2D" parent="Level/Ground"]
 position = Vector2(5910, 247)
@@ -3029,6 +2968,15 @@ rotation = -0.12271337
 scale = Vector2(0.8409131, 0.9161853)
 texture = ExtResource("33_370wn")
 
+[node name="GroundAboveLong" parent="Level" instance=ExtResource("32_8p7k4")]
+position = Vector2(-152, 357)
+
+[node name="GroundAboveLong2" parent="Level" instance=ExtResource("32_8p7k4")]
+position = Vector2(2184, 357)
+
+[node name="GroundAboveLong3" parent="Level" instance=ExtResource("32_8p7k4")]
+position = Vector2(4716, 365)
+
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("acorn_label")]
 z_index = 1
 position = Vector2(-164, 2874)
@@ -3053,9 +3001,9 @@ anim_player = NodePath("../newplayer")
 [node name="MainCamera" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
 limit_left = -1280
-limit_top = -9415
+limit_top = -9015
 limit_right = 37740
-limit_bottom = 3295
+limit_bottom = 3640
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0

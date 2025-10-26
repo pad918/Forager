@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bep3igiy8ivrg"]
+
+[ext_resource type="Texture2D" uid="uid://b054spq7x1wks" path="res://Sprites/AboveGroundAssetsNew/bluedirtlarge.png" id="1_uw8kn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5hr3"]
+size = Vector2(2433, 616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmkqa"]
+size = Vector2(2459, 655)
+
+[node name="DirtBelowShort" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uw8kn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7.5, 9)
+shape = SubResource("RectangleShape2D_b5hr3")
+
+[node name="GroundCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
+position = Vector2(8.5, 7.5)
+shape = SubResource("RectangleShape2D_kmkqa")

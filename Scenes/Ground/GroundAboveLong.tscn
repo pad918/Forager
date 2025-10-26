@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7gne6kw521kb"]
+
+[ext_resource type="Texture2D" uid="uid://so2l21pdwsyf" path="res://Sprites/AboveGroundAssetsNew/orangefloorlarge.png" id="1_3wt2r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5hr3"]
+size = Vector2(2472, 836)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmkqa"]
+size = Vector2(2506, 877)
+
+[node name="GroundAboveLong" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3wt2r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-38, 71)
+shape = SubResource("RectangleShape2D_b5hr3")
+
+[node name="GroundCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
+position = Vector2(-31, 63.5)
+shape = SubResource("RectangleShape2D_kmkqa")

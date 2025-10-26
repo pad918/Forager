@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwmu5dvxdp5vp"]
+
+[ext_resource type="Texture2D" uid="uid://cnlhmfmbphtvm" path="res://Sprites/AboveGroundAssetsNew/bluefloorlarge.png" id="1_kql1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5hr3"]
+size = Vector2(2439, 834)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmkqa"]
+size = Vector2(2465, 877)
+
+[node name="GroundBelowLong" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kql1g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(11.5, 70)
+shape = SubResource("RectangleShape2D_b5hr3")
+
+[node name="GroundCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollider"]
+position = Vector2(15.5, 63.5)
+shape = SubResource("RectangleShape2D_kmkqa")
