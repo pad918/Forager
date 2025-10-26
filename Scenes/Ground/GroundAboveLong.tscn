@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7gne6kw521kb"]
+[gd_scene load_steps=5 format=3 uid="uid://b7gne6kw521kb"]
 
 [ext_resource type="Texture2D" uid="uid://so2l21pdwsyf" path="res://Sprites/AboveGroundAssetsNew/orangefloorlarge.png" id="1_3wt2r"]
+[ext_resource type="Texture2D" uid="uid://cq68nbsrk5db2" path="res://Sprites/AboveGroundAssetsNew/orangedirtlarge.png" id="1_pei1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5hr3"]
 size = Vector2(2472, 836)
@@ -9,6 +10,10 @@ size = Vector2(2472, 836)
 size = Vector2(2506, 877)
 
 [node name="GroundAboveLong" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-63, 20)
+texture = ExtResource("1_pei1b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3wt2r")
