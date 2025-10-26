@@ -3388,7 +3388,17 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 80
 text = "5:00"
 
-[node name="TextureRect" type="TextureRect" parent="GameUi"]
+[node name="UpgradesPanel" type="Panel" parent="GameUi"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("32_h34ov")
+
+[node name="TextureRect" type="TextureRect" parent="GameUi/UpgradesPanel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3399,15 +3409,6 @@ size_flags_vertical = 3
 texture = ExtResource("68_kyqma")
 expand_mode = 2
 metadata/_edit_lock_ = true
-
-[node name="UpgradesPanel" type="Panel" parent="GameUi"]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("32_h34ov")
 
 [node name="UiSoundSelector" type="Node" parent="GameUi/UpgradesPanel"]
 script = ExtResource("60_w517i")
