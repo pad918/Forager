@@ -12,6 +12,11 @@ class_name MovementStateMachine
 
 @export var animation_tree: AnimationTree
 
+@export var anim_states: AnimationStateMachine
+
+func play_animation(anim_name:String):
+	anim_states.play_animation(anim_name)
+
 func set_animation_frame(source_state:MovementState, frame_id:int):
 	if(source_state == current_state):
 		animator.frame = frame_id

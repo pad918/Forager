@@ -18,6 +18,8 @@ class_name StemMovementState
 @export var jump_boost_up: float = 500
 @export var jump_boost_down: float = 500
 
+var last_mov_y_dir: float = 1
+
 # Used to temporarely change the friction (e.g. when jumping)
 var friction_multiplier:Vector2 = Vector2(1, 1)
 var max_speed_multiplier:Vector2 = Vector2(1, 1)
@@ -114,5 +116,12 @@ func update(delta:float):
 		statemachine.set_movement_state(self, gliding_state)
 	
 	character.move_and_slide();
+	
+	# Set the animation
+	if(input_dir.y==0):
+		play_animation("ClimbStillUp" if last_mov_y_dir<=0 else "ClimbStillDown")
+	else:
+		play_animation("ClimbUp" if input_dir.y<=0 else "ClimbDown")
+		last_mov_y_dir = input_dir.y
 	
 	

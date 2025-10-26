@@ -17,6 +17,7 @@ class_name GroundMovementState
 
 var is_on_stem: bool = false
 
+
 func _ready() -> void:
 	super._ready()
 
@@ -84,3 +85,7 @@ func update(delta: float):
 		
 	
 	character.move_and_slide()
+	if(input_dir.x==0):
+		play_animation("IdleRight" if character.velocity.x>0 else "IdleLeft")
+	else:
+		play_animation("WalkRight" if character.velocity.x>0 else "WalkLeft")

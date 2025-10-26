@@ -17,3 +17,6 @@ func update(delta:float):
 
 func became_active_state():
 	pass
+
+func play_animation(anim_name:String):
+	statemachine.play_animation(anim_name)

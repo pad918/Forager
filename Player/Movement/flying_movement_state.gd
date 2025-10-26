@@ -73,7 +73,7 @@ func update(delta:float):
 	
 	# If the user is trying to move upwards, and is over the stem,
 	# go to the climbing state!
-	if(is_on_stem and input_dir.y < 0 and time_since_started_falling>0.4):
+	if(is_on_stem and input_dir.y < 0 and time_since_started_falling>0.25):
 		statemachine.set_movement_state(self, stem_climb_state)	
 	
 	if(input_dir.x==0):
@@ -82,3 +82,5 @@ func update(delta:float):
 		character.velocity.x += delta*input_dir.x*x_acceleration
 	character.velocity.x = min(max_speed.x, max(-max_speed.x, character.velocity.x))
 	character.move_and_slide()
+	
+	play_animation("FallRight" if character.velocity.x>0 else "FallLeft")
