@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgxtompmitimv"]
 
-[ext_resource type="Texture2D" uid="uid://dgpqmpeb0q8ee" path="res://Sprites/ui/Acorns.png" id="1_hswda"]
+[ext_resource type="Texture2D" uid="uid://c0rygmif7tvyn" path="res://Sprites/ui/Strength.png" id="1_hswda"]
 [ext_resource type="Script" uid="uid://cqin2gwbr84uk" path="res://Scenes/upgrade_capacity_card.gd" id="2_gkbe7"]
 
 [node name="UpgradeCapacityCard" type="TextureButton"]

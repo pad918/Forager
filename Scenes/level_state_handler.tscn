@@ -994,7 +994,7 @@ position = Vector2(1834, -3154.8386)
 scale = Vector2(2.8500504, 2.8500504)
 texture = ExtResource("3_nmnqg")
 script = ExtResource("5_87qsy")
-scroll_speed = Vector2(0.1, 0.1)
+scroll_speed = Vector2(0.01, 0.01)
 
 [node name="ParalaxLayers" type="Node2D" parent="."]
 
@@ -1050,8 +1050,8 @@ scale = Vector2(4.5, 4.5)
 texture = ExtResource("10_t4qa6")
 
 [node name="Cave" type="Sprite2D" parent="ParalaxLayers"]
-position = Vector2(28141, 4712)
-scale = Vector2(5.587, 5.587)
+position = Vector2(27790, 4604)
+scale = Vector2(5.3, 5.3)
 texture = ExtResource("15_kddj7")
 
 [node name="SfxSingleton" type="Node2D" parent="."]
@@ -4017,7 +4017,7 @@ collision_layer = 2147483648
 collision_mask = 2147483648
 script = ExtResource("35_m7j3d")
 low_limit = Vector2(-1350, -10000000)
-high_limit = Vector2(60000, 2200)
+high_limit = Vector2(60000, 8000)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CameraLimtAreas/Cave3LeftLimits2"]
 position = Vector2(411.2554, -94.30581)
@@ -4360,6 +4360,11 @@ scale = Vector2(0.59893, 0.81286407)
 
 [node name="Rock28" parent="." instance=ExtResource("70_t4qa6")]
 position = Vector2(29151.002, 1041.0001)
+rotation = -1.5550268
+scale = Vector2(0.59893, 0.81286407)
+
+[node name="Rock55" parent="." instance=ExtResource("70_t4qa6")]
+position = Vector2(29588.002, 1041)
 rotation = -1.5550268
 scale = Vector2(0.59893, 0.81286407)
 
