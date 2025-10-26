@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=122 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -85,6 +85,7 @@
 [ext_resource type="PackedScene" uid="uid://cvh857qepu50n" path="res://Scenes/Ground/GroundAboveShort.tscn" id="72_a2moc"]
 [ext_resource type="PackedScene" uid="uid://cwwh5xp0cnjrk" path="res://Scenes/Ground/GroundBelowShort.tscn" id="73_87qsy"]
 [ext_resource type="Texture2D" uid="uid://cxi0jdtu6fqvl" path="res://Sprites/ui/Play_Now.png" id="75_vl3or"]
+[ext_resource type="Script" uid="uid://cwgat0yvo7w4r" path="res://Scenes/continue_btn.gd" id="77_kyqma"]
 [ext_resource type="PackedScene" uid="uid://eck11r4aa688" path="res://Scenes/Ground/DirtBelowShort.tscn" id="79_km4rw"]
 [ext_resource type="PackedScene" uid="uid://doli1ucdqterx" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
 [ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
@@ -3529,8 +3530,10 @@ offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4508812, 0.4508812)
+disabled = true
 texture_normal = ExtResource("75_vl3or")
 stretch_mode = 4
+script = ExtResource("77_kyqma")
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -4818,4 +4821,5 @@ scale = Vector2(0.97164, 1.0650624)
 [connection signal="ready" from="InitialBgmSetter" to="InitialBgmSetter" method="play_tracks"]
 [connection signal="visibility_changed" from="GameUi/UpgradesPanel" to="GameUi/UpgradesPanel/HBoxContainer" method="randomly_sample_cards"]
 [connection signal="card_selected" from="GameUi/UpgradesPanel/HBoxContainer" to="GameUi/UpgradesPanel/UiSoundSelector" method="play"]
+[connection signal="card_selected" from="GameUi/UpgradesPanel/HBoxContainer" to="GameUi/UpgradesPanel/ContinueBtn" method="activate"]
 [connection signal="button_down" from="GameUi/UpgradesPanel/ContinueBtn" to="GameUi/UpgradesPanel" method="load_next_round"]
