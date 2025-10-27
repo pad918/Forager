@@ -8,5 +8,4 @@ class_name BasicParalax
 func _process(_delta: float) -> void:
 	#var viewport_pos:Vector2 = get_viewport_transform().get_origin()
 	var viewport_pos:Vector2 = get_viewport().get_camera_2d().global_position
-	print("alalal: ", (scroll_speed-Vector2(1, 1)).x)
 	offset = ((scroll_speed-Vector2(1, 1)) * (viewport_pos-zero_point)) / scale.x

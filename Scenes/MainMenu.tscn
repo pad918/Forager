@@ -108,6 +108,7 @@ script = ExtResource("3_ghw46")
 scene_name = "MainGame"
 
 [node name="TextureButton" type="TextureButton" parent="Panel/CenterContainer"]
+z_index = 60
 custom_minimum_size = Vector2(431.71, 137.075)
 layout_mode = 2
 texture_normal = ExtResource("4_koqhg")
@@ -146,6 +147,7 @@ theme_override_font_sizes/font_size = 46
 text = "VOLUME"
 
 [node name="HSlider" type="HSlider" parent="."]
+z_index = 50
 custom_minimum_size = Vector2(510.525, 31.25)
 layout_mode = 0
 offset_left = 378.00003

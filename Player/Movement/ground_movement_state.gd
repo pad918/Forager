@@ -66,7 +66,8 @@ func update(delta: float):
 	elif(Input.is_action_just_pressed("Jump")):
 		# Just jump strait up
 		character.velocity.y += jump_boost.y
-		statemachine.set_movement_state(self, fall_state)
+		# Maybe problematic line:?
+		#statemachine.set_movement_state(self, fall_state)
 		print("GAVE UP BOOST!")
 		get_node("%SfxSingleton").play_sfx("Jump")
 

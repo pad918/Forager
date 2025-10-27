@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=126 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -93,6 +93,11 @@
 [ext_resource type="PackedScene" uid="uid://doli1ucdqterx" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
 [ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
 [ext_resource type="PackedScene" uid="uid://bep3igiy8ivrg" path="res://Scenes/Ground/DirtBelowLong.tscn" id="83_q1d4q"]
+
+[sub_resource type="Curve" id="Curve_dh4uv"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.97408205, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juer4"]
 size = Vector2(956.5, 3438)
@@ -987,6 +992,34 @@ bgm_name = "ForrestBGM"
 ambiance_name = "ForrestAmbience"
 cross_fade_time = 5.0
 reset_blocking = true
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(7950, -1973)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Parallax2D"]
+z_index = -11
+position = Vector2(2080, 0)
+amount = 100
+texture = ExtResource("29_upfit")
+lifetime = 6.0
+preprocess = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(10000, 1)
+direction = Vector2(-0.7, 1)
+spread = 27.52
+gravity = Vector2(0, 0)
+initial_velocity_min = 888.43
+initial_velocity_max = 1000.0
+angular_velocity_min = -23.8
+angular_velocity_max = 101.16
+orbit_velocity_min = -0.01
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.02
+scale_amount_max = 0.03
+hue_variation_max = 0.08
+hue_variation_curve = SubResource("Curve_dh4uv")
 
 [node name="FallingLeafs" type="Node2D" parent="."]
 position = Vector2(-1327, 2937)
@@ -4109,6 +4142,70 @@ bgm_name = "CaveBGM"
 ambiance_name = "CaveAmbience"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/CaveBGMCollider"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="ForrestBGMCollider2" type="Area2D" parent="BGMAreas"]
+position = Vector2(17003, 1192)
+script = ExtResource("41_iaphp")
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/ForrestBGMCollider2"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="CaveBGMCollider2" type="Area2D" parent="BGMAreas"]
+position = Vector2(17031, 1578)
+script = ExtResource("41_iaphp")
+bgm_name = "CaveBGM"
+ambiance_name = "CaveAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/CaveBGMCollider2"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="ForrestBGMCollider4" type="Area2D" parent="BGMAreas"]
+position = Vector2(37289, 4439)
+rotation = 1.5612203
+script = ExtResource("41_iaphp")
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/ForrestBGMCollider4"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="CaveBGMCollider4" type="Area2D" parent="BGMAreas"]
+position = Vector2(36584, 4499)
+rotation = 1.5612203
+script = ExtResource("41_iaphp")
+bgm_name = "CaveBGM"
+ambiance_name = "CaveAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/CaveBGMCollider4"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="ForrestBGMCollider3" type="Area2D" parent="BGMAreas"]
+position = Vector2(22954, 419)
+scale = Vector2(1.72, 1)
+script = ExtResource("41_iaphp")
+bgm_name = "ForrestBGM"
+ambiance_name = "ForrestAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/ForrestBGMCollider3"]
+position = Vector2(33, 74.5)
+shape = SubResource("RectangleShape2D_3iuea")
+
+[node name="CaveBGMCollider3" type="Area2D" parent="BGMAreas"]
+position = Vector2(22982, 805)
+scale = Vector2(1.72, 1)
+script = ExtResource("41_iaphp")
+bgm_name = "CaveBGM"
+ambiance_name = "CaveAmbience"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BGMAreas/CaveBGMCollider3"]
 position = Vector2(33, 74.5)
 shape = SubResource("RectangleShape2D_3iuea")
 
