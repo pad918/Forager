@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dcocokngkym4r"]
+[gd_scene load_steps=130 format=3 uid="uid://dcocokngkym4r"]
 
 [ext_resource type="Script" uid="uid://csk6o0e7wgbtw" path="res://Scenes/level_state_handler.gd" id="1_03kpd"]
 [ext_resource type="Script" uid="uid://b4ybxa6g0d6qi" path="res://Other/track_setter.gd" id="2_7dfb5"]
@@ -6,7 +6,10 @@
 [ext_resource type="Script" uid="uid://wi6qljer14m3" path="res://Other/paralax_resolution_fixer.gd" id="2_mccl8"]
 [ext_resource type="Script" uid="uid://bys2bcx8xcf1f" path="res://Other/falling_leafs.gd" id="3_a2moc"]
 [ext_resource type="Texture2D" uid="uid://b23wxr2crrnqu" path="res://Sprites/AboveGroundAssets/leavesback.png" id="3_nmnqg"]
+[ext_resource type="Shader" uid="uid://dixywojbqsalx" path="res://Other/shaders/paralax_shader.gdshader" id="4_c8ln2"]
+[ext_resource type="Texture2D" uid="uid://dvd5tmcv2xbp1" path="res://Sprites/ParalaxLayers/leaf.png" id="5_4vyhc"]
 [ext_resource type="Script" uid="uid://dkt0ipsiosup8" path="res://Other/basic_paralax.gd" id="5_87qsy"]
+[ext_resource type="Script" uid="uid://ckpdmvoh50vib" path="res://Other/shader_paralax.gd" id="6_avg6c"]
 [ext_resource type="Texture2D" uid="uid://dgrd6j2cyw0lc" path="res://Sprites/ParalaxLayers/Sky.png" id="7_km4rw"]
 [ext_resource type="Texture2D" uid="uid://bma608kgdmf04" path="res://Sprites/ParalaxLayers/Tree1.png" id="8_1yfsm"]
 [ext_resource type="Texture2D" uid="uid://cksj4c0ucsjj0" path="res://Sprites/ParalaxLayers/Tree2.png" id="9_dh4uv"]
@@ -93,6 +96,9 @@
 [ext_resource type="PackedScene" uid="uid://doli1ucdqterx" path="res://Scenes/Ground/DirtAboveLong.tscn" id="80_kddj7"]
 [ext_resource type="PackedScene" uid="uid://bwmu5dvxdp5vp" path="res://Scenes/Ground/GroundBelowLong.tscn" id="82_o8o58"]
 [ext_resource type="PackedScene" uid="uid://bep3igiy8ivrg" path="res://Scenes/Ground/DirtBelowLong.tscn" id="83_q1d4q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_avg6c"]
+shader = ExtResource("4_c8ln2")
 
 [sub_resource type="Curve" id="Curve_dh4uv"]
 _limits = [-1.0, 1.0, 0.0, 1.0]
@@ -993,33 +999,57 @@ ambiance_name = "ForrestAmbience"
 cross_fade_time = 5.0
 reset_blocking = true
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(7950, -1973)
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Parallax2D"]
+[node name="ForgorundLeafs" type="CPUParticles2D" parent="."]
 z_index = -11
-position = Vector2(2080, 0)
+material = SubResource("ShaderMaterial_avg6c")
+position = Vector2(10030, -1973)
 amount = 100
-texture = ExtResource("29_upfit")
-lifetime = 6.0
-preprocess = 6.0
+texture = ExtResource("5_4vyhc")
+lifetime = 15.0
+preprocess = 15.0
 emission_shape = 3
 emission_rect_extents = Vector2(10000, 1)
 direction = Vector2(-0.7, 1)
 spread = 27.52
 gravity = Vector2(0, 0)
-initial_velocity_min = 888.43
-initial_velocity_max = 1000.0
+initial_velocity_min = 367.77
+initial_velocity_max = 553.72
 angular_velocity_min = -23.8
 angular_velocity_max = 101.16
 orbit_velocity_min = -0.01
 angle_min = -720.0
 angle_max = 720.0
-scale_amount_min = 0.02
-scale_amount_max = 0.03
-hue_variation_max = 0.08
+scale_amount_min = 0.35
+hue_variation_max = 0.04
 hue_variation_curve = SubResource("Curve_dh4uv")
+script = ExtResource("6_avg6c")
+scroll_speed = Vector2(0.9, 0.9)
+
+[node name="BGLeafs" type="CPUParticles2D" parent="."]
+z_index = -91
+material = SubResource("ShaderMaterial_avg6c")
+position = Vector2(10030, -1973)
+amount = 300
+texture = ExtResource("5_4vyhc")
+lifetime = 45.0
+preprocess = 45.0
+emission_shape = 3
+emission_rect_extents = Vector2(10000, 1)
+direction = Vector2(-0.7, 1)
+spread = 27.52
+gravity = Vector2(0, 0)
+initial_velocity_min = 170.2
+initial_velocity_max = 219.73
+angular_velocity_min = -23.8
+angular_velocity_max = 101.16
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.2
+scale_amount_max = 0.4
+hue_variation_max = 0.04
+hue_variation_curve = SubResource("Curve_dh4uv")
+script = ExtResource("6_avg6c")
+scroll_speed = Vector2(0.8, 0.8)
 
 [node name="FallingLeafs" type="Node2D" parent="."]
 position = Vector2(-1327, 2937)
@@ -1075,7 +1105,7 @@ scroll_offset = Vector2(-1100, 3091)
 script = ExtResource("2_mccl8")
 
 [node name="Background2" type="Sprite2D" parent="ParalaxLayers/BackgroundBack"]
-z_index = -100
+z_index = -90
 texture_repeat = 2
 position = Vector2(6180, -4255.65)
 scale = Vector2(4.5, 4.5)
@@ -1087,7 +1117,7 @@ scroll_offset = Vector2(39120, 6924)
 script = ExtResource("2_mccl8")
 
 [node name="Background1" type="Sprite2D" parent="ParalaxLayers/BackgroundFront"]
-z_index = -100
+z_index = -89
 texture_repeat = 2
 position = Vector2(9190, -5232)
 scale = Vector2(4.5, 4.5)
